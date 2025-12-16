@@ -79,30 +79,30 @@ function QUirenLandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
       {/* Navbar */}
-      <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:py-4">
           <a href="#top" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-400/10">
-              <span className="text-lg font-bold text-emerald-400">Q</span>
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-500/10">
+              <span className="text-lg font-bold text-orange-500">Q</span>
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight sm:text-base">
+              <span className="text-sm font-semibold tracking-tight sm:text-base text-slate-900">
                 Q-Uiren
               </span>
-              <span className="hidden text-xs text-slate-400 sm:block">
+              <span className="hidden text-xs text-slate-600 sm:block">
                 умная домбра для нового поколения
               </span>
             </div>
           </a>
 
-          <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+          <nav className="hidden items-center gap-6 text-sm text-slate-700 md:flex">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="transition hover:text-emerald-400"
+                className="transition hover:text-orange-500"
               >
                 {item.name}
               </a>
@@ -111,7 +111,7 @@ function QUirenLandingPage() {
 
           <a
             href="#cta"
-            className="hidden rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950 shadow-sm hover:bg-emerald-400 md:inline-flex"
+            className="hidden rounded-full bg-orange-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-orange-600 md:inline-flex"
           >
             Оставить контакты
           </a>
@@ -122,19 +122,19 @@ function QUirenLandingPage() {
         {/* Hero */}
         <section className="grid gap-10 md:grid-cols-2 md:items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/5 px-3 py-1 text-xs font-medium text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-orange-300 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
               Пилотируем с музыкальными школами
             </div>
 
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl text-slate-900">
               Первая умная домбра
-              <span className="block text-emerald-400">
+              <span className="block text-blue-600">
                 с LED-подсветкой и живой обратной связью
               </span>
             </h1>
 
-            <p className="max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            <p className="max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
               Q-Uiren объединяет традиционную домбру и современные технологии.
               Устройство показывает, куда ставить пальцы, слушает вашу игру через
               телефон и помогает шаг за шагом освоить кюи – от первых нот до
@@ -144,25 +144,25 @@ function QUirenLandingPage() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#cta"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
+                className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600"
               >
                 Стать пилотным пользователем
               </a>
               <a
                 href="#about"
-                className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-200 hover:border-slate-500"
+                className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 hover:border-blue-500 hover:text-blue-600"
               >
                 Узнать подробнее
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-4 pt-2 text-xs text-slate-400">
+            <div className="flex flex-wrap gap-4 pt-2 text-xs text-slate-600">
               <div className="flex items-center gap-2">
-                <span className="h-5 w-5 rounded-full bg-emerald-500/10" />
+                <span className="h-5 w-5 rounded-full bg-blue-500/20" />
                 <span>Для школ и индивидуальных учеников</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="h-5 w-5 rounded-full bg-emerald-500/10" />
+                <span className="h-5 w-5 rounded-full bg-blue-500/20" />
                 <span>Поддержка KZ / RU / EN</span>
               </div>
             </div>
@@ -170,69 +170,69 @@ function QUirenLandingPage() {
 
           {/* Right mockup */}
           <div className="relative flex justify-center md:justify-end">
-            <div className="relative mt-4 h-[320px] w-full max-w-sm rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-4 shadow-2xl">
+            <div className="relative mt-4 h-[320px] w-full max-w-sm rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-50 via-white to-orange-50 p-4 shadow-2xl">
               <div className="flex items-center justify-between px-1 pb-3">
                 <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-emerald-500/20" />
-                  <span className="text-xs font-medium text-slate-200">
+                  <div className="h-6 w-6 rounded-full bg-blue-500/20" />
+                  <span className="text-xs font-medium text-slate-700">
                     Урок · Начальные кюи
                   </span>
                 </div>
-                <span className="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] text-slate-300">
+                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] text-blue-700">
                   Реальное время
                 </span>
               </div>
 
               <div className="flex h-full gap-4">
                 {/* Dombyra neck mock */}
-                <div className="relative flex h-full flex-1 items-center justify-center rounded-2xl bg-slate-900/60">
-                  <div className="relative h-[220px] w-10 rounded-full border border-slate-700 bg-slate-950/80">
-                    <div className="absolute inset-x-1 top-6 h-1 rounded-full bg-slate-700" />
-                    <div className="absolute inset-x-1 top-12 h-1 rounded-full bg-slate-700" />
-                    <div className="absolute inset-x-1 top-20 h-1 rounded-full bg-slate-700" />
-                    <div className="absolute inset-x-1 top-28 h-1 rounded-full bg-slate-700" />
-                    <div className="absolute inset-x-1 top-36 h-1 rounded-full bg-slate-700" />
-                    <div className="absolute inset-x-1 top-44 h-1 rounded-full bg-slate-700" />
+                <div className="relative flex h-full flex-1 items-center justify-center rounded-2xl bg-slate-100">
+                  <div className="relative h-[220px] w-10 rounded-full border border-slate-300 bg-white">
+                    <div className="absolute inset-x-1 top-6 h-1 rounded-full bg-slate-300" />
+                    <div className="absolute inset-x-1 top-12 h-1 rounded-full bg-slate-300" />
+                    <div className="absolute inset-x-1 top-20 h-1 rounded-full bg-slate-300" />
+                    <div className="absolute inset-x-1 top-28 h-1 rounded-full bg-slate-300" />
+                    <div className="absolute inset-x-1 top-36 h-1 rounded-full bg-slate-300" />
+                    <div className="absolute inset-x-1 top-44 h-1 rounded-full bg-slate-300" />
 
                     {/* LED hints */}
-                    <div className="absolute left-1/2 top-12 h-3 w-3 -translate-x-1/2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-                    <div className="absolute left-1/2 top-28 h-3 w-3 -translate-x-1/2 rounded-full bg-emerald-400/80 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
-                    <div className="absolute left-1/2 top-36 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-emerald-300/80" />
+                    <div className="absolute left-1/2 top-12 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(249,115,22,0.9)]" />
+                    <div className="absolute left-1/2 top-28 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-500/80 shadow-[0_0_10px_rgba(249,115,22,0.7)]" />
+                    <div className="absolute left-1/2 top-36 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-blue-500/80" />
                   </div>
                 </div>
 
                 {/* Analytics mock */}
-                <div className="flex w-40 flex-col justify-between rounded-2xl bg-slate-900/80 p-3">
+                <div className="flex w-40 flex-col justify-between rounded-2xl bg-white border border-slate-200 p-3">
                   <div>
-                    <p className="text-[10px] uppercase tracking-wide text-slate-400">
+                    <p className="text-[10px] uppercase tracking-wide text-slate-500">
                       Точность нот
                     </p>
-                    <p className="text-2xl font-semibold text-emerald-400">92%</p>
-                    <p className="mt-1 text-[11px] text-slate-400">
+                    <p className="text-2xl font-semibold text-blue-600">92%</p>
+                    <p className="mt-1 text-[11px] text-slate-500">
                       +8% за последнюю неделю
                     </p>
                   </div>
 
                   <div className="mt-3 space-y-2">
                     <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-300">Ритм</span>
-                      <span className="text-slate-400">87%</span>
+                      <span className="text-slate-700">Ритм</span>
+                      <span className="text-slate-600">87%</span>
                     </div>
-                    <div className="h-1 rounded-full bg-slate-800">
-                      <div className="h-1 w-4/5 rounded-full bg-emerald-400" />
-                    </div>
-
-                    <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-300">Чистота звука</span>
-                      <span className="text-slate-400">95%</span>
-                    </div>
-                    <div className="h-1 rounded-full bg-slate-800">
-                      <div className="h-1 w-[90%] rounded-full bg-emerald-400" />
+                    <div className="h-1 rounded-full bg-slate-200">
+                      <div className="h-1 w-4/5 rounded-full bg-orange-500" />
                     </div>
 
                     <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-300">Домашнее задание</span>
-                      <span className="text-emerald-400">выполнено</span>
+                      <span className="text-slate-700">Чистота звука</span>
+                      <span className="text-slate-600">95%</span>
+                    </div>
+                    <div className="h-1 rounded-full bg-slate-200">
+                      <div className="h-1 w-[90%] rounded-full bg-blue-500" />
+                    </div>
+
+                    <div className="flex items-center justify-between text-[11px]">
+                      <span className="text-slate-700">Домашнее задание</span>
+                      <span className="text-orange-600 font-medium">выполнено</span>
                     </div>
                   </div>
                 </div>
@@ -241,17 +241,17 @@ function QUirenLandingPage() {
 
             {/* Glow */}
             <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl">
-              <div className="mx-auto h-56 w-56 rounded-full bg-emerald-500/20" />
+              <div className="mx-auto h-56 w-56 rounded-full bg-blue-500/10" />
             </div>
           </div>
         </section>
 
         {/* About */}
         <section id="about" className="mt-20 space-y-6">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
             Что делает Q-Uiren особенным?
           </h2>
-          <p className="max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base">
             Традиционные уроки по домбре часто требуют много времени, дороги до школы
             и зависят от расписания преподавателя. Q-Uiren предлагает другой формат:
             вы сохраняете живого учителя, если он у вас есть, но переносите часть
@@ -267,10 +267,10 @@ function QUirenLandingPage() {
           className="mt-20 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:items-start"
         >
           <div className="space-y-5">
-            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
               Почему Q-Uiren?
             </h2>
-            <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
+            <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
               Наша задача – не заменить домбру гаджетом, а наоборот: сделать
               традиционный инструмент ближе к молодому поколению. Мы объединяем
               педагогику, технологии и уважение к казахской культуре, чтобы обучение
@@ -282,12 +282,12 @@ function QUirenLandingPage() {
             {benefits.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4"
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
               >
-                <h3 className="text-sm font-semibold text-slate-50 sm:text-base">
+                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-300 sm:text-sm">
+                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -299,10 +299,10 @@ function QUirenLandingPage() {
         <section id="tech" className="mt-20">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+              <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
                 Основные технологии
               </h2>
-              <p className="mt-1 max-w-xl text-sm text-slate-300 sm:text-base">
+              <p className="mt-1 max-w-xl text-sm text-slate-600 sm:text-base">
                 Мы строим продукт на стыке железа, софта и педагогики. Каждый элемент
                 – от LEDs до алгоритмов анализа – создан для того, чтобы обучение
                 было понятным даже без технических знаний.
@@ -314,12 +314,12 @@ function QUirenLandingPage() {
             {tech.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/40 p-4"
+                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
               >
-                <h3 className="text-sm font-semibold text-slate-50 sm:text-base">
+                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-300 sm:text-sm">
+                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -329,10 +329,10 @@ function QUirenLandingPage() {
 
         {/* Audience */}
         <section id="audience" className="mt-20">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
             Для кого мы создаём Q-Uiren?
           </h2>
-          <p className="mt-1 max-w-3xl text-sm text-slate-300 sm:text-base">
+          <p className="mt-1 max-w-3xl text-sm text-slate-600 sm:text-base">
             Мы думаем о Q-Uiren как о мосте между поколениями: бабушки и дедушки,
             которые играют традиционные кюи, дети, которые привыкли к смартфону, и
             преподаватели, которые хотят видеть реальный прогресс учеников.
@@ -342,12 +342,12 @@ function QUirenLandingPage() {
             {audience.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/40 p-4"
+                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
               >
-                <h3 className="text-sm font-semibold text-slate-50 sm:text-base">
+                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-300 sm:text-sm">
+                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -358,19 +358,19 @@ function QUirenLandingPage() {
         {/* CTA */}
         <section
           id="cta"
-          className="mt-20 grid gap-8 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-slate-950 to-slate-950 p-6 sm:p-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]"
+          className="mt-20 grid gap-8 rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 via-orange-50/30 to-blue-50 p-6 sm:p-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]"
         >
           <div className="space-y-4">
-            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
               Присоединиться к пилотной программе
             </h2>
-            <p className="max-w-xl text-sm text-emerald-50/90 sm:text-base">
+            <p className="max-w-xl text-sm text-slate-700 sm:text-base">
               Мы собираем список музыкальных школ, преподавателей и семей, которые
               хотят протестировать Q-Uiren раньше других. Оставьте контакты – мы
               свяжемся с вами, как только будем готовы к следующей волне пилотов.
             </p>
 
-            <ul className="space-y-2 text-xs text-emerald-50/80 sm:text-sm">
+            <ul className="space-y-2 text-xs text-slate-700 sm:text-sm">
               <li>• Ранняя скидка на устройство</li>
               <li>• Совместная разработка образовательной программы</li>
               <li>• Прямой контакт с командой и возможность влиять на продукт</li>
@@ -379,33 +379,33 @@ function QUirenLandingPage() {
 
           <form className="space-y-4">
             <div>
-              <label className="text-xs font-medium text-emerald-50/90">
+              <label className="text-xs font-medium text-slate-700">
                 Имя и фамилия
               </label>
               <input
                 type="text"
-                className="mt-1 w-full rounded-xl border border-emerald-500/40 bg-slate-950/60 px-3 py-2 text-sm text-slate-50 outline-none placeholder:text-slate-500 focus:border-emerald-400"
+                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 placeholder="Например, Алия Нурлыбек"
               />
             </div>
 
             <div>
-              <label className="text-xs font-medium text-emerald-50/90">
+              <label className="text-xs font-medium text-slate-700">
                 E-mail
               </label>
               <input
                 type="email"
-                className="mt-1 w-full rounded-xl border border-emerald-500/40 bg-slate-950/60 px-3 py-2 text-sm text-slate-50 outline-none placeholder:text-slate-500 focus:border-emerald-400"
+                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 placeholder="name@example.com"
               />
             </div>
 
             <div>
-              <label className="text-xs font-medium text-emerald-50/90">
+              <label className="text-xs font-medium text-slate-700">
                 Кто вы?
               </label>
               <select
-                className="mt-1 w-full rounded-xl border border-emerald-500/40 bg-slate-950/60 px-3 py-2 text-sm text-slate-50 outline-none focus:border-emerald-400"
+                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 defaultValue="teacher"
               >
                 <option value="teacher">Преподаватель / музыкальная школа</option>
@@ -416,11 +416,11 @@ function QUirenLandingPage() {
             </div>
 
             <div>
-              <label className="text-xs font-medium text-emerald-50/90">
+              <label className="text-xs font-medium text-slate-700">
                 Сообщение (необязательно)
               </label>
               <textarea
-                className="mt-1 w-full rounded-xl border border-emerald-500/40 bg-slate-950/60 px-3 py-2 text-sm text-slate-50 outline-none placeholder:text-slate-500 focus:border-emerald-400"
+                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 rows={3}
                 placeholder="Расскажите пару слов о себе или вашей школе"
               />
@@ -428,12 +428,12 @@ function QUirenLandingPage() {
 
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
+              className="inline-flex w-full items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600"
             >
               Отправить заявку
             </button>
 
-            <p className="text-[10px] text-emerald-50/70">
+            <p className="text-[10px] text-slate-500">
               Отправляя форму, вы соглашаетесь получать от нас e-mail с обновлениями
               о проекте. Никакого спама.
             </p>
@@ -442,19 +442,19 @@ function QUirenLandingPage() {
 
         {/* FAQ */}
         <section id="faq" className="mt-20">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
             Частые вопросы
           </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {faqs.map((item) => (
               <div
                 key={item.q}
-                className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4"
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
               >
-                <h3 className="text-sm font-semibold text-slate-50 sm:text-base">
+                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
                   {item.q}
                 </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-300 sm:text-sm">
+                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
                   {item.a}
                 </p>
               </div>
@@ -464,8 +464,8 @@ function QUirenLandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 bg-slate-950/90">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Q-Uiren. Сохранение казахской культуры через
             технологии.
@@ -479,4 +479,4 @@ function QUirenLandingPage() {
   );
 }
 
-export default QUirenLandingPage;
+export default QUirenLandingPage; w
