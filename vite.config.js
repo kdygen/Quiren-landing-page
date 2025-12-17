@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [react()],
   // For local development, use '/'
   // For GitHub Pages deployment, change this to '/your-repo-name/'
-  base: '/',
+  base: '/quiren-landing-page/',
 })
