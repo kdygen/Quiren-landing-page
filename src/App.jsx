@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Q-Uiren landing page using Tailwind CSS
 function QUirenLandingPage() {
@@ -77,6 +77,27 @@ function QUirenLandingPage() {
       a: "Сейчас мы на стадии прототипа и пилотных запусков с партнёрскими школами. Открытый пред-заказ планируем после завершения тестирования.",
     },
   ];
+
+  // Photos for hero card (stored in /public)
+  const galleryImages = [
+    `${import.meta.env.BASE_URL}IMG_4705.jpeg`,
+    `${import.meta.env.BASE_URL}IMG_4700.jpeg`,
+    `${import.meta.env.BASE_URL}IMG_4701.jpeg`,
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const handlePrevImage = () => {
+    setCurrentImage((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextImage = () => {
+    setCurrentImage((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1
+    );
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -168,9 +189,9 @@ function QUirenLandingPage() {
             </div>
           </div>
 
-          {/* Right mockup */}
+          {/* Right: photo card (7:5 ratio) */}
           <div className="relative flex justify-center md:justify-end">
-            <div className="relative mt-4 h-[320px] w-full max-w-sm rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-50 via-white to-orange-50 p-4 shadow-2xl">
+            <div className="relative w-full max-w-md rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-50 via-white to-orange-50 p-4 shadow-2xl">
               <div className="flex items-center justify-between px-1 pb-3">
                 <div className="flex items-center gap-2">
                   <div className="h-6 w-6 rounded-full bg-blue-500/20" />
@@ -178,64 +199,51 @@ function QUirenLandingPage() {
                     Урок · Начальные кюи
                   </span>
                 </div>
-                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] text-blue-700">
-                  Реальное время
-                </span>
               </div>
 
-              <div className="flex h-full gap-4">
-                {/* Dombyra neck mock */}
-                <div className="relative flex h-full flex-1 items-center justify-center rounded-2xl bg-slate-100">
-                  <div className="relative h-[220px] w-10 rounded-full border border-slate-300 bg-white">
-                    <div className="absolute inset-x-1 top-6 h-1 rounded-full bg-slate-300" />
-                    <div className="absolute inset-x-1 top-12 h-1 rounded-full bg-slate-300" />
-                    <div className="absolute inset-x-1 top-20 h-1 rounded-full bg-slate-300" />
-                    <div className="absolute inset-x-1 top-28 h-1 rounded-full bg-slate-300" />
-                    <div className="absolute inset-x-1 top-36 h-1 rounded-full bg-slate-300" />
-                    <div className="absolute inset-x-1 top-44 h-1 rounded-full bg-slate-300" />
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={handlePrevImage}
+                  className="absolute left-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-transparent border-2 border-orange-500 text-orange-500 shadow-lg hover:bg-orange-500 hover:text-white transition-colors"
+                  aria-label="Предыдущее фото"
+                >
+                  ‹
+                </button>
 
-                    {/* LED hints */}
-                    <div className="absolute left-1/2 top-12 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(249,115,22,0.9)]" />
-                    <div className="absolute left-1/2 top-28 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-500/80 shadow-[0_0_10px_rgba(249,115,22,0.7)]" />
-                    <div className="absolute left-1/2 top-36 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-blue-500/80" />
-                  </div>
+                <div className="relative aspect-[7/5] w-full overflow-hidden rounded-2xl bg-slate-100">
+                  <img
+                    src={galleryImages[currentImage]}
+                    alt={`Q-Uiren пилотное обучение ${currentImage + 1}`}
+                    className="h-full w-full object-cover"
+                    loading="eager"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
                 </div>
 
-                {/* Analytics mock */}
-                <div className="flex w-40 flex-col justify-between rounded-2xl bg-white border border-slate-200 p-3">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-wide text-slate-500">
-                      Точность нот
-                    </p>
-                    <p className="text-2xl font-semibold text-blue-600">92%</p>
-                    <p className="mt-1 text-[11px] text-slate-500">
-                      +8% за последнюю неделю
-                    </p>
-                  </div>
+                <button
+                  type="button"
+                  onClick={handleNextImage}
+                  className="absolute right-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-transparent border-2 border-orange-500 text-orange-500 shadow-lg hover:bg-orange-500 hover:text-white transition-colors"
+                  aria-label="Следующее фото"
+                >
+                  ›
+                </button>
+              </div>
 
-                  <div className="mt-3 space-y-2">
-                    <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-700">Ритм</span>
-                      <span className="text-slate-600">87%</span>
-                    </div>
-                    <div className="h-1 rounded-full bg-slate-200">
-                      <div className="h-1 w-4/5 rounded-full bg-orange-500" />
-                    </div>
-
-                    <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-700">Чистота звука</span>
-                      <span className="text-slate-600">95%</span>
-                    </div>
-                    <div className="h-1 rounded-full bg-slate-200">
-                      <div className="h-1 w-[90%] rounded-full bg-blue-500" />
-                    </div>
-
-                    <div className="flex items-center justify-between text-[11px]">
-                      <span className="text-slate-700">Домашнее задание</span>
-                      <span className="text-orange-600 font-medium">выполнено</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="mt-4 flex justify-center gap-3">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setCurrentImage(index)}
+                    className={`h-4 w-4 rounded-full border-2 transition-all duration-300 ${index === currentImage
+                      ? "bg-orange-500 border-orange-500"
+                      : "bg-transparent border-orange-500"
+                      }`}
+                    aria-label={`Перейти к фото ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
 
