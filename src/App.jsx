@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, Menu, X, ArrowRight, Sparkles, Zap, Music, Users, Play, Code2, Flame, Headphones } from "lucide-react";
 
-// Q-Uiren landing page using Tailwind CSS
 function QUirenLandingPage() {
   const translations = {
     RU: {
@@ -365,6 +366,8 @@ function QUirenLandingPage() {
 
   const [currentImage, setCurrentImage] = useState(0);
   const [currentLanguage, setCurrentLanguage] = useState("RU");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedFaq, setExpandedFaq] = useState(-1);
 
   const languages = [
     { code: "RU", name: "Русский", flag: "🇷🇺" },
@@ -388,391 +391,472 @@ function QUirenLandingPage() {
   const t = translations[currentLanguage] || translations.RU;
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      {/* Navbar */}
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:py-4">
-          <a href="#top" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-500/10">
-              <span className="text-lg font-bold text-orange-500">Q</span>
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight sm:text-base text-slate-900">
-                Q-Uiren
-              </span>
-              <span className="hidden text-xs text-slate-600 sm:block">
-                {t.tagline}
-              </span>
-            </div>
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-black via-stone-950 to-slate-950 text-white overflow-hidden">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-stone-900/90 border-b border-amber-900/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center">
+                <Music className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-bold text-white">Q-Uiren</span>
+            </motion.div>
 
-          <nav className="hidden items-center gap-6 text-sm text-slate-700 md:flex">
-            {t.navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="transition hover:text-orange-500"
-              >
-                {item.name}
-              </a>
-            ))}
-          </nav>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              {t.navigation.map((item, i) => (
+                <motion.a
+                  key={i}
+                  href={item.href}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="text-amber-200 hover:text-orange-400 transition-colors text-sm font-medium"
+                >
+                  {item.name}
+                </motion.a>
+              ))}
+            </div>
 
-          <div className="flex items-center gap-4">
-            {/* Language Selector */}
-            <div className="relative">
+            {/* Language Selector & Mobile Menu */}
+            <div className="flex items-center gap-4">
               <select
                 value={currentLanguage}
                 onChange={(e) => setCurrentLanguage(e.target.value)}
-                className="appearance-none bg-transparent border border-slate-300 rounded-lg pl-3 pr-8 py-1.5 text-xs font-medium text-slate-700 cursor-pointer hover:border-blue-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 transition-colors"
+                className="bg-stone-800 text-white text-xs px-3 py-2 rounded-lg border border-amber-700/50 hover:border-orange-500/50 transition-colors"
               >
                 {languages.map((lang) => (
                   <option key={lang.code} value={lang.code}>
-                    {lang.flag} {lang.code}
+                    {lang.flag} {lang.name}
                   </option>
                 ))}
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-slate-500">
-                <svg className="h-3 w-3 fill-current" viewBox="0 0 20 20">
-                  <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                </svg>
-              </div>
-            </div>
 
-            <a
-              href="#cta"
-              className="hidden rounded-full bg-orange-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide !text-white shadow-sm hover:bg-orange-600 md:inline-flex"
-            >
-              {t.contactButton}
-            </a>
+              <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden border-t border-amber-900/30 py-4 space-y-3"
+            >
+              {t.navigation.map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  className="block text-amber-200 hover:text-orange-400 transition-colors text-sm"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </motion.div>
+          )}
         </div>
-      </header>
+      </nav>
 
-      <main id="top" className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:pt-16">
-        {/* Hero */}
-        <section className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange-300 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700">
-              <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-              {t.pilotBadge}
-            </div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute top-32 left-10 w-80 h-80 bg-orange-600/5 rounded-full blur-3xl"
+          animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-32 right-10 w-80 h-80 bg-orange-600/5 rounded-full blur-3xl"
+          animate={{ y: [0, -40, 0], x: [0, -20, 0] }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
 
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl text-slate-900">
-              {t.heroTitle}
-              <span className="block text-blue-600">
-                {t.heroSubtitle}
-              </span>
-            </h1>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 max-w-4xl mx-auto text-center space-y-8"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full"
+          >
+            <Sparkles className="w-4 h-4 text-orange-400" />
+            <span className="text-orange-300 text-sm font-medium">{t.pilotBadge}</span>
+          </motion.div>
 
-            <p className="max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
-              {t.heroDescription}
-            </p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-5xl md:text-7xl font-bold leading-tight"
+          >
+            {t.heroTitle}
+            <br />
+            <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">
+              {t.heroSubtitle}
+            </span>
+          </motion.h1>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#cta"
-                className="inline-flex items-center justify-center rounded-full bg-orange-500/90 px-6 py-2.5 text-sm font-semibold !text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600"
-              >
-                {t.ctaButton}
-              </a>
-              <a
-                href="#about"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 hover:border-blue-500 hover:text-blue-600"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-base md:text-lg text-amber-100 max-w-2xl mx-auto leading-relaxed"
+          >
+            {t.heroDescription}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+          >
+            <button className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-orange-600/50 transition-all duration-300 flex items-center justify-center gap-2">
+              {t.ctaButton}
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button className="px-8 py-4 border border-orange-600/50 text-orange-400 font-semibold rounded-lg hover:bg-orange-600/10 transition-colors">
+              {t.learnMore}
+            </button>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="relative py-20 px-4 bg-gradient-to-b from-black/50 to-stone-900/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-12 items-center"
+          >
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white">{t.aboutTitle}</h2>
+              <p className="text-lg text-amber-100 leading-relaxed">{t.aboutDescription}</p>
+              <motion.button
+                whileHover={{ x: 10 }}
+                className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors font-semibold"
               >
                 {t.learnMore}
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-stone-900 to-stone-800 border border-amber-700/50 flex items-center justify-center"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 to-transparent" />
+              <div className="relative z-10 text-center">
+                <Flame className="w-24 h-24 text-orange-500/30 mx-auto mb-4" />
+                <p className="text-amber-300 font-semibold">{t.cardLessonText}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Section */}
+      <section id="why" className="relative py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.whyTitle}</h2>
+            <p className="text-lg text-amber-200 max-w-2xl mx-auto">{t.whyDescription}</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {t.benefits.map((benefit, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="p-8 rounded-2xl bg-gradient-to-br from-black/50 to-stone-800/50 border border-amber-700/50 hover:border-orange-600/50 transition-all duration-300 group cursor-pointer"
+              >
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-3 mb-4 group-hover:scale-110 transition-transform">
+                  <Zap className="w-full h-full text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                <p className="text-amber-100">{benefit.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Tech Section */}
+      <section id="tech" className="relative py-20 px-4 bg-gradient-to-b from-black/30 to-stone-900/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.techTitle}</h2>
+            <p className="text-lg text-amber-200 max-w-2xl mx-auto">{t.techDescription}</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-6"
+          >
+            {t.tech.map((tech, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                className="p-8 rounded-2xl bg-gradient-to-br from-black to-stone-800 border border-amber-700/50 hover:border-orange-500/50 transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-3 mb-4">
+                  <Code2 className="w-full h-full text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{tech.title}</h3>
+                <p className="text-amber-100">{tech.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Audience Section */}
+      <section id="audience" className="relative py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.audienceTitle}</h2>
+            <p className="text-lg text-amber-200 max-w-2xl mx-auto">{t.audienceDescription}</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {t.audience.map((aud, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="relative p-8 rounded-2xl overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-amber-500/10 group-hover:from-orange-600/20 group-hover:to-amber-500/20 transition-all" />
+                <div className="absolute inset-0 border border-orange-600/30 group-hover:border-orange-600/50 transition-all rounded-2xl" />
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-2.5 mb-4">
+                    <Users className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{aud.title}</h3>
+                  <p className="text-amber-100">{aud.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="relative py-20 px-4 bg-gradient-to-b from-black/50 to-stone-900/30">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.faqTitle}</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, staggerChildren: 0.05 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            {t.faqs.map((faq, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                viewport={{ once: true }}
+                className="border border-amber-700/50 rounded-lg overflow-hidden hover:border-orange-500/50 transition-all"
+              >
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === idx ? -1 : idx)}
+                  className="w-full p-6 bg-stone-800/50 hover:bg-stone-800 transition-all flex items-center justify-between group"
+                >
+                  <span className="text-lg font-semibold text-white text-left">{faq.q}</span>
+                  <motion.div
+                    animate={{ rotate: expandedFaq === idx ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronRight className="w-5 h-5 text-orange-400 group-hover:translate-x-1 transition-transform" />
+                  </motion.div>
+                </button>
+
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{
+                    height: expandedFaq === idx ? "auto" : 0,
+                    opacity: expandedFaq === idx ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="p-6 bg-stone-900/50 border-t border-amber-700/50 text-amber-100">
+                    {faq.a}
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-24 px-4">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative rounded-3xl overflow-hidden p-12 md:p-16 bg-gradient-to-br from-orange-900/30 to-amber-900/20 border border-orange-600/30"
+          >
+            <div className="absolute top-0 right-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl -z-0" />
+
+            <div className="relative z-10 text-center space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white">{t.ctaTitle}</h2>
+              <p className="text-lg text-amber-100 max-w-2xl mx-auto">{t.ctaDescription}</p>
+
+              <div className="space-y-4 flex flex-col items-center">
+                {t.ctaBenefits.map((benefit, idx) => (
+                  <motion.p
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-orange-400 text-base font-medium"
+                  >
+                    {benefit}
+                  </motion.p>
+                ))}
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold rounded-lg hover:shadow-2xl hover:shadow-orange-600/50 transition-all duration-300 inline-flex items-center gap-2"
+              >
+                {t.contactButton}
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-amber-900/30 py-12 px-4 bg-black/90">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-4 gap-8 mb-8"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center">
+                  <Music className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-bold text-white">Q-Uiren</span>
+              </div>
+              <p className="text-sm text-amber-300">{t.tagline}</p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold text-white">Product</h4>
+              {t.navigation.slice(0, 3).map((item, i) => (
+                <a key={i} href={item.href} className="block text-sm text-amber-300 hover:text-orange-400 transition-colors">
+                  {item.name}
+                </a>
+              ))}
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold text-white">Community</h4>
+              <a href="#" className="block text-sm text-amber-300 hover:text-orange-400 transition-colors">
+                Contact
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-4 pt-2 text-xs text-slate-600">
-              <div className="flex items-center gap-2">
-                <span className="h-5 w-5 rounded-full bg-blue-500/20" />
-                <span>{t.featureSchools}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="h-5 w-5 rounded-full bg-blue-500/20" />
-                <span>{t.featureLanguages}</span>
-              </div>
+            <div className="space-y-3">
+              <h4 className="font-semibold text-white">Legal</h4>
+              <a href="#" className="block text-sm text-amber-300 hover:text-orange-400 transition-colors">
+                Privacy Policy
+              </a>
             </div>
+          </motion.div>
+
+          <div className="border-t border-amber-900/30 pt-8 text-center text-sm text-amber-400/70">
+            <p>© 2026 Q-Uiren. All rights reserved.</p>
           </div>
-
-          {/* Right: photo card (7:5 ratio) */}
-          <div className="relative flex justify-center md:justify-end">
-            <div className="relative w-full max-w-md rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-50 via-white to-orange-50 p-4 shadow-2xl">
-              <div className="flex items-center justify-between px-1 pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-blue-500/20" />
-                  <span className="text-xs font-medium text-slate-700">
-                    {t.cardLessonText}
-                  </span>
-                </div>
-              </div>
-
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={handlePrevImage}
-                  className="absolute left-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-transparent border-2 border-orange-500 text-orange-500 shadow-lg hover:bg-orange-500 hover:text-white transition-colors"
-                  aria-label={t.prevImageLabel}
-                >
-                  ‹
-                </button>
-
-                <div className="relative aspect-[7/5] w-full overflow-hidden rounded-2xl bg-slate-100">
-                  <img
-                    src={galleryImages[currentImage]}
-                    alt={`Q-Uiren пилотное обучение ${currentImage + 1}`}
-                    className="h-full w-full object-cover"
-                    loading="eager"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
-                </div>
-
-                <button
-                  type="button"
-                  onClick={handleNextImage}
-                  className="absolute right-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-transparent border-2 border-orange-500 text-orange-500 shadow-lg hover:bg-orange-500 hover:text-white transition-colors"
-                  aria-label={t.nextImageLabel}
-                >
-                  ›
-                </button>
-              </div>
-
-              <div className="mt-4 flex justify-center gap-3">
-                {galleryImages.map((_, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    onClick={() => setCurrentImage(index)}
-                    className={`h-4 w-4 rounded-full border-2 transition-all duration-300 ${index === currentImage
-                      ? "bg-orange-500 border-orange-500"
-                      : "bg-transparent border-orange-500"
-                      }`}
-                    aria-label={`${t.goToImageLabel} ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Glow */}
-            <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl">
-              <div className="mx-auto h-56 w-56 rounded-full bg-blue-500/10" />
-            </div>
-          </div>
-        </section>
-
-        {/* About */}
-        <section id="about" className="mt-20 space-y-6">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
-            {t.aboutTitle}
-          </h2>
-          <p className="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            {t.aboutDescription}
-          </p>
-        </section>
-
-        {/* Why Q-Uiren */}
-        <section
-          id="why"
-          className="mt-20 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:items-start"
-        >
-          <div className="space-y-5">
-            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
-              {t.whyTitle}
-            </h2>
-            <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
-              {t.whyDescription}
-            </p>
-          </div>
-
-          <div className="grid gap-4">
-            {t.benefits.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
-              >
-                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Tech */}
-        <section id="tech" className="mt-20">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
-                {t.techTitle}
-              </h2>
-              <p className="mt-1 max-w-xl text-sm text-slate-600 sm:text-base">
-                {t.techDescription}
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {t.tech.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
-              >
-                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Audience */}
-        <section id="audience" className="mt-20">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
-            {t.audienceTitle}
-          </h2>
-          <p className="mt-1 max-w-3xl text-sm text-slate-600 sm:text-base">
-            {t.audienceDescription}
-          </p>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {t.audience.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
-              >
-                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section
-          id="cta"
-          className="mt-20 grid gap-8 rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 via-orange-50/30 to-blue-50 p-6 sm:p-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]"
-        >
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
-              {t.ctaTitle}
-            </h2>
-            <p className="max-w-xl text-sm text-slate-700 sm:text-base">
-              {t.ctaDescription}
-            </p>
-
-            <ul className="space-y-2 text-xs text-slate-700 sm:text-sm">
-              {t.ctaBenefits.map((benefit, index) => (
-                <li key={index}>{benefit}</li>
-              ))}
-            </ul>
-          </div>
-
-          <form className="space-y-4">
-            <div>
-              <label className="text-xs font-medium text-slate-700">
-                {t.formNameLabel}
-              </label>
-              <input
-                type="text"
-                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                placeholder={t.formNamePlaceholder}
-              />
-            </div>
-
-            <div>
-              <label className="text-xs font-medium text-slate-700">
-                {t.formEmailLabel}
-              </label>
-              <input
-                type="email"
-                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                placeholder={t.formEmailPlaceholder}
-              />
-            </div>
-
-            <div>
-              <label className="text-xs font-medium text-slate-700">
-                {t.formRoleLabel}
-              </label>
-              <select
-                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                defaultValue="teacher"
-              >
-                <option value="teacher">{t.formRoleTeacher}</option>
-                <option value="parent">{t.formRoleParent}</option>
-                <option value="student">{t.formRoleStudent}</option>
-                <option value="other">{t.formRoleOther}</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="text-xs font-medium text-slate-700">
-                {t.formMessageLabel}
-              </label>
-              <textarea
-                className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                rows={3}
-                placeholder={t.formMessagePlaceholder}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="inline-flex w-full items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600"
-            >
-              {t.formSubmitButton}
-            </button>
-
-            <p className="text-[10px] text-slate-500">
-              {t.formDisclaimer}
-            </p>
-          </form>
-        </section>
-
-        {/* FAQ */}
-        <section id="faq" className="mt-20">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl text-slate-900">
-            {t.faqTitle}
-          </h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {t.faqs.map((item) => (
-              <div
-                key={item.q}
-                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
-              >
-                <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
-                  {item.q}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                  {item.a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} Q-Uiren. Сохранение казахской культуры через
-            технологии.
-          </p>
-          <p className="text-[11px] text-slate-500">
-            Страница в разработке · внешний вид и функционал могут меняться.
-          </p>
         </div>
       </footer>
     </div>
