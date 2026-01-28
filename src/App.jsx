@@ -391,7 +391,7 @@ function QUirenLandingPage() {
   const t = translations[currentLanguage] || translations.RU;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-stone-950 to-slate-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-stone-900 via-stone-950 to-stone-800 text-white overflow-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-stone-900/90 border-b border-amber-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -532,7 +532,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-20 px-4 bg-gradient-to-b from-black/50 to-stone-900/50">
+      <section id="about" className="relative py-20 px-4 bg-gradient-to-b from-stone-950/70 to-stone-900/50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -605,7 +605,7 @@ function QUirenLandingPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className="p-8 rounded-2xl bg-gradient-to-br from-black/50 to-stone-800/50 border border-amber-700/50 hover:border-orange-600/50 transition-all duration-300 group cursor-pointer"
+                className="p-8 rounded-2xl bg-gradient-to-br from-stone-800/60 to-stone-900/60 border border-amber-700/50 hover:border-orange-600/50 transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-3 mb-4 group-hover:scale-110 transition-transform">
                   <Zap className="w-full h-full text-white" />
@@ -619,7 +619,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* Tech Section */}
-      <section id="tech" className="relative py-20 px-4 bg-gradient-to-b from-black/30 to-stone-900/50">
+      <section id="tech" className="relative py-20 px-4 bg-gradient-to-b from-stone-900/60 to-stone-950/50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -647,7 +647,7 @@ function QUirenLandingPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="p-8 rounded-2xl bg-gradient-to-br from-black to-stone-800 border border-amber-700/50 hover:border-orange-500/50 transition-all duration-300"
+                className="p-8 rounded-2xl bg-gradient-to-br from-stone-900 to-stone-950 border border-amber-700/50 hover:border-orange-500/50 transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-3 mb-4">
                   <Code2 className="w-full h-full text-white" />
@@ -706,7 +706,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="relative py-20 px-4 bg-gradient-to-b from-black/50 to-stone-900/30">
+      <section id="faq" className="relative py-20 px-4 bg-gradient-to-b from-stone-950/70 to-stone-900/50">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -811,7 +811,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-amber-900/30 py-12 px-4 bg-black/90">
+      <footer className="border-t border-amber-900/30 py-12 px-4 bg-stone-950/95">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
