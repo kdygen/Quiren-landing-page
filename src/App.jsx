@@ -463,30 +463,29 @@ function QUirenLandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
-        {/* Animated background elements */}
-        <motion.div
-          className="absolute top-32 left-10 w-80 h-80 bg-orange-600/5 rounded-full blur-3xl"
-          animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-32 right-10 w-80 h-80 bg-orange-600/5 rounded-full blur-3xl"
-          animate={{ y: [0, -40, 0], x: [0, -20, 0] }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
+      <section className="relative min-h-screen flex items-center justify-end pt-20 px-4 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src={`${import.meta.env.BASE_URL}Quiren — Умный домбра-учитель (2).pptx (1).png`}
+            alt="Quiren"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-stone-900/40 to-transparent" />
+        </div>
 
+        {/* Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative z-10 max-w-4xl mx-auto text-center space-y-8"
+          className="relative z-10 max-w-2xl w-full md:mr-12 lg:mr-20 text-left space-y-8"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full w-fit"
           >
             <Sparkles className="w-4 h-4 text-orange-400" />
             <span className="text-orange-300 text-sm font-medium">{t.pilotBadge}</span>
@@ -496,7 +495,7 @@ function QUirenLandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl md:text-7xl font-bold leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
             {t.heroTitle}
             <br />
@@ -509,7 +508,7 @@ function QUirenLandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-base md:text-lg text-amber-100 max-w-2xl mx-auto leading-relaxed"
+            className="text-base md:text-lg text-amber-100 leading-relaxed max-w-xl"
           >
             {t.heroDescription}
           </motion.p>
@@ -518,7 +517,7 @@ function QUirenLandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+            className="flex flex-col sm:flex-row gap-4 pt-4"
           >
             <button className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-orange-600/50 transition-all duration-300 flex items-center justify-center gap-2">
               {t.ctaButton}
