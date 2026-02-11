@@ -7,29 +7,29 @@ function QUirenLandingPage() {
     RU: {
       navigation: [
         { name: "О продукте", href: "#about" },
-        { name: "Почему Q-Uiren", href: "#why" },
+        { name: "Почему Quimen", href: "#why" },
         { name: "Технологии", href: "#tech" },
         { name: "Для кого", href: "#audience" },
         { name: "FAQ", href: "#faq" },
       ],
       tagline: "умная домбра для нового поколения",
       pilotBadge: "Пилотируем с музыкальными школами",
-      heroTitle: "Первая умная домбра",
-      heroSubtitle: "с LED-подсветкой и живой обратной связью",
-      heroDescription: "Q-Uiren объединяет традиционную домбру и современные технологии. Устройство показывает, куда ставить пальцы, слушает вашу игру через телефон и помогает шаг за шагом освоить кюи – от первых нот до сложных произведений.",
+      heroTitle: "Когда играет күй",
+      heroSubtitle: "звучит история",
+      heroDescription: "Первая умная домбра с LED-подсветкой и живой обратной связью. Quimen объединяет традиционную домбру и современные технологии. Устройство показывает, куда ставить пальцы, слушает вашу игру через телефон и помогает шаг за шагом освоить кюи – от первых нот до сложных произведений.",
       ctaButton: "Стать пилотным пользователем",
       learnMore: "Узнать подробнее",
       contactButton: "Оставить контакты",
-      aboutTitle: "Что делает Q-Uiren особенным?",
-      aboutDescription: "Традиционные уроки по домбре часто требуют много времени, дороги до школы и зависят от расписания преподавателя. Q-Uiren предлагает другой формат: вы сохраняете живого учителя, если он у вас есть, но переносите часть обучения на дом – с точной визуальной подсказкой и честной аналитикой. Устройство помогает ученику не теряться между уроками и постепенно формировать правильную технику.",
-      whyTitle: "Почему Q-Uiren?",
+      aboutTitle: "Что делает Quimen особенным?",
+      aboutDescription: "Традиционные уроки по домбре часто требуют много времени, дороги до школы и зависят от расписания преподавателя. Quimen предлагает другой формат: вы сохраняете живого учителя, если он у вас есть, но переносите часть обучения на дом – с точной визуальной подсказкой и честной аналитикой. Устройство помогает ученику не теряться между уроками и постепенно формировать правильную технику.",
+      whyTitle: "Почему Quimen?",
       whyDescription: "Наша задача – не заменить домбру гаджетом, а наоборот: сделать традиционный инструмент ближе к молодому поколению. Мы объединяем педагогику, технологии и уважение к казахской культуре, чтобы обучение стало системным и измеримым, но при этом живым и эмоциональным.",
       techTitle: "Основные технологии",
       techDescription: "Мы строим продукт на стыке железа, софта и педагогики. Каждый элемент – от LEDs до алгоритмов анализа – создан для того, чтобы обучение было понятным даже без технических знаний.",
-      audienceTitle: "Для кого мы создаём Q-Uiren?",
-      audienceDescription: "Мы думаем о Q-Uiren как о мосте между поколениями: бабушки и дедушки, которые играют традиционные кюи, дети, которые привыкли к смартфону, и преподаватели, которые хотят видеть реальный прогресс учеников.",
+      audienceTitle: "Для кого мы создаём Quimen?",
+      audienceDescription: "Мы думаем о Quimen как о мосте между поколениями: бабушки и дедушки, которые играют традиционные кюи, дети, которые привыкли к смартфону, и преподаватели, которые хотят видеть реальный прогресс учеников.",
       ctaTitle: "Присоединиться к пилотной программе",
-      ctaDescription: "Мы собираем список музыкальных школ, преподавателей и семей, которые хотят протестировать Q-Uiren раньше других. Оставьте контакты – мы свяжемся с вами, как только будем готовы к следующей волне пилотов.",
+      ctaDescription: "Мы собираем список музыкальных школ, преподавателей и семей, которые хотят протестировать Quimen раньше других. Оставьте контакты – мы свяжемся с вами, как только будем готовы к следующей волне пилотов.",
       faqTitle: "Частые вопросы",
       formNameLabel: "Имя и фамилия",
       formNamePlaceholder: "Например, Алия Нурлыбек",
@@ -67,7 +67,7 @@ function QUirenLandingPage() {
         },
         {
           title: "Учитель + устройство",
-          desc: "Q-Uiren усиливает работу преподавателя: домашние задания становятся прозрачными, прогресс – измеримым.",
+          desc: "Quimen усиливает работу преподавателя: домашние задания становятся прозрачными, прогресс – измеримым.",
         },
       ],
       tech: [
@@ -104,8 +104,8 @@ function QUirenLandingPage() {
       ],
       faqs: [
         {
-          q: "Что такое Q-Uiren?",
-          a: "Q-Uiren – это умное устройство для обучения игре на домбре: LED-гриф + мобильное приложение с интерактивными уроками и обратной связью в реальном времени.",
+          q: "Что такое Quimen?",
+          a: "Quimen – это умное устройство для обучения игре на домбре: LED-гриф + мобильное приложение с интерактивными уроками и обратной связью в реальном времени.",
         },
         {
           q: "Мне нужен преподаватель или можно учиться самому?",
@@ -124,29 +124,29 @@ function QUirenLandingPage() {
     EN: {
       navigation: [
         { name: "About", href: "#about" },
-        { name: "Why Q-Uiren", href: "#why" },
+        { name: "Why Quimen", href: "#why" },
         { name: "Technology", href: "#tech" },
         { name: "For Whom", href: "#audience" },
         { name: "FAQ", href: "#faq" },
       ],
       tagline: "smart dombra for the new generation",
       pilotBadge: "Piloting with music schools",
-      heroTitle: "The first smart dombra",
-      heroSubtitle: "with LED lighting and live feedback",
-      heroDescription: "Q-Uiren brings together traditional dombra and cutting-edge technology. The device shows you exactly where to place your fingers, listens to your playing through your phone, and guides you step-by-step through kuis – from your first notes to complex masterpieces.",
+      heroTitle: "History speaks",
+      heroSubtitle: "when you play dombra",
+      heroDescription: "The first smart dombra with LED lighting and live feedback. Quimen brings together traditional dombra and cutting-edge technology. The device shows you exactly where to place your fingers, listens to your playing through your phone, and guides you step-by-step through kuis – from your first notes to complex masterpieces.",
       ctaButton: "Join the pilot program",
       learnMore: "Learn more",
       contactButton: "Get in touch",
-      aboutTitle: "What makes Q-Uiren special?",
-      aboutDescription: "Traditional dombra lessons often require significant time investment, travel to schools, and depend on teacher availability. Q-Uiren offers a different approach: keep your live teacher if you have one, but bring part of your learning home – with precise visual guidance and honest feedback. The device helps students stay engaged between lessons and gradually develop proper technique.",
-      whyTitle: "Why Q-Uiren?",
+      aboutTitle: "What makes Quimen special?",
+      aboutDescription: "Traditional dombra lessons often require significant time investment, travel to schools, and depend on teacher availability. Quimen offers a different approach: keep your live teacher if you have one, but bring part of your learning home – with precise visual guidance and honest feedback. The device helps students stay engaged between lessons and gradually develop proper technique.",
+      whyTitle: "Why Quimen?",
       whyDescription: "Our mission isn't to replace the dombra with a gadget, but rather to bring this traditional instrument closer to the younger generation. We combine pedagogy, technology, and deep respect for Kazakh culture to make learning systematic and measurable, while keeping it alive and emotionally engaging.",
       techTitle: "Core Technologies",
       techDescription: "We're building at the intersection of hardware, software, and pedagogy. Every component – from LEDs to analysis algorithms – is designed to make learning intuitive, even without technical knowledge.",
-      audienceTitle: "Who is Q-Uiren for?",
-      audienceDescription: "We see Q-Uiren as a bridge between generations: grandparents who play traditional kuis, children who grew up with smartphones, and teachers who want to see real student progress.",
+      audienceTitle: "Who is Quimen for?",
+      audienceDescription: "We see Quimen as a bridge between generations: grandparents who play traditional kuis, children who grew up with smartphones, and teachers who want to see real student progress.",
       ctaTitle: "Join our pilot program",
-      ctaDescription: "We're building a community of music schools, teachers, and families who want to experience Q-Uiren before anyone else. Share your contact details – we'll reach out when we're ready for the next wave of pilots.",
+      ctaDescription: "We're building a community of music schools, teachers, and families who want to experience Quimen before anyone else. Share your contact details – we'll reach out when we're ready for the next wave of pilots.",
       faqTitle: "Frequently Asked Questions",
       formNameLabel: "Full Name",
       formNamePlaceholder: "For example, John Smith",
@@ -184,7 +184,7 @@ function QUirenLandingPage() {
         },
         {
           title: "Teacher + device",
-          desc: "Q-Uiren enhances the teacher's work: homework becomes transparent, progress becomes measurable.",
+          desc: "Quimen enhances the teacher's work: homework becomes transparent, progress becomes measurable.",
         },
       ],
       tech: [
@@ -221,8 +221,8 @@ function QUirenLandingPage() {
       ],
       faqs: [
         {
-          q: "What is Q-Uiren?",
-          a: "Q-Uiren is a smart device for learning dombra: LED neck + mobile app with interactive lessons and real-time feedback.",
+          q: "What is Quimen?",
+          a: "Quimen is a smart device for learning dombra: LED neck + mobile app with interactive lessons and real-time feedback.",
         },
         {
           q: "Do I need a teacher or can I learn by myself?",
@@ -248,22 +248,22 @@ function QUirenLandingPage() {
       ],
       tagline: "заманауи домбыра жас ұрпаққа",
       pilotBadge: "Музыка мектептерінде сынап жатырмыз",
-      heroTitle: "Алғашқы ақылды домбыра",
-      heroSubtitle: "LED жарықтандыру және тікелей кері байланыспен",
-      heroDescription: "Q-Uiren арқылы ата-бабалардың домбырасы заманауи технологиямен кездеседі. Саусақты қайда басу керектігін жарық арқылы көрсетеді, телефон арқылы ойнағаныңызды тыңдайды, күйлерді үйренуде қадам сайын жетелейді.",
+      heroTitle: "күй тартқанда",
+      heroSubtitle: "тарих сөйлейді",
+      heroDescription: "Алғашқы ақылды домбыра LED жарықтандыру және тікелей кері байланыспен. Quimen арқылы ата-бабалардың домбырасы заманауи технологиямен кездеседі. Саусақты қайда басу керектігін жарық арқылы көрсетеді, телефон арқылы ойнағаныңызды тыңдайды, күйлерді үйренуде қадам сайын жетелейді.",
       ctaButton: "Алғашқылардан болу",
       learnMore: "Көбірек білу",
       contactButton: "Хабарласу",
-      aboutTitle: "Q-Uiren неге ерекше?",
-      aboutDescription: "Дәстүрлі домбыра сабақтары көбінесе көп уақытты, мектепке жол жүруді талап етеді және мұғалімнің кестесіне тәуелді болады. Q-Uiren басқа форматты ұсынады: егер сізде тірі мұғалім болса, оны сақтайсыз, бірақ оқытудың бір бөлігін үйге көшіресіз – дәл визуалды нұсқаулар мен адал аналитикамен. Құрылғы оқушыға сабақтар арасында адаспауға және біртіндеп дұрыс техниканы қалыптастыруға көмектеседі.",
-      whyTitle: "Неге Q-Uiren таңдау керек?",
+      aboutTitle: "Quimen неге ерекше?",
+      aboutDescription: "Дәстүрлі домбыра сабақтары көбінесе көп уақытты, мектепке жол жүруді талап етеді және мұғалімнің кестесіне тәуелді болады. Quimen басқа форматты ұсынады: егер сізде тірі мұғалім болса, оны сақтайсыз, бірақ оқытудың бір бөлігін үйге көшіресіз – дәл визуалды нұсқаулар мен адал аналитикамен. Құрылғы оқушыға сабақтар арасында адаспауға және біртіндеп дұрыс техниканы қалыптастыруға көмектеседі.",
+      whyTitle: "Неге Quimen таңдау керек?",
       whyDescription: "Біздің мақсат - домбыраны гаджетке айналдыру емес. Керісінше, ата-бабалардың аспабын жас балаларға жақындату. Дәстүр мен технологияны, мұғалімдік пен жаңалықты бірге қолданып, үйренуді қызықты әрі нәтижелі етеміз.",
       techTitle: "Қалай жұмыс істейді",
       techDescription: "Техника, бағдарлама және педагогиканы бірге қолданамыз. LED жарығынан бастап дыбыс талдауға дейін барлығы техникалық білімсіз де түсінікті болуы үшін жасалған.",
       audienceTitle: "Кімге арналған",
-      audienceDescription: "Q-Uiren ұрпақтарды жалғастырады: күй ойнайтын ата-әжелер, телефонмен өскен балалар, оқушылардың дамуын көргісі келетін мұғалімдер - барлығына бірдей пайдалы.",
+      audienceDescription: "Quimen ұрпақтарды жалғастырады: күй ойнайтын ата-әжелер, телефонмен өскен балалар, оқушылардың дамуын көргісі келетін мұғалімдер - барлығына бірдей пайдалы.",
       ctaTitle: "Алғашқы қолданушылар тобына қосылу",
-      ctaDescription: "Q-Uiren-ді басқалардан бұрын сынап көргісі келетін музыка мектептері, мұғалімдер, отбасылар іздеп жатырмыз. Байланыс жолдарыңызды қалдырыңыз - дайын болғанда хабарласамыз.",
+      ctaDescription: "Quimen-ді басқалардан бұрын сынап көргісі келетін музыка мектептері, мұғалімдер, отбасылар іздеп жатырмыз. Байланыс жолдарыңызды қалдырыңыз - дайын болғанда хабарласамыз.",
       faqTitle: "Көп сұралатын сұрақтар",
       formNameLabel: "Есіміңіз",
       formNamePlaceholder: "Мысалы: Айгүл Нұрланқызы",
@@ -301,7 +301,7 @@ function QUirenLandingPage() {
         },
         {
           title: "Мұғалімге көмекші",
-          desc: "Q-Uiren мұғалімнің жұмысын жеңілдетеді: үй тапсырмасы айқын болады, дамуы көрінеді.",
+          desc: "Quimen мұғалімнің жұмысын жеңілдетеді: үй тапсырмасы айқын болады, дамуы көрінеді.",
         },
       ],
       tech: [
@@ -338,8 +338,8 @@ function QUirenLandingPage() {
       ],
       faqs: [
         {
-          q: "Q-Uiren дегеніміз не?",
-          a: "Q-Uiren - домбыра үйренуге арналған ақылды құрылғы: жарықты мойын + интерактивті сабақтары бар телефон бағдарламасы.",
+          q: "Quimen дегеніміз не?",
+          a: "Quimen - домбыра үйренуге арналған ақылды құрылғы: жарықты мойын + интерактивті сабақтары бар телефон бағдарламасы.",
         },
         {
           q: "Мұғалім керек пе, әлде өзім үйрене аламын ба?",
@@ -368,11 +368,35 @@ function QUirenLandingPage() {
   const [currentLanguage, setCurrentLanguage] = useState("RU");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState(-1);
+  const [accentTheme, setAccentTheme] = useState("sunset");
 
   const languages = [
     { code: "RU", name: "Русский", flag: "🇷🇺" },
     { code: "EN", name: "English", flag: "🇺🇸" },
     { code: "KZ", name: "Қазақша", flag: "🇰🇿" },
+  ];
+
+  const accentThemes = [
+    {
+      id: "sunset",
+      name: "Sunset",
+      primary: "#f97316",
+      secondary: "#fef3c7",
+      soft: "rgba(254, 243, 199, 0.12)",
+      border: "rgba(254, 243, 199, 0.35)",
+      shadow: "rgba(254, 243, 199, 0.5)",
+      text: "rgba(254, 243, 199, 0.85)",
+    },
+    {
+      id: "bw",
+      name: "B&W",
+      primary: "#ffffff",
+      secondary: "#000000",
+      soft: "rgba(0, 0, 0, 0.04)",
+      border: "rgba(0, 0, 0, 0.12)",
+      shadow: "rgba(0, 0, 0, 0.2)",
+      text: "rgba(0, 0, 0, 0.85)",
+    },
   ];
 
   const handlePrevImage = () => {
@@ -389,18 +413,33 @@ function QUirenLandingPage() {
 
   // Get current language translations
   const t = translations[currentLanguage] || translations.RU;
+  const activeAccent = accentThemes.find((theme) => theme.id === accentTheme) || accentThemes[0];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-900 via-stone-950 to-stone-800 text-white overflow-hidden">
+    <div
+      className={`min-h-screen overflow-hidden ${
+        accentTheme === "bw"
+          ? "bg-white text-black"
+          : "bg-gradient-to-br from-stone-900 via-stone-950 to-stone-800 text-white"
+      }`}
+      style={{
+        "--accent-1": activeAccent.primary,
+        "--accent-2": activeAccent.secondary,
+        "--accent-soft": activeAccent.soft,
+        "--accent-border": activeAccent.border,
+        "--accent-shadow": activeAccent.shadow,
+        "--accent-text": activeAccent.text,
+      }}
+    >
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-stone-900/90 border-b border-amber-900/30">
+      <nav className={`fixed top-0 w-full z-50 backdrop-blur-md ${accentTheme === "bw" ? "bg-white/90" : "bg-stone-900/90"} border-b border-[color:var(--accent-border)]`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] flex items-center justify-center">
                 <Music className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">Q-Uiren</span>
+              <span className={`text-xl font-bold ${accentTheme === "bw" ? "text-black" : "text-white"}`}>Quimen</span>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -412,7 +451,7 @@ function QUirenLandingPage() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="text-amber-200 hover:text-orange-400 transition-colors text-sm font-medium"
+                  className={`${accentTheme === "bw" ? "text-black hover:text-gray-700" : "text-white hover:text-[#fef3c7]"} transition-colors text-sm font-medium`}
                 >
                   {item.name}
                 </motion.a>
@@ -421,10 +460,23 @@ function QUirenLandingPage() {
 
             {/* Language Selector & Mobile Menu */}
             <div className="flex items-center gap-4">
+              <div className="hidden sm:flex items-center gap-2">
+                {accentThemes.map((theme) => (
+                  <button
+                    key={theme.id}
+                    type="button"
+                    onClick={() => setAccentTheme(theme.id)}
+                    className={`h-7 w-7 rounded-full border transition-all ${accentTheme === theme.id ? "border-white/70" : "border-white/20"
+                      }`}
+                    style={{ background: `linear-gradient(135deg, ${theme.primary}, ${theme.secondary})` }}
+                    aria-label={`${theme.name} theme`}
+                  />
+                ))}
+              </div>
               <select
                 value={currentLanguage}
                 onChange={(e) => setCurrentLanguage(e.target.value)}
-                className="bg-stone-800 text-white text-xs px-3 py-2 rounded-lg border border-amber-700/50 hover:border-orange-500/50 transition-colors"
+                className="bg-stone-800 text-white text-xs px-3 py-2 rounded-lg border border-[color:var(--accent-border)] hover:border-[color:var(--accent-1)] transition-colors"
               >
                 {languages.map((lang) => (
                   <option key={lang.code} value={lang.code}>
@@ -445,13 +497,13 @@ function QUirenLandingPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-amber-900/30 py-4 space-y-3"
+              className="lg:hidden border-t border-[color:var(--accent-border)] py-4 space-y-3"
             >
               {t.navigation.map((item, i) => (
                 <a
                   key={i}
                   href={item.href}
-                  className="block text-amber-200 hover:text-orange-400 transition-colors text-sm"
+                  className="block text-white hover:text-[#fef3c7] transition-colors text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -465,13 +517,12 @@ function QUirenLandingPage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-end pt-20 px-4 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full left-0">
           <img
-            src={`${import.meta.env.BASE_URL}Quiren — Умный домбра-учитель (2).pptx (1).png`}
+            src={`${import.meta.env.BASE_URL}quimen2.png`}
             alt="Quiren"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-left"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-stone-900/40 to-transparent" />
         </div>
 
         {/* Content */}
@@ -479,27 +530,27 @@ function QUirenLandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative z-10 max-w-2xl w-full md:mr-12 lg:mr-20 text-left space-y-8"
+          className="relative z-10 max-w-2xl w-full md:mr-20 lg:mr-32 text-left space-y-6"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full w-fit"
+            className={`inline-flex items-center gap-2 px-4 py-2 ${accentTheme === "bw" ? "bg-gray-100 border-gray-200" : "bg-white/10 border-white/20"} border rounded-full`}
           >
-            <Sparkles className="w-4 h-4 text-orange-400" />
-            <span className="text-orange-300 text-sm font-medium">{t.pilotBadge}</span>
+            <Sparkles className="w-4 h-4 text-white" />
+            <span className="text-white text-sm font-medium">{t.pilotBadge}</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+            className="font-bold leading-tight text-white"
+            style={{ fontSize: "52px", textShadow: "0 4px 16px rgba(0,0,0,0.5)" }}
           >
-            {t.heroTitle}
-            <br />
-            <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">
+            {t.heroTitle}{" "}
+            <span className="bg-[linear-gradient(90deg,#fef3c7,#fbbf24)] bg-clip-text text-transparent">
               {t.heroSubtitle}
             </span>
           </motion.h1>
@@ -507,8 +558,9 @@ function QUirenLandingPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-base md:text-lg text-amber-100 leading-relaxed max-w-xl"
+            transition={{ delay: 0.35 }}
+            className="text-lg md:text-xl text-white leading-relaxed"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}
           >
             {t.heroDescription}
           </motion.p>
@@ -516,14 +568,16 @@ function QUirenLandingPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <button className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-orange-600/50 transition-all duration-300 flex items-center justify-center gap-2">
+            <motion.button
+              className={`group px-8 py-4 bg-white text-black font-semibold rounded-lg border border-white/20 hover:shadow-lg hover:bg-gray-50 transition-all duration-300 flex items-center gap-2 w-fit backdrop-blur-sm`}
+            >
               {t.ctaButton}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 border border-orange-600/50 text-orange-400 font-semibold rounded-lg hover:bg-orange-600/10 transition-colors">
+            </motion.button>
+            <button className="px-8 py-4 border border-white/30 text-white font-semibold rounded-lg transition-colors hover:bg-[#fef3c7]/20 hover:border-[#fef3c7]">
               {t.learnMore}
             </button>
           </motion.div>
@@ -531,7 +585,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-20 px-4 bg-gradient-to-b from-stone-950/70 to-stone-900/50">
+      <section id="about" className={`relative py-20 px-4 ${accentTheme === "bw" ? "bg-gray-50 border-b border-gray-100" : "bg-gradient-to-b from-stone-950/70 to-stone-900/50"}`}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -547,11 +601,11 @@ function QUirenLandingPage() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white">{t.aboutTitle}</h2>
-              <p className="text-lg text-amber-100 leading-relaxed">{t.aboutDescription}</p>
+              <h2 className={`text-4xl md:text-5xl font-bold ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{t.aboutTitle}</h2>
+              <p className="text-lg text-[color:var(--accent-text)] leading-relaxed">{t.aboutDescription}</p>
               <motion.button
                 whileHover={{ x: 10 }}
-                className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors font-semibold"
+                className={`inline-flex items-center gap-2 ${accentTheme === "bw" ? "text-black hover:text-gray-700" : "text-[color:var(--accent-1)] hover:text-white"} transition-colors font-semibold`}
               >
                 {t.learnMore}
                 <ArrowRight className="w-5 h-5" />
@@ -563,12 +617,12 @@ function QUirenLandingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-stone-900 to-stone-800 border border-amber-700/50 flex items-center justify-center"
+              className={`relative h-96 rounded-2xl overflow-hidden ${accentTheme === "bw" ? "bg-white shadow-sm" : "bg-gradient-to-br from-stone-900 to-stone-800"} border border-[color:var(--accent-border)] flex items-center justify-center`}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 to-transparent" />
               <div className="relative z-10 text-center">
-                <Flame className="w-24 h-24 text-orange-500/30 mx-auto mb-4" />
-                <p className="text-amber-300 font-semibold">{t.cardLessonText}</p>
+                <Flame className="w-24 h-24 text-[color:var(--accent-border)] mx-auto mb-4" />
+                <p className="text-[color:var(--accent-2)] font-semibold">{t.cardLessonText}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -576,7 +630,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* Why Section */}
-      <section id="why" className="relative py-20 px-4">
+      <section id="why" className={`relative py-20 px-4 ${accentTheme === "bw" ? "bg-white border-b border-gray-100" : ""}`}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -585,8 +639,8 @@ function QUirenLandingPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.whyTitle}</h2>
-            <p className="text-lg text-amber-200 max-w-2xl mx-auto">{t.whyDescription}</p>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{t.whyTitle}</h2>
+            <p className="text-lg text-[color:var(--accent-text)] max-w-2xl mx-auto">{t.whyDescription}</p>
           </motion.div>
 
           <motion.div
@@ -604,13 +658,13 @@ function QUirenLandingPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className="p-8 rounded-2xl bg-gradient-to-br from-stone-800/60 to-stone-900/60 border border-amber-700/50 hover:border-orange-600/50 transition-all duration-300 group cursor-pointer"
+                className={`p-8 rounded-2xl ${accentTheme === "bw" ? "bg-white shadow-sm" : "bg-gradient-to-br from-stone-800/60 to-stone-900/60"} border border-[color:var(--accent-border)] hover:border-[color:var(--accent-1)] transition-all duration-300 group cursor-pointer`}
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-3 mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] p-3 mb-4 group-hover:scale-110 transition-transform">
                   <Zap className="w-full h-full text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-amber-100">{benefit.desc}</p>
+                <h3 className={`text-xl font-bold mb-3 ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{benefit.title}</h3>
+                <p className="text-[color:var(--accent-text)]">{benefit.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -618,7 +672,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* Tech Section */}
-      <section id="tech" className="relative py-20 px-4 bg-gradient-to-b from-stone-900/60 to-stone-950/50">
+      <section id="tech" className={`relative py-20 px-4 ${accentTheme === "bw" ? "bg-gray-50 border-b border-gray-100" : "bg-gradient-to-b from-stone-900/60 to-stone-950/50"}`}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -627,8 +681,8 @@ function QUirenLandingPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.techTitle}</h2>
-            <p className="text-lg text-amber-200 max-w-2xl mx-auto">{t.techDescription}</p>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{t.techTitle}</h2>
+            <p className="text-lg text-[color:var(--accent-text)] max-w-2xl mx-auto">{t.techDescription}</p>
           </motion.div>
 
           <motion.div
@@ -646,13 +700,13 @@ function QUirenLandingPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="p-8 rounded-2xl bg-gradient-to-br from-stone-900 to-stone-950 border border-amber-700/50 hover:border-orange-500/50 transition-all duration-300"
+                className={`p-8 rounded-2xl ${accentTheme === "bw" ? "bg-white shadow-sm" : "bg-gradient-to-br from-stone-900 to-stone-950"} border border-[color:var(--accent-border)] hover:border-[color:var(--accent-1)] transition-all duration-300`}
               >
-                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-3 mb-4">
+                <div className="w-14 h-14 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] p-3 mb-4">
                   <Code2 className="w-full h-full text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{tech.title}</h3>
-                <p className="text-amber-100">{tech.desc}</p>
+                <h3 className={`text-xl font-bold mb-3 ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{tech.title}</h3>
+                <p className="text-[color:var(--accent-text)]">{tech.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -660,7 +714,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* Audience Section */}
-      <section id="audience" className="relative py-20 px-4">
+      <section id="audience" className={`relative py-20 px-4 ${accentTheme === "bw" ? "bg-white border-b border-gray-100" : ""}`}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -669,8 +723,8 @@ function QUirenLandingPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.audienceTitle}</h2>
-            <p className="text-lg text-amber-200 max-w-2xl mx-auto">{t.audienceDescription}</p>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{t.audienceTitle}</h2>
+            <p className="text-lg text-[color:var(--accent-text)] max-w-2xl mx-auto">{t.audienceDescription}</p>
           </motion.div>
 
           <motion.div
@@ -687,16 +741,16 @@ function QUirenLandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="relative p-8 rounded-2xl overflow-hidden group"
+                className={`relative p-8 rounded-2xl overflow-hidden group ${accentTheme === "bw" ? "bg-white shadow-sm" : ""}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 to-amber-500/10 group-hover:from-orange-600/20 group-hover:to-amber-500/20 transition-all" />
-                <div className="absolute inset-0 border border-orange-600/30 group-hover:border-orange-600/50 transition-all rounded-2xl" />
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--accent-soft),rgba(0,0,0,0))] group-hover:bg-[linear-gradient(135deg,var(--accent-soft),var(--accent-soft))] transition-all" />
+                <div className="absolute inset-0 border border-[color:var(--accent-border)] group-hover:border-[color:var(--accent-1)] transition-all rounded-2xl" />
                 <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 p-2.5 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] p-2.5 mb-4">
                     <Users className="w-full h-full text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{aud.title}</h3>
-                  <p className="text-amber-100">{aud.desc}</p>
+                  <h3 className={`text-xl font-bold mb-3 ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{aud.title}</h3>
+                  <p className="text-[color:var(--accent-text)]">{aud.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -705,7 +759,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="relative py-20 px-4 bg-gradient-to-b from-stone-950/70 to-stone-900/50">
+      <section id="faq" className={`relative py-20 px-4 ${accentTheme === "bw" ? "bg-gray-50 border-b border-gray-100" : "bg-gradient-to-b from-stone-950/70 to-stone-900/50"}`}>
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -714,7 +768,7 @@ function QUirenLandingPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.faqTitle}</h2>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{t.faqTitle}</h2>
           </motion.div>
 
           <motion.div
@@ -731,18 +785,18 @@ function QUirenLandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
                 viewport={{ once: true }}
-                className="border border-amber-700/50 rounded-lg overflow-hidden hover:border-orange-500/50 transition-all"
+                className="border border-[color:var(--accent-border)] rounded-lg overflow-hidden hover:border-[color:var(--accent-1)] transition-all"
               >
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === idx ? -1 : idx)}
-                  className="w-full p-6 bg-stone-800/50 hover:bg-stone-800 transition-all flex items-center justify-between group"
+                  className={`w-full p-6 ${accentTheme === "bw" ? "bg-white hover:bg-gray-50" : "bg-stone-800/50 hover:bg-stone-800"} transition-all flex items-center justify-between group`}
                 >
-                  <span className="text-lg font-semibold text-white text-left">{faq.q}</span>
+                  <span className={`text-lg font-semibold text-left ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{faq.q}</span>
                   <motion.div
                     animate={{ rotate: expandedFaq === idx ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronRight className="w-5 h-5 text-orange-400 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-5 h-5 text-[color:var(--accent-1)] group-hover:translate-x-1 transition-transform" />
                   </motion.div>
                 </button>
 
@@ -755,7 +809,7 @@ function QUirenLandingPage() {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="p-6 bg-stone-900/50 border-t border-amber-700/50 text-amber-100">
+                  <div className={`p-6 ${accentTheme === "bw" ? "bg-gray-50" : "bg-stone-900/50"} border-t border-[color:var(--accent-border)] text-[color:var(--accent-text)]`}>
                     {faq.a}
                   </div>
                 </motion.div>
@@ -766,20 +820,20 @@ function QUirenLandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 px-4">
+      <section className={`relative py-24 px-4 ${accentTheme === "bw" ? "bg-white border-b border-gray-100" : ""}`}>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden p-12 md:p-16 bg-gradient-to-br from-orange-900/30 to-amber-900/20 border border-orange-600/30"
+            className={`relative rounded-3xl overflow-hidden p-12 md:p-16 ${accentTheme === "bw" ? "bg-white shadow-sm" : "bg-[linear-gradient(135deg,var(--accent-soft),rgba(0,0,0,0))]"} border border-[color:var(--accent-border)]`}
           >
-            <div className="absolute top-0 right-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl -z-0" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[color:var(--accent-soft)] rounded-full blur-3xl -z-0" />
 
             <div className="relative z-10 text-center space-y-8">
-              <h2 className="text-4xl md:text-5xl font-bold text-white">{t.ctaTitle}</h2>
-              <p className="text-lg text-amber-100 max-w-2xl mx-auto">{t.ctaDescription}</p>
+              <h2 className={`text-4xl md:text-5xl font-bold ${accentTheme === "bw" ? "text-black" : "text-white"}`}>{t.ctaTitle}</h2>
+              <p className="text-lg text-[color:var(--accent-text)] max-w-2xl mx-auto">{t.ctaDescription}</p>
 
               <div className="space-y-4 flex flex-col items-center">
                 {t.ctaBenefits.map((benefit, idx) => (
@@ -789,7 +843,7 @@ function QUirenLandingPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
                     viewport={{ once: true }}
-                    className="text-orange-400 text-base font-medium"
+                    className={`text-base font-medium ${accentTheme === "bw" ? "text-black" : "text-[color:var(--accent-1)]"}`}
                   >
                     {benefit}
                   </motion.p>
@@ -799,7 +853,7 @@ function QUirenLandingPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold rounded-lg hover:shadow-2xl hover:shadow-orange-600/50 transition-all duration-300 inline-flex items-center gap-2"
+                className={`px-10 py-4 bg-[linear-gradient(90deg,var(--accent-1),var(--accent-2))] ${accentTheme === "bw" ? "text-black" : "text-white"} font-bold rounded-lg hover:shadow-2xl hover:shadow-[0_12px_30px_var(--accent-shadow)] transition-all duration-300 inline-flex items-center gap-2`}
               >
                 {t.contactButton}
                 <ArrowRight className="w-5 h-5" />
@@ -810,7 +864,7 @@ function QUirenLandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-amber-900/30 py-12 px-4 bg-stone-950/95">
+      <footer className={`border-t border-[color:var(--accent-border)] py-12 px-4 ${accentTheme === "bw" ? "bg-white" : "bg-stone-950/95"}`}>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -821,18 +875,18 @@ function QUirenLandingPage() {
           >
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] flex items-center justify-center">
                   <Music className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-bold text-white">Q-Uiren</span>
+                <span className="font-bold text-white">Quimen</span>
               </div>
-              <p className="text-sm text-amber-300">{t.tagline}</p>
+              <p className="text-sm text-[color:var(--accent-text)]">{t.tagline}</p>
             </div>
 
             <div className="space-y-3">
               <h4 className="font-semibold text-white">Product</h4>
               {t.navigation.slice(0, 3).map((item, i) => (
-                <a key={i} href={item.href} className="block text-sm text-amber-300 hover:text-orange-400 transition-colors">
+                <a key={i} href={item.href} className="block text-sm text-[color:var(--accent-text)] hover:text-white transition-colors">
                   {item.name}
                 </a>
               ))}
@@ -840,21 +894,21 @@ function QUirenLandingPage() {
 
             <div className="space-y-3">
               <h4 className="font-semibold text-white">Community</h4>
-              <a href="#" className="block text-sm text-amber-300 hover:text-orange-400 transition-colors">
+              <a href="#" className="block text-sm text-[color:var(--accent-text)] hover:text-white transition-colors">
                 Contact
               </a>
             </div>
 
             <div className="space-y-3">
               <h4 className="font-semibold text-white">Legal</h4>
-              <a href="#" className="block text-sm text-amber-300 hover:text-orange-400 transition-colors">
+              <a href="#" className="block text-sm text-[color:var(--accent-text)] hover:text-white transition-colors">
                 Privacy Policy
               </a>
             </div>
           </motion.div>
 
-          <div className="border-t border-amber-900/30 pt-8 text-center text-sm text-amber-400/70">
-            <p>© 2026 Q-Uiren. All rights reserved.</p>
+          <div className="border-t border-[color:var(--accent-border)] pt-8 text-center text-sm text-[color:var(--accent-text)]">
+            <p>© 2026 Quimen. All rights reserved.</p>
           </div>
         </div>
       </footer>
