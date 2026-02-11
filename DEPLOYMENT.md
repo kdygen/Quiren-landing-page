@@ -14,45 +14,6 @@
    npm run preview
    ```
 
-## Deploy to GitHub Pages
-
-### Option 1: Using gh-pages (Recommended)
-
-1. **Update `vite.config.js`** - Set the base path to match your repository name:
-   ```js
-   base: '/your-repo-name/',
-   ```
-   (Currently set to `/` for local development)
-
-2. **Build and deploy:**
-   ```bash
-   npm run build
-   npm run deploy
-   ```
-
-3. **Enable GitHub Pages:**
-   - Go to your repository on GitHub
-   - Settings → Pages
-   - Source: Select "gh-pages" branch
-   - Save
-
-### Option 2: Manual Deployment
-
-1. **Update `vite.config.js`** with your repo name:
-   ```js
-   base: '/your-repo-name/',
-   ```
-
-2. **Build:**
-   ```bash
-   npm run build
-   ```
-
-3. **Push dist folder to gh-pages branch:**
-   ```bash
-   git subtree push --prefix dist origin gh-pages
-   ```
-
 ## Deploy to Other Platforms
 
 ### Vercel / Netlify
