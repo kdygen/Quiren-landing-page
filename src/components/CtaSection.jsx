@@ -35,8 +35,8 @@ function CtaSection({ t, accentTheme }) {
                 "template_1518ipq", // Your Template ID
                 {
                     to_email: "kudaibergen.margulan67@gmail.com",
-                    from_name: formData.name,
-                    from_email: formData.email,
+                    name: formData.name,
+                    email: formData.email,
                     role: formData.role,
                     message: formData.message,
                 }
