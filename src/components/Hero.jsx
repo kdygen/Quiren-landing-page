@@ -23,8 +23,8 @@ function Hero({ t, accentTheme }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                     className={`inline-flex items-center gap-2 px-4 py-2 ${accentTheme === "bw"
-                            ? "bg-gray-100 border-gray-200"
-                            : "bg-white/10 border-white/20"
+                        ? "bg-gray-100 border-gray-200"
+                        : "bg-white/10 border-white/20"
                         } border rounded-full`}
                 >
                     <Sparkles className="w-4 h-4 text-white" />
@@ -41,7 +41,7 @@ function Hero({ t, accentTheme }) {
                     style={{ fontSize: "52px", textShadow: "0 4px 16px rgba(0,0,0,0.5)" }}
                 >
                     {t.heroTitle}{" "}
-                    <span className="bg-[linear-gradient(90deg,#fef3c7,#fbbf24)] bg-clip-text text-transparent">
+                    <span className="text-[#f6d36b] drop-shadow-[0_0_20px_rgba(246,211,107,0.75)]">
                         {t.heroSubtitle}
                     </span>
                 </motion.h1>

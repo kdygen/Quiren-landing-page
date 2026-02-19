@@ -6,8 +6,8 @@ function TechSection({ t, accentTheme }) {
         <section
             id="tech"
             className={`relative py-20 px-4 ${accentTheme === "bw"
-                    ? "bg-gray-50 border-b border-gray-100"
-                    : "bg-gradient-to-b from-stone-900/60 to-stone-950/50"
+                ? "bg-gray-50 border-b border-gray-100"
+                : "bg-gradient-to-b from-stone-900/60 to-stone-950/50"
                 }`}
         >
             <div className="max-w-6xl mx-auto">
@@ -45,9 +45,9 @@ function TechSection({ t, accentTheme }) {
                             viewport={{ once: true }}
                             whileHover={{ scale: 1.02 }}
                             className={`p-8 rounded-2xl ${accentTheme === "bw"
-                                    ? "bg-white shadow-sm"
-                                    : "bg-gradient-to-br from-stone-900 to-stone-950"
-                                } border border-[color:var(--accent-border)] hover:border-[color:var(--accent-1)] transition-all duration-300`}
+                                ? "bg-white shadow-sm"
+                                : "bg-gradient-to-br from-stone-900 to-stone-950"
+                                } border border-[color:var(--accent-border)] hover:border-white transition-all duration-300`}
                         >
                             <div className="w-14 h-14 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] p-3 mb-4">
                                 <Code2 className="w-full h-full text-white" />

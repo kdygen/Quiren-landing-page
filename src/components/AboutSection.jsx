@@ -6,8 +6,8 @@ function AboutSection({ t, accentTheme }) {
         <section
             id="about"
             className={`relative py-20 px-4 ${accentTheme === "bw"
-                    ? "bg-gray-50 border-b border-gray-100"
-                    : "bg-gradient-to-b from-stone-950/70 to-stone-900/50"
+                ? "bg-gray-50 border-b border-gray-100"
+                : "bg-gradient-to-b from-stone-950/70 to-stone-900/50"
                 }`}
         >
             <div className="max-w-6xl mx-auto">
@@ -37,8 +37,8 @@ function AboutSection({ t, accentTheme }) {
                         <motion.button
                             whileHover={{ x: 10 }}
                             className={`inline-flex items-center gap-2 ${accentTheme === "bw"
-                                    ? "text-black hover:text-gray-700"
-                                    : "text-[color:var(--accent-1)] hover:text-white"
+                                ? "text-black hover:text-gray-700"
+                                : "text-white hover:text-white"
                                 } transition-colors font-semibold`}
                         >
                             {t.learnMore}
@@ -52,8 +52,8 @@ function AboutSection({ t, accentTheme }) {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                         className={`relative h-96 rounded-2xl overflow-hidden ${accentTheme === "bw"
-                                ? "bg-white shadow-sm"
-                                : "bg-gradient-to-br from-stone-900 to-stone-800"
+                            ? "bg-white shadow-sm"
+                            : "bg-gradient-to-br from-stone-900 to-stone-800"
                             } border border-[color:var(--accent-border)] flex items-center justify-center`}
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 to-transparent" />

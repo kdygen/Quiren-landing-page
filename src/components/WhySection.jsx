@@ -43,9 +43,9 @@ function WhySection({ t, accentTheme }) {
                             viewport={{ once: true }}
                             whileHover={{ y: -10 }}
                             className={`p-8 rounded-2xl ${accentTheme === "bw"
-                                    ? "bg-white shadow-sm"
-                                    : "bg-gradient-to-br from-stone-800/60 to-stone-900/60"
-                                } border border-[color:var(--accent-border)] hover:border-[color:var(--accent-1)] transition-all duration-300 group cursor-pointer`}
+                                ? "bg-white shadow-sm"
+                                : "bg-gradient-to-br from-stone-800/60 to-stone-900/60"
+                                } border border-[color:var(--accent-border)] hover:border-white transition-all duration-300 group cursor-pointer`}
                         >
                             <div className="w-12 h-12 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] p-3 mb-4 group-hover:scale-110 transition-transform">
                                 <Zap className="w-full h-full text-white" />
