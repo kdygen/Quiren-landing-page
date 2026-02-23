@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
-function FaqSection({ t, accentTheme, expandedFaq, setExpandedFaq }) {
+function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
     return (
         <section
             id="faq"
-            className={`relative py-20 px-4 ${accentTheme === "bw"
-                ? "bg-gray-50 border-b border-gray-100"
-                : "bg-gradient-to-b from-stone-950/70 to-stone-900/50"
-                }`}
+            className={`relative py-20 px-4 ${activeAccent.ui.faq.section}`}
         >
             <div className="max-w-3xl mx-auto">
                 <motion.div
@@ -19,8 +16,7 @@ function FaqSection({ t, accentTheme, expandedFaq, setExpandedFaq }) {
                     className="text-center mb-16"
                 >
                     <h2
-                        className={`text-4xl md:text-5xl font-bold mb-6 ${accentTheme === "bw" ? "text-black" : "text-white"
-                            }`}
+                        className={`text-4xl md:text-5xl font-bold mb-6 ${activeAccent.ui.faq.heading}`}
                     >
                         {t.faqTitle}
                     </h2>
@@ -47,14 +43,10 @@ function FaqSection({ t, accentTheme, expandedFaq, setExpandedFaq }) {
                                 onClick={() =>
                                     setExpandedFaq(expandedFaq === idx ? -1 : idx)
                                 }
-                                className={`w-full p-6 ${accentTheme === "bw"
-                                    ? "bg-white hover:bg-gray-50"
-                                    : "bg-stone-800/50 hover:bg-stone-800"
-                                    } transition-all flex items-center justify-between group`}
+                                className={`w-full p-6 ${activeAccent.ui.faq.questionButton} transition-all flex items-center justify-between group`}
                             >
                                 <span
-                                    className={`text-lg font-semibold text-left ${accentTheme === "bw" ? "text-black" : "text-white"
-                                        }`}
+                                    className={`text-lg font-semibold text-left ${activeAccent.ui.faq.questionText}`}
                                 >
                                     {faq.q}
                                 </span>
@@ -76,8 +68,7 @@ function FaqSection({ t, accentTheme, expandedFaq, setExpandedFaq }) {
                                 className="overflow-hidden"
                             >
                                 <div
-                                    className={`p-6 ${accentTheme === "bw" ? "bg-gray-50" : "bg-stone-900/50"
-                                        } border-t border-[color:var(--accent-border)] text-[color:var(--accent-text)]`}
+                                    className={`p-6 ${activeAccent.ui.faq.answer} border-t border-[color:var(--accent-border)] text-[color:var(--accent-text)]`}
                                 >
                                     {faq.a}
                                 </div>

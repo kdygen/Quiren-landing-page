@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
 import { Music } from "lucide-react";
 
-function Footer({ t, accentTheme }) {
-    const headingText = accentTheme === "bw" ? "text-black" : "text-white";
-    const bodyText =
-        accentTheme === "bw" ? "text-black/70" : "text-[color:var(--accent-text)]";
-    const linkHover = accentTheme === "bw" ? "hover:text-black" : "hover:text-white";
+function Footer({ t, activeAccent }) {
+    const headingText = activeAccent.ui.footer.heading;
+    const bodyText = activeAccent.ui.footer.body;
+    const linkHover = activeAccent.ui.footer.linkHover;
 
     return (
         <footer
-            className={`border-t border-[color:var(--accent-border)] py-12 px-4 ${accentTheme === "bw" ? "bg-white" : "bg-stone-950/95"
-                }`}
+            className={`border-t border-[color:var(--accent-border)] py-12 px-4 ${activeAccent.ui.footer.section}`}
         >
             <div className="max-w-6xl mx-auto">
                 <motion.div

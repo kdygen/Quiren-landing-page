@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 // Initialize EmailJS with your Public Key
 emailjs.init("Bl7VTVYE7GJyeQlxf");
 
-function CtaSection({ t, accentTheme }) {
+function CtaSection({ t, activeAccent }) {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -57,8 +57,7 @@ function CtaSection({ t, accentTheme }) {
 
     return (
         <section
-            className={`relative py-24 px-4 ${accentTheme === "bw" ? "bg-white border-b border-gray-100" : ""
-                }`}
+            className={`relative py-24 px-4 ${activeAccent.ui.cta.section}`}
         >
             <div className="max-w-4xl mx-auto">
                 <motion.div
@@ -66,18 +65,14 @@ function CtaSection({ t, accentTheme }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className={`relative rounded-3xl overflow-hidden p-12 md:p-16 ${accentTheme === "bw"
-                        ? "bg-white shadow-sm"
-                        : "bg-[linear-gradient(135deg,var(--accent-soft),rgba(0,0,0,0))]"
-                        } border border-[color:var(--accent-border)]`}
+                    className={`relative rounded-3xl overflow-hidden p-12 md:p-16 ${activeAccent.ui.cta.container} border border-[color:var(--accent-border)]`}
                 >
                     <div className="absolute top-0 right-0 w-96 h-96 bg-[color:var(--accent-soft)] rounded-full blur-3xl -z-0" />
 
                     <div className="relative z-10 space-y-10">
                         <div className="space-y-6">
                             <h2
-                                className={`text-4xl md:text-5xl font-bold ${accentTheme === "bw" ? "text-black" : "text-white"
-                                    }`}
+                                className={`text-4xl md:text-5xl font-bold ${activeAccent.ui.cta.heading}`}
                             >
                                 {t.ctaTitle}
                             </h2>
@@ -92,10 +87,7 @@ function CtaSection({ t, accentTheme }) {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         transition={{ delay: idx * 0.1 }}
                                         viewport={{ once: true }}
-                                        className={`text-base font-medium ${accentTheme === "bw"
-                                            ? "text-black"
-                                            : "text-[color:var(--accent-text)]"
-                                            }`}
+                                        className={`text-base font-medium ${activeAccent.ui.cta.benefit}`}
                                     >
                                         {benefit}
                                     </motion.p>
@@ -109,15 +101,11 @@ function CtaSection({ t, accentTheme }) {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                             onSubmit={handleSubmit}
-                            className={`rounded-2xl border border-[color:var(--accent-border)] ${accentTheme === "bw"
-                                ? "bg-white"
-                                : "bg-black/20"
-                                } p-6 md:p-8 space-y-5 backdrop-blur`}
+                            className={`rounded-2xl border border-[color:var(--accent-border)] ${activeAccent.ui.cta.form} p-6 md:p-8 space-y-5 backdrop-blur`}
                         >
                             <div className="space-y-2">
                                 <label
-                                    className={`text-sm font-semibold ${accentTheme === "bw" ? "text-black" : "text-white"
-                                        }`}
+                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
                                     htmlFor="cta-name"
                                 >
                                     {t.formNameLabel}
@@ -129,18 +117,14 @@ function CtaSection({ t, accentTheme }) {
                                     placeholder={t.formNamePlaceholder}
                                     value={formData.name}
                                     onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${accentTheme === "bw"
-                                        ? "bg-gray-100 text-black"
-                                        : "bg-black/40 text-white"
-                                        } focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
+                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
                                     required
                                 />
                             </div>
 
                             <div className="space-y-2">
                                 <label
-                                    className={`text-sm font-semibold ${accentTheme === "bw" ? "text-black" : "text-white"
-                                        }`}
+                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
                                     htmlFor="cta-email"
                                 >
                                     {t.formEmailLabel}
@@ -152,18 +136,14 @@ function CtaSection({ t, accentTheme }) {
                                     placeholder={t.formEmailPlaceholder}
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${accentTheme === "bw"
-                                        ? "bg-gray-100 text-black"
-                                        : "bg-black/40 text-white"
-                                        } focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
+                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
                                     required
                                 />
                             </div>
 
                             <div className="space-y-2">
                                 <label
-                                    className={`text-sm font-semibold ${accentTheme === "bw" ? "text-black" : "text-white"
-                                        }`}
+                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
                                     htmlFor="cta-role"
                                 >
                                     {t.formRoleLabel}
@@ -173,10 +153,7 @@ function CtaSection({ t, accentTheme }) {
                                     name="role"
                                     value={formData.role}
                                     onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${accentTheme === "bw"
-                                        ? "bg-gray-100 text-black"
-                                        : "bg-black/40 text-white"
-                                        } focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
+                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
                                     required
                                 >
                                     <option value="" disabled>
@@ -191,8 +168,7 @@ function CtaSection({ t, accentTheme }) {
 
                             <div className="space-y-2">
                                 <label
-                                    className={`text-sm font-semibold ${accentTheme === "bw" ? "text-black" : "text-white"
-                                        }`}
+                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
                                     htmlFor="cta-message"
                                 >
                                     {t.formMessageLabel}
@@ -204,10 +180,7 @@ function CtaSection({ t, accentTheme }) {
                                     placeholder={t.formMessagePlaceholder}
                                     value={formData.message}
                                     onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${accentTheme === "bw"
-                                        ? "bg-gray-100 text-black"
-                                        : "bg-black/40 text-white"
-                                        } focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
+                                    className={`w-full rounded-lg border border-transparent px-4 py-3 ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
                                     required
                                 />
                             </div>

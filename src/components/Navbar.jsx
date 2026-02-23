@@ -4,6 +4,7 @@ import { Menu, X, Music } from "lucide-react";
 function Navbar({
     t,
     accentTheme,
+    activeAccent,
     accentThemes,
     setAccentTheme,
     currentLanguage,
@@ -12,10 +13,11 @@ function Navbar({
     setMobileMenuOpen,
     languages,
 }) {
+    const isLightMode = activeAccent.mode === "light";
+
     return (
         <nav
-            className={`fixed top-0 w-full z-50 backdrop-blur-md ${accentTheme === "bw" ? "bg-white/90" : "bg-stone-900/90"
-                } border-b border-[color:var(--accent-border)]`}
+            className={`fixed top-0 w-full z-50 backdrop-blur-md ${activeAccent.ui.navbar.background} border-b border-[color:var(--accent-border)]`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
@@ -28,8 +30,7 @@ function Navbar({
                             <Music className="w-5 h-5 text-white" />
                         </div>
                         <span
-                            className={`text-xl font-bold ${accentTheme === "bw" ? "text-black" : "text-white"
-                                }`}
+                            className={`text-xl font-bold ${activeAccent.ui.navbar.brandText}`}
                         >
                             Quimen
                         </span>
@@ -43,10 +44,7 @@ function Navbar({
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className={`${accentTheme === "bw"
-                                    ? "text-black hover:text-gray-700"
-                                    : "text-white hover:text-white"
-                                    } transition-colors text-sm font-medium`}
+                                className={`${activeAccent.ui.navbar.navLink} transition-colors text-sm font-medium`}
                             >
                                 {item.name}
                             </motion.a>
@@ -61,8 +59,12 @@ function Navbar({
                                     type="button"
                                     onClick={() => setAccentTheme(theme.id)}
                                     className={`h-7 w-7 rounded-full border transition-all ${accentTheme === theme.id
-                                        ? "border-white/70"
-                                        : "border-white/20"
+                                        ? isLightMode
+                                            ? "border-black/40"
+                                            : "border-white/70"
+                                        : isLightMode
+                                            ? "border-black/20"
+                                            : "border-white/20"
                                         }`}
                                     style={{
                                         background: `linear-gradient(135deg, ${theme.primary}, ${theme.secondary})`,
@@ -74,10 +76,7 @@ function Navbar({
                         <select
                             value={currentLanguage}
                             onChange={(event) => setCurrentLanguage(event.target.value)}
-                            className={`text-xs px-3 py-2 rounded-lg border transition-colors ${accentTheme === "bw"
-                                ? "bg-white text-black border-black/20 hover:border-black/40"
-                                : "bg-stone-800 text-white border-[color:var(--accent-border)] hover:border-white"
-                                }`}
+                            className={`text-xs px-3 py-2 rounded-lg border transition-colors ${activeAccent.ui.navbar.languageSelect}`}
                         >
                             {languages.map((lang) => (
                                 <option key={lang.code} value={lang.code}>
@@ -112,10 +111,7 @@ function Navbar({
                             <a
                                 key={item.href}
                                 href={item.href}
-                                className={`block transition-colors text-sm ${accentTheme === "bw"
-                                    ? "text-black hover:text-gray-700"
-                                    : "text-white hover:text-white"
-                                    }`}
+                                className={`block transition-colors text-sm ${activeAccent.ui.navbar.navLink}`}
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {item.name}

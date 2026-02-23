@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-function Hero({ t, accentTheme }) {
+function Hero({ t, activeAccent }) {
     return (
         <section className="relative min-h-screen flex items-center justify-end pt-20 px-4 overflow-hidden">
             <div className="absolute inset-0 w-full h-full left-0">
@@ -22,10 +22,7 @@ function Hero({ t, accentTheme }) {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className={`inline-flex items-center gap-2 px-4 py-2 ${accentTheme === "bw"
-                        ? "bg-gray-100 border-gray-200"
-                        : "bg-white/10 border-white/20"
-                        } border rounded-full`}
+                    className={`inline-flex items-center gap-2 px-4 py-2 ${activeAccent.ui.hero.badge} border rounded-full`}
                 >
                     <Sparkles className="w-4 h-4 text-white" />
                     <span className="text-white text-sm font-medium">

@@ -22,10 +22,7 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen overflow-hidden ${accentTheme === "bw"
-          ? "bg-white text-black"
-          : "bg-gradient-to-br from-stone-900 via-stone-950 to-stone-800 text-white"
-        }`}
+      className={`min-h-screen overflow-hidden ${activeAccent.pageBackground}`}
       style={{
         "--accent-1": activeAccent.primary,
         "--accent-2": activeAccent.secondary,
@@ -38,6 +35,7 @@ function App() {
       <Navbar
         t={t}
         accentTheme={accentTheme}
+        activeAccent={activeAccent}
         accentThemes={accentThemes}
         setAccentTheme={setAccentTheme}
         currentLanguage={currentLanguage}
@@ -46,19 +44,19 @@ function App() {
         setMobileMenuOpen={setMobileMenuOpen}
         languages={languages}
       />
-      <Hero t={t} accentTheme={accentTheme} />
-      <AboutSection t={t} accentTheme={accentTheme} />
-      <WhySection t={t} accentTheme={accentTheme} />
-      <TechSection t={t} accentTheme={accentTheme} />
-      <AudienceSection t={t} accentTheme={accentTheme} />
+      <Hero t={t} activeAccent={activeAccent} />
+      <AboutSection t={t} activeAccent={activeAccent} />
+      <WhySection t={t} activeAccent={activeAccent} />
+      <TechSection t={t} activeAccent={activeAccent} />
+      <AudienceSection t={t} activeAccent={activeAccent} />
       <FaqSection
         t={t}
-        accentTheme={accentTheme}
+        activeAccent={activeAccent}
         expandedFaq={expandedFaq}
         setExpandedFaq={setExpandedFaq}
       />
-      <CtaSection t={t} accentTheme={accentTheme} />
-      <Footer t={t} accentTheme={accentTheme} />
+      <CtaSection t={t} activeAccent={activeAccent} />
+      <Footer t={t} activeAccent={activeAccent} />
     </div>
   );
 }

@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Flame } from "lucide-react";
 
-function AboutSection({ t, accentTheme }) {
+function AboutSection({ t, activeAccent }) {
     return (
         <section
             id="about"
-            className={`relative py-20 px-4 ${accentTheme === "bw"
-                ? "bg-gray-50 border-b border-gray-100"
-                : "bg-gradient-to-b from-stone-950/70 to-stone-900/50"
-                }`}
+            className={`relative py-20 px-4 ${activeAccent.ui.about.section}`}
         >
             <div className="max-w-6xl mx-auto">
                 <motion.div
@@ -26,8 +23,7 @@ function AboutSection({ t, accentTheme }) {
                         className="space-y-6"
                     >
                         <h2
-                            className={`text-4xl md:text-5xl font-bold ${accentTheme === "bw" ? "text-black" : "text-white"
-                                }`}
+                            className={`text-4xl md:text-5xl font-bold ${activeAccent.ui.about.heading}`}
                         >
                             {t.aboutTitle}
                         </h2>
@@ -36,10 +32,7 @@ function AboutSection({ t, accentTheme }) {
                         </p>
                         <motion.button
                             whileHover={{ x: 10 }}
-                            className={`inline-flex items-center gap-2 ${accentTheme === "bw"
-                                ? "text-black hover:text-gray-700"
-                                : "text-white hover:text-white"
-                                } transition-colors font-semibold`}
+                            className={`inline-flex items-center gap-2 ${activeAccent.ui.about.learnMore} transition-colors font-semibold`}
                         >
                             {t.learnMore}
                             <ArrowRight className="w-5 h-5" />
@@ -51,10 +44,7 @@ function AboutSection({ t, accentTheme }) {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className={`relative h-96 rounded-2xl overflow-hidden ${accentTheme === "bw"
-                            ? "bg-white shadow-sm"
-                            : "bg-gradient-to-br from-stone-900 to-stone-800"
-                            } border border-[color:var(--accent-border)] flex items-center justify-center`}
+                        className={`relative h-96 rounded-2xl overflow-hidden ${activeAccent.ui.about.mediaCard} border border-[color:var(--accent-border)] flex items-center justify-center`}
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 to-transparent" />
                         <div className="relative z-10 text-center">
