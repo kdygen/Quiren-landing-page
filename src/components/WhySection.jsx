@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
 
 function WhySection({ t, activeAccent }) {
     return (
@@ -42,9 +41,6 @@ function WhySection({ t, activeAccent }) {
                             whileHover={{ y: -10 }}
                             className={`p-8 rounded-2xl ${activeAccent.ui.why.card} border border-[color:var(--accent-border)] hover:border-white transition-all duration-300 group cursor-pointer`}
                         >
-                            <div className="w-12 h-12 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] p-3 mb-4 group-hover:scale-110 transition-transform">
-                                <Zap className="w-full h-full text-white" />
-                            </div>
                             <h3
                                 className={`text-xl font-bold mb-3 ${activeAccent.ui.why.cardHeading}`}
                             >

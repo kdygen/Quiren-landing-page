@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Music } from "lucide-react";
 
 function Footer({ t, activeAccent }) {
     const headingText = activeAccent.ui.footer.heading;
@@ -19,17 +18,14 @@ function Footer({ t, activeAccent }) {
                     className="grid md:grid-cols-4 gap-8 mb-8"
                 >
                     <div className="space-y-4">
-                        <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] flex items-center justify-center">
-                                <Music className="w-5 h-5 text-white" />
-                            </div>
+                        <div className="flex items-center">
                             <span className={`font-bold ${headingText}`}>Quimen</span>
                         </div>
                         <p className={`text-sm ${bodyText}`}>{t.tagline}</p>
                     </div>
 
                     <div className="space-y-3">
-                        <h4 className={`font-semibold ${headingText}`}>Product</h4>
+                        <h3 className={`font-semibold ${headingText}`}>Product</h3>
                         {t.navigation.slice(0, 3).map((item) => (
                             <a
                                 key={item.href}
@@ -42,7 +38,7 @@ function Footer({ t, activeAccent }) {
                     </div>
 
                     <div className="space-y-3">
-                        <h4 className={`font-semibold ${headingText}`}>Community</h4>
+                        <h3 className={`font-semibold ${headingText}`}>Community</h3>
                         <a
                             href="#"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}
@@ -52,7 +48,7 @@ function Footer({ t, activeAccent }) {
                     </div>
 
                     <div className="space-y-3">
-                        <h4 className={`font-semibold ${headingText}`}>Legal</h4>
+                        <h3 className={`font-semibold ${headingText}`}>Legal</h3>
                         <a
                             href="#"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}

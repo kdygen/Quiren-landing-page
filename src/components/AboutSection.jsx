@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Flame } from "lucide-react";
 
 function AboutSection({ t, activeAccent }) {
     return (
@@ -32,10 +31,12 @@ function AboutSection({ t, activeAccent }) {
                         </p>
                         <motion.button
                             whileHover={{ x: 10 }}
-                            className={`inline-flex items-center gap-2 ${activeAccent.ui.about.learnMore} transition-colors font-semibold`}
+                            className={`inline-flex items-center gap-2 group ${activeAccent.ui.about.learnMore} transition-colors font-semibold`}
                         >
-                            {t.learnMore}
-                            <ArrowRight className="w-5 h-5" />
+                            <span>{t.learnMore}</span>
+                            <span className="text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1">
+                                ›
+                            </span>
                         </motion.button>
                     </motion.div>
 
@@ -46,13 +47,11 @@ function AboutSection({ t, activeAccent }) {
                         viewport={{ once: true }}
                         className={`relative h-96 rounded-2xl overflow-hidden ${activeAccent.ui.about.mediaCard} border border-[color:var(--accent-border)] flex items-center justify-center`}
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 to-transparent" />
-                        <div className="relative z-10 text-center">
-                            <Flame className="w-24 h-24 text-[color:var(--accent-border)] mx-auto mb-4" />
-                            <p className="text-[color:var(--accent-2)] font-semibold">
-                                {t.cardLessonText}
-                            </p>
-                        </div>
+                        <img
+                            src={`${import.meta.env.BASE_URL}image.png`}
+                            alt={t.cardLessonText}
+                            className="h-full w-full object-cover scale-[1.2] -translate-y-8 translate-x-4"
+                        />
                     </motion.div>
                 </motion.div>
             </div>

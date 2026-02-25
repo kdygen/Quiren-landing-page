@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 // Initialize EmailJS with your Public Key
@@ -190,11 +189,10 @@ function CtaSection({ t, activeAccent }) {
                                 whileTap={{ scale: loading ? 1 : 0.97 }}
                                 type="submit"
                                 disabled={loading}
-                                className={`w-full px-6 py-3 bg-white text-black font-bold rounded-lg border border-black/10 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2 ${loading ? "opacity-70 cursor-not-allowed" : ""
+                                className={`w-full px-6 py-3 bg-white text-black font-bold rounded-lg border border-black/10 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center ${loading ? "opacity-70 cursor-not-allowed" : ""
                                     }`}
                             >
                                 {loading ? "Отправка..." : t.formSubmitButton}
-                                {!loading && <ArrowRight className="w-5 h-5" />}
                             </motion.button>
 
                             {submitStatus === "success" && (

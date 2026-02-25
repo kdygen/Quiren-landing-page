@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Code2 } from "lucide-react";
 
 function TechSection({ t, activeAccent }) {
     return (
@@ -42,9 +41,6 @@ function TechSection({ t, activeAccent }) {
                             whileHover={{ scale: 1.02 }}
                             className={`p-8 rounded-2xl ${activeAccent.ui.tech.card} border border-[color:var(--accent-border)] hover:border-white transition-all duration-300`}
                         >
-                            <div className="w-14 h-14 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] p-3 mb-4">
-                                <Code2 className="w-full h-full text-white" />
-                            </div>
                             <h3
                                 className={`text-xl font-bold mb-3 ${activeAccent.ui.tech.cardHeading}`}
                             >

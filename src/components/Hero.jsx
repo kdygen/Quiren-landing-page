@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
 
 function Hero({ t, activeAccent }) {
     return (
@@ -24,7 +23,6 @@ function Hero({ t, activeAccent }) {
                     transition={{ delay: 0.2 }}
                     className={`inline-flex items-center gap-2 px-4 py-2 ${activeAccent.ui.hero.badge} border rounded-full`}
                 >
-                    <Sparkles className="w-4 h-4 text-white" />
                     <span className="text-white text-sm font-medium">
                         {t.pilotBadge}
                     </span>
@@ -59,9 +57,11 @@ function Hero({ t, activeAccent }) {
                     transition={{ delay: 0.4 }}
                     className="flex flex-col sm:flex-row gap-4 pt-4"
                 >
-                    <motion.button className="group px-8 py-4 bg-white text-black font-semibold rounded-lg border border-white/20 hover:shadow-lg hover:bg-gray-50 transition-all duration-300 flex items-center gap-2 w-fit backdrop-blur-sm">
-                        {t.ctaButton}
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <motion.button className="px-8 py-4 bg-white text-black font-semibold rounded-lg border border-white/20 hover:shadow-lg hover:bg-gray-50 transition-all duration-300 w-fit backdrop-blur-sm inline-flex items-center gap-2 group">
+                        <span>{t.ctaButton}</span>
+                        <span className="text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1">
+                            ›
+                        </span>
                     </motion.button>
                     <button className="px-8 py-4 border border-white/30 text-white font-semibold rounded-lg transition-colors hover:bg-[#fef3c7]/20 hover:border-[#fef3c7]">
                         {t.learnMore}

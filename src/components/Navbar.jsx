@@ -1,43 +1,37 @@
 import { motion } from "framer-motion";
-import { Menu, X, Music } from "lucide-react";
 
 function Navbar({
     t,
-    accentTheme,
     activeAccent,
-    accentThemes,
-    setAccentTheme,
     currentLanguage,
     setCurrentLanguage,
     mobileMenuOpen,
     setMobileMenuOpen,
     languages,
 }) {
-    const isLightMode = activeAccent.mode === "light";
+    const navigationItems = t?.navigation ?? [];
+    const languageItems = languages ?? [];
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 backdrop-blur-md ${activeAccent.ui.navbar.background} border-b border-[color:var(--accent-border)]`}
+            className={`fixed top-0 w-full z-50 px-4 backdrop-blur-md ${activeAccent.ui.navbar.background} border-b border-[color:var(--accent-border)]`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
                 <div className="flex items-center justify-between h-16">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        className="flex items-center gap-2"
+                        className="flex items-center"
                     >
-                        <div className="w-8 h-8 rounded-lg bg-[linear-gradient(135deg,var(--accent-1),var(--accent-2))] flex items-center justify-center">
-                            <Music className="w-5 h-5 text-white" />
-                        </div>
-                        <span
-                            className={`text-xl font-bold ${activeAccent.ui.navbar.brandText}`}
-                        >
-                            Quimen
-                        </span>
+                        <img
+                            src={`${import.meta.env.BASE_URL}quimenlogo.png`}
+                            alt="Quimen"
+                            className="h-8 w-auto"
+                        />
                     </motion.div>
 
                     <div className="hidden lg:flex items-center gap-8">
-                        {t.navigation.map((item, i) => (
+                        {navigationItems.map((item, i) => (
                             <motion.a
                                 key={item.href}
                                 href={item.href}
@@ -52,33 +46,17 @@ function Navbar({
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <div className="hidden sm:flex items-center gap-2">
-                            {accentThemes.map((theme) => (
-                                <button
-                                    key={theme.id}
-                                    type="button"
-                                    onClick={() => setAccentTheme(theme.id)}
-                                    className={`h-7 w-7 rounded-full border transition-all ${accentTheme === theme.id
-                                        ? isLightMode
-                                            ? "border-black/40"
-                                            : "border-white/70"
-                                        : isLightMode
-                                            ? "border-black/20"
-                                            : "border-white/20"
-                                        }`}
-                                    style={{
-                                        background: `linear-gradient(135deg, ${theme.primary}, ${theme.secondary})`,
-                                    }}
-                                    aria-label={`${theme.name} theme`}
-                                />
-                            ))}
-                        </div>
+                        <label htmlFor="language-select" className="sr-only">
+                            Language
+                        </label>
                         <select
+                            id="language-select"
                             value={currentLanguage}
                             onChange={(event) => setCurrentLanguage(event.target.value)}
                             className={`text-xs px-3 py-2 rounded-lg border transition-colors ${activeAccent.ui.navbar.languageSelect}`}
+                            aria-label="Language"
                         >
-                            {languages.map((lang) => (
+                            {languageItems.map((lang) => (
                                 <option key={lang.code} value={lang.code}>
                                     {lang.flag} {lang.name}
                                 </option>
@@ -91,11 +69,9 @@ function Navbar({
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             aria-label="Toggle menu"
                         >
-                            {mobileMenuOpen ? (
-                                <X className="w-6 h-6" />
-                            ) : (
-                                <Menu className="w-6 h-6" />
-                            )}
+                            <span className="text-sm font-semibold">
+                                {mobileMenuOpen ? "Close" : "Menu"}
+                            </span>
                         </button>
                     </div>
                 </div>
@@ -107,7 +83,7 @@ function Navbar({
                         exit={{ opacity: 0, height: 0 }}
                         className="lg:hidden border-t border-[color:var(--accent-border)] py-4 space-y-3"
                     >
-                        {t.navigation.map((item) => (
+                        {navigationItems.map((item) => (
                             <a
                                 key={item.href}
                                 href={item.href}

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 
 function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
     return (
@@ -51,10 +50,11 @@ function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
                                     {faq.q}
                                 </span>
                                 <motion.div
-                                    animate={{ rotate: expandedFaq === idx ? 180 : 0 }}
+                                    animate={{ rotate: expandedFaq === idx ? 90 : 0 }}
                                     transition={{ duration: 0.3 }}
+                                    className="text-white text-3xl leading-none"
                                 >
-                                    <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
+                                    ›
                                 </motion.div>
                             </button>
 

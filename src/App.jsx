@@ -14,11 +14,9 @@ function App() {
   const [currentLanguage, setCurrentLanguage] = useState("RU");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState(-1);
-  const [accentTheme, setAccentTheme] = useState("sunset");
 
   const t = translations[currentLanguage] || translations.RU;
-  const activeAccent =
-    accentThemes.find((theme) => theme.id === accentTheme) || accentThemes[0];
+  const activeAccent = accentThemes[0];
 
   return (
     <div
@@ -34,10 +32,7 @@ function App() {
     >
       <Navbar
         t={t}
-        accentTheme={accentTheme}
         activeAccent={activeAccent}
-        accentThemes={accentThemes}
-        setAccentTheme={setAccentTheme}
         currentLanguage={currentLanguage}
         setCurrentLanguage={setCurrentLanguage}
         mobileMenuOpen={mobileMenuOpen}
