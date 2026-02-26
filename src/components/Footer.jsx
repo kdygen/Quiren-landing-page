@@ -7,7 +7,7 @@ function Footer({ t, activeAccent }) {
 
     return (
         <footer
-            className={`border-t border-[color:var(--accent-border)] py-12 px-4 ${activeAccent.ui.footer.section}`}
+            className={`border-t border-[color:var(--accent-border)] py-10 sm:py-12 px-4 ${activeAccent.ui.footer.section}`}
         >
             <div className="max-w-6xl mx-auto">
                 <motion.div
@@ -15,7 +15,7 @@ function Footer({ t, activeAccent }) {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="grid md:grid-cols-4 gap-8 mb-8"
+                    className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8"
                 >
                     <div className="space-y-4">
                         <div className="flex items-center">
@@ -59,7 +59,7 @@ function Footer({ t, activeAccent }) {
                 </motion.div>
 
                 <div
-                    className={`border-t border-[color:var(--accent-border)] pt-8 text-center text-sm ${bodyText}`}
+                    className={`border-t border-[color:var(--accent-border)] pt-6 sm:pt-8 text-center text-sm ${bodyText}`}
                 >
                     <p>© 2026 Quimen. All rights reserved.</p>
                 </div>

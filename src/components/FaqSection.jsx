@@ -4,7 +4,7 @@ function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
     return (
         <section
             id="faq"
-            className={`relative py-20 px-4 ${activeAccent.ui.faq.section}`}
+            className={`relative py-14 sm:py-20 px-4 ${activeAccent.ui.faq.section}`}
         >
             <div className="max-w-3xl mx-auto">
                 <motion.div
@@ -12,10 +12,10 @@ function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-10 sm:mb-16"
                 >
                     <h2
-                        className={`text-4xl md:text-5xl font-bold mb-6 ${activeAccent.ui.faq.heading}`}
+                        className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 ${activeAccent.ui.faq.heading}`}
                     >
                         {t.faqTitle}
                     </h2>
@@ -26,7 +26,7 @@ function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8, staggerChildren: 0.05 }}
                     viewport={{ once: true }}
-                    className="space-y-4"
+                    className="space-y-3 sm:space-y-4"
                 >
                     {t.faqs.map((faq, idx) => (
                         <motion.div
@@ -42,17 +42,17 @@ function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
                                 onClick={() =>
                                     setExpandedFaq(expandedFaq === idx ? -1 : idx)
                                 }
-                                className={`w-full p-6 ${activeAccent.ui.faq.questionButton} transition-all flex items-center justify-between group`}
+                                className={`w-full p-4 sm:p-6 ${activeAccent.ui.faq.questionButton} transition-all flex items-center justify-between group`}
                             >
                                 <span
-                                    className={`text-lg font-semibold text-left ${activeAccent.ui.faq.questionText}`}
+                                    className={`text-base sm:text-lg font-semibold text-left pr-4 ${activeAccent.ui.faq.questionText}`}
                                 >
                                     {faq.q}
                                 </span>
                                 <motion.div
                                     animate={{ rotate: expandedFaq === idx ? 90 : 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="text-white text-3xl leading-none"
+                                    className="text-white text-2xl sm:text-3xl leading-none"
                                 >
                                     ›
                                 </motion.div>
@@ -68,7 +68,7 @@ function FaqSection({ t, activeAccent, expandedFaq, setExpandedFaq }) {
                                 className="overflow-hidden"
                             >
                                 <div
-                                    className={`p-6 ${activeAccent.ui.faq.answer} border-t border-[color:var(--accent-border)] text-[color:var(--accent-text)]`}
+                                    className={`p-4 sm:p-6 ${activeAccent.ui.faq.answer} border-t border-[color:var(--accent-border)] text-sm sm:text-base text-[color:var(--accent-text)]`}
                                 >
                                     {faq.a}
                                 </div>
