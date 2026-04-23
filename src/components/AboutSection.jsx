@@ -1,59 +1,47 @@
-import { motion } from "framer-motion";
-
-function AboutSection({ t, activeAccent }) {
+function AboutSection() {
     return (
-        <section
-            id="about"
-            className={`relative py-14 sm:py-20 px-4 ${activeAccent.ui.about.section}`}
-        >
-            <div className="max-w-6xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center"
-                >
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="space-y-6"
-                    >
-                        <h2
-                            className={`text-3xl sm:text-4xl md:text-5xl font-bold ${activeAccent.ui.about.heading}`}
-                        >
-                            {t.aboutTitle}
-                        </h2>
-                        <p className="text-base sm:text-lg text-[color:var(--accent-text)] leading-relaxed">
-                            {t.aboutDescription}
-                        </p>
-                        <motion.button
-                            whileHover={{ x: 10 }}
-                            className={`inline-flex items-center gap-2 group ${activeAccent.ui.about.learnMore} transition-colors font-semibold`}
-                        >
-                            <span>{t.learnMore}</span>
-                            <span className="text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1">
-                                ›
-                            </span>
-                        </motion.button>
-                    </motion.div>
+        <section id="about" className="relative bg-[#0D0B08] py-20 lg:py-28 px-4 lg:px-16">
+            <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div className="max-w-[720px] reveal">
+                    <div className="flex items-center gap-4 mb-7">
+                        <div className="h-px w-8 bg-[#C8974A]" />
+                        <span className="font-display text-[10px] tracking-[0.45em] uppercase text-[#C8974A] font-light">
+                            О проекте
+                        </span>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className={`relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden ${activeAccent.ui.about.mediaCard} border border-[color:var(--accent-border)] flex items-center justify-center`}
-                    >
+                    <h2 className="font-serif text-5xl lg:text-6xl leading-[1.05] text-[#FDFAF5] font-light mb-8">
+                        Традиция,<br />
+                        рождённая <em className="text-[#C8974A] italic font-light">заново</em>
+                    </h2>
+
+                    <div className="flex items-center gap-7 mb-9">
+                        <div className="h-px w-16 bg-[#C8974A]/45" />
+                        <div className="w-2 h-2 rotate-45 bg-[#C8974A]" />
+                        <div className="h-px w-16 bg-[#C8974A]/45" />
+                    </div>
+
+                    <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-[#F5E4C3]/70 font-body font-light mb-8">
+                        Домбыра — это душа казахского народа. На протяжении тысячелетий этот инструмент передавал истории, радость и мудрость от поколения к поколению. Сегодня мы создаём мост между древним искусством и современными методами обучения.
+                    </p>
+
+                    <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-[#F5E4C3]/70 font-body font-light">
+                        Quimen — интерактивная платформа, разработанная совместно с ведущими домбристами Казахстана. Мы верим, что каждый ребёнок, каждый взрослый заслуживает возможности прикоснуться к живому наследию своего народа.
+                    </p>
+                </div>
+
+                <div className="relative reveal reveal-delay-2">
+                    <div className="relative overflow-hidden border border-[#C8974A]/20 aspect-[4/5] w-full max-w-[640px] ml-auto">
                         <img
-                            src={`${import.meta.env.BASE_URL}image.png`}
-                            alt={t.cardLessonText}
-                            className="h-full w-full object-cover scale-110 sm:scale-[1.2] -translate-y-4 sm:-translate-y-8 translate-x-2 sm:translate-x-4"
+                            src={`${import.meta.env.BASE_URL}Gemini_Generated_Image_70l4pj70l4pj70l4.png`}
+                            alt="Прошлое и настоящее"
+                            className="h-full w-full object-cover"
                         />
-                    </motion.div>
-                </motion.div>
+                    </div>
+
+                    <div className="pointer-events-none absolute -top-7 -left-7 w-[48%] h-[48%] border border-[#C8974A]/15" />
+                    <div className="pointer-events-none absolute -bottom-7 -right-7 w-[60%] h-[60%] border border-[#C8974A]/25" />
+                </div>
             </div>
         </section>
     );
