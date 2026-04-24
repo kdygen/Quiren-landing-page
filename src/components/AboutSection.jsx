@@ -21,17 +21,21 @@ function AboutSection() {
                         <div className="h-px w-16 bg-[#C8974A]/45" />
                     </div>
 
+                    <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-[#F5E4C3]/70 font-body font-bold mb-8">
+                        Quimen создан, чтобы ни одна казахская семья не теряла связь со своими музыкальными корнями. Мы стремимся к миру, в котором домбыра звучит в каждом доме.
+                    </p>
+
                     <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-[#F5E4C3]/70 font-body font-light mb-8">
-                        Домбыра — это душа казахского народа. На протяжении тысячелетий этот инструмент передавал истории, радость и мудрость от поколения к поколению. Сегодня мы создаём мост между древним искусством и современными методами обучения.
+                        На протяжении тысячелетий этот инструмент передавал истории, радость и мудрость от поколения к поколению. Сегодня мы соединяем древнее искусство с современными технологиями, создавая новый способ учиться, сохраняя и развивая традицию.
                     </p>
 
                     <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-[#F5E4C3]/70 font-body font-light">
-                        Quimen — интерактивная платформа, разработанная совместно с ведущими домбристами Казахстана. Мы верим, что каждый ребёнок, каждый взрослый заслуживает возможности прикоснуться к живому наследию своего народа.
+                        Мы не просто учим играть на инструменте. Мы передаём культуру, историю и дух казахского народа через живой звук домбыры.
                     </p>
                 </div>
 
                 <div className="relative reveal reveal-delay-2">
-                    <div className="relative overflow-hidden border border-[#C8974A]/20 aspect-[4/5] w-full max-w-[640px] ml-auto">
+                    <div className="relative overflow-hidden border border-[#C8974A]/20 aspect-[4/5] w-full max-w-[544px] ml-auto">
                         <img
                             src={`${import.meta.env.BASE_URL}Gemini_Generated_Image_70l4pj70l4pj70l4.png`}
                             alt="Прошлое и настоящее"

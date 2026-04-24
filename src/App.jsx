@@ -5,15 +5,14 @@ import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
 import WhySection from "./components/WhySection";
 import TechSection from "./components/TechSection";
+import AppSection from "./components/AppSection";
 import AudienceSection from "./components/AudienceSection";
-import FaqSection from "./components/FaqSection";
 import CtaSection from "./components/CtaSection";
 import Footer from "./components/Footer";
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState("RU");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedFaq, setExpandedFaq] = useState(-1);
 
   const t = translations[currentLanguage] || translations.RU;
   const activeAccent = accentThemes[0];
@@ -43,13 +42,8 @@ function App() {
       <AboutSection t={t} activeAccent={activeAccent} />
       <WhySection t={t} activeAccent={activeAccent} />
       <TechSection t={t} activeAccent={activeAccent} />
+      <AppSection />
       <AudienceSection t={t} activeAccent={activeAccent} />
-      <FaqSection
-        t={t}
-        activeAccent={activeAccent}
-        expandedFaq={expandedFaq}
-        setExpandedFaq={setExpandedFaq}
-      />
       <CtaSection t={t} activeAccent={activeAccent} />
       <Footer t={t} activeAccent={activeAccent} />
     </div>

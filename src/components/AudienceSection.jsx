@@ -1,58 +1,51 @@
-import { motion } from "framer-motion";
-
-function AudienceSection({ t, activeAccent }) {
+function AudienceSection() {
     return (
-        <section
-            id="audience"
-            className={`relative py-14 sm:py-20 px-4 ${activeAccent.ui.audience.section}`}
-        >
-            <div className="max-w-6xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-10 sm:mb-16"
-                >
-                    <h2
-                        className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 ${activeAccent.ui.audience.heading}`}
-                    >
-                        {t.audienceTitle}
-                    </h2>
-                    <p className="text-base sm:text-lg text-[color:var(--accent-text)] max-w-2xl mx-auto">
-                        {t.audienceDescription}
-                    </p>
-                </motion.div>
+        <section id="audience" className="bg-[#0D0B08] py-24 lg:py-32 px-4 lg:px-16">
+            <div className="max-w-[1400px] mx-auto">
+                <div className="mb-14 lg:mb-16 reveal">
+                    <div className="flex items-center gap-4 mb-5">
+                        <div className="h-px w-8 bg-[#C8974A]" />
+                        <span className="font-display text-[10px] tracking-[0.45em] uppercase text-[#C8974A] font-light">
+                            Аудитория
+                        </span>
+                    </div>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8, staggerChildren: 0.1 }}
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-3 gap-4 sm:gap-6"
-                >
-                    {t.audience.map((aud) => (
-                        <motion.div
-                            key={aud.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            className={`relative p-5 sm:p-8 rounded-2xl overflow-hidden group ${activeAccent.ui.audience.card}`}
-                        >
-                            <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--accent-soft),rgba(0,0,0,0))] group-hover:bg-[linear-gradient(135deg,var(--accent-soft),var(--accent-soft))] transition-all" />
-                            <div className="absolute inset-0 border border-[color:var(--accent-border)] group-hover:border-white transition-all rounded-2xl" />
-                            <div className="relative z-10">
-                                <h3
-                                    className={`text-lg sm:text-xl font-bold mb-3 ${activeAccent.ui.audience.cardHeading}`}
-                                >
-                                    {aud.title}
-                                </h3>
-                                <p className="text-sm sm:text-base text-[color:var(--accent-text)]">{aud.desc}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                    <h2 className="font-serif text-5xl lg:text-6xl leading-[1.06] text-[#FDFAF5] font-light">
+                        Для <em className="text-[#C8974A] italic font-light">кого</em> Quimen?
+                    </h2>
+                </div>
+
+                <div className="grid lg:grid-cols-3 border border-[#C8974A]/16 reveal reveal-delay-1">
+                    <article className="px-8 py-10 lg:px-10 lg:py-12 border-b lg:border-b-0 lg:border-r border-[#C8974A]/16 bg-[linear-gradient(135deg,rgba(200,151,74,0.06),rgba(0,0,0,0))] hover:bg-[linear-gradient(135deg,rgba(200,151,74,0.12),rgba(0,0,0,0))] transition-colors duration-300">
+                        <div className="text-[2.3rem] leading-none mb-5">🧒</div>
+                        <h3 className="font-serif text-[2.05rem] leading-[1.2] text-[#E8BE7A] font-light mb-5">
+                            Дети 6–14 лет
+                        </h3>
+                        <p className="font-body text-[1.02rem] leading-[1.85] text-[#F5E4C3]/68 font-light">
+                            Ваш ребёнок познакомится с казахской музыкальной культурой через игровой и интерактивный формат. Занятия развивают музыкальный слух, координацию и культурную идентичность.
+                        </p>
+                    </article>
+
+                    <article className="px-8 py-10 lg:px-10 lg:py-12 border-b lg:border-b-0 lg:border-r border-[#C8974A]/16 hover:bg-[linear-gradient(135deg,rgba(200,151,74,0.08),rgba(0,0,0,0))] transition-colors duration-300">
+                        <div className="text-[2.3rem] leading-none mb-5">👩‍🎓</div>
+                        <h3 className="font-serif text-[2.05rem] leading-[1.2] text-[#E8BE7A] font-light mb-5">
+                            Подростки и студенты
+                        </h3>
+                        <p className="font-body text-[1.02rem] leading-[1.85] text-[#F5E4C3]/68 font-light">
+                            Хочешь освоить домбыру самостоятельно? Наша платформа даёт полную свободу в выборе темпа и времени обучения. Учись в любое время — прогресс всегда с тобой.
+                        </p>
+                    </article>
+
+                    <article className="px-8 py-10 lg:px-10 lg:py-12 hover:bg-[linear-gradient(135deg,rgba(200,151,74,0.08),rgba(0,0,0,0))] transition-colors duration-300">
+                        <div className="text-[2.3rem] leading-none mb-5">🏛️</div>
+                        <h3 className="font-serif text-[2.05rem] leading-[1.2] text-[#E8BE7A] font-light mb-5">
+                            Школы и учителя
+                        </h3>
+                        <p className="font-body text-[1.02rem] leading-[1.85] text-[#F5E4C3]/68 font-light">
+                            Полноценная платформа для музыкальных школ с интерактивной доской, инструментами отслеживания прогресса и готовой учебной программой по домбыре.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
     );

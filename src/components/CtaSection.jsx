@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 // Initialize EmailJS with your Public Key
 emailjs.init("Bl7VTVYE7GJyeQlxf");
 
-function CtaSection({ t, activeAccent }) {
+function CtaSection({ t }) {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -55,174 +54,134 @@ function CtaSection({ t, activeAccent }) {
     };
 
     return (
-        <section
-            className={`relative py-16 sm:py-24 px-4 ${activeAccent.ui.cta.section}`}
-        >
-            <div className="max-w-4xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className={`relative rounded-2xl sm:rounded-3xl overflow-hidden p-6 sm:p-10 md:p-16 ${activeAccent.ui.cta.container} border border-[color:var(--accent-border)]`}
-                >
-                    <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-[color:var(--accent-soft)] rounded-full blur-3xl -z-0" />
+        <section id="cta" className="relative bg-[#0D0B08] py-24 lg:py-32 px-4 lg:px-16 overflow-hidden">
+            <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                    background:
+                        "radial-gradient(ellipse at center, rgba(200,151,74,0.10) 0%, transparent 70%)",
+                }}
+            />
 
-                    <div className="relative z-10 space-y-8 sm:space-y-10">
-                        <div className="space-y-4 sm:space-y-6">
-                            <h2
-                                className={`text-3xl sm:text-4xl md:text-5xl font-bold ${activeAccent.ui.cta.heading}`}
-                            >
-                                {t.ctaTitle}
-                            </h2>
-                            <p className="text-base sm:text-lg text-[color:var(--accent-text)]">
-                                {t.ctaDescription}
-                            </p>
-                            <div className="space-y-3">
-                                {t.ctaBenefits.map((benefit, idx) => (
-                                    <motion.p
-                                        key={benefit}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: idx * 0.1 }}
-                                        viewport={{ once: true }}
-                                        className={`text-sm sm:text-base font-medium ${activeAccent.ui.cta.benefit}`}
-                                    >
-                                        {benefit}
-                                    </motion.p>
-                                ))}
-                            </div>
+            <div className="relative z-10 max-w-[980px] mx-auto">
+                <div className="text-center mb-12 reveal">
+                    <div className="flex justify-center items-center gap-4 mb-5">
+                        <div className="h-px w-8 bg-[#C8974A]" />
+                        <span className="font-display text-[10px] tracking-[0.45em] uppercase text-[#C8974A] font-light">
+                            Начать сейчас
+                        </span>
+                        <div className="h-px w-8 bg-[#C8974A]" />
+                    </div>
+
+                    <h2 className="font-serif text-5xl lg:text-6xl leading-[1.06] text-[#FDFAF5] font-light mb-6">
+                        Пусть домбыра<br />
+                        зазвучит <em className="text-[#C8974A] italic font-light">снова</em>
+                    </h2>
+
+                    <p className="max-w-[700px] mx-auto font-body text-[1.02rem] leading-[1.85] text-[#F5E4C3]/65 font-light">
+                        {t?.ctaDescription ||
+                            "Присоединяйтесь к ученикам, которые открывают для себя красоту казахской музыки через платформу Quimen."}
+                    </p>
+                </div>
+
+                <form
+                    onSubmit={handleSubmit}
+                    className="reveal reveal-delay-1 border border-[#C8974A]/18 bg-[#1A1510]/70 p-6 lg:p-10 space-y-5"
+                >
+                    <div className="grid md:grid-cols-2 gap-5">
+                        <div className="space-y-2">
+                            <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-name">
+                                {t.formNameLabel}
+                            </label>
+                            <input
+                                id="cta-name"
+                                name="name"
+                                type="text"
+                                placeholder={t.formNamePlaceholder}
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] placeholder:text-[#F5E4C3]/35 focus:outline-none focus:border-[#C8974A]/55"
+                                required
+                            />
                         </div>
 
-                        <motion.form
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            onSubmit={handleSubmit}
-                            className={`rounded-2xl border border-[color:var(--accent-border)] ${activeAccent.ui.cta.form} p-5 sm:p-6 md:p-8 space-y-4 sm:space-y-5 backdrop-blur`}
-                        >
-                            <div className="space-y-2">
-                                <label
-                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
-                                    htmlFor="cta-name"
-                                >
-                                    {t.formNameLabel}
-                                </label>
-                                <input
-                                    id="cta-name"
-                                    name="name"
-                                    type="text"
-                                    placeholder={t.formNamePlaceholder}
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
-                                    required
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label
-                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
-                                    htmlFor="cta-email"
-                                >
-                                    {t.formEmailLabel}
-                                </label>
-                                <input
-                                    id="cta-email"
-                                    name="email"
-                                    type="email"
-                                    placeholder={t.formEmailPlaceholder}
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
-                                    required
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label
-                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
-                                    htmlFor="cta-role"
-                                >
-                                    {t.formRoleLabel}
-                                </label>
-                                <select
-                                    id="cta-role"
-                                    name="role"
-                                    value={formData.role}
-                                    onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
-                                    required
-                                >
-                                    <option value="" disabled>
-                                        {t.formRoleLabel}
-                                    </option>
-                                    <option value="teacher">{t.formRoleTeacher}</option>
-                                    <option value="parent">{t.formRoleParent}</option>
-                                    <option value="student">{t.formRoleStudent}</option>
-                                    <option value="other">{t.formRoleOther}</option>
-                                </select>
-                            </div>
-
-                            <div className="space-y-2">
-                                <label
-                                    className={`text-sm font-semibold ${activeAccent.ui.cta.label}`}
-                                    htmlFor="cta-message"
-                                >
-                                    {t.formMessageLabel}
-                                </label>
-                                <textarea
-                                    id="cta-message"
-                                    name="message"
-                                    rows="4"
-                                    placeholder={t.formMessagePlaceholder}
-                                    value={formData.message}
-                                    onChange={handleInputChange}
-                                    className={`w-full rounded-lg border border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base ${activeAccent.ui.cta.input} focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-1)]`}
-                                    required
-                                />
-                            </div>
-
-                            <motion.button
-                                whileHover={{ scale: loading ? 1 : 1.03 }}
-                                whileTap={{ scale: loading ? 1 : 0.97 }}
-                                type="submit"
-                                disabled={loading}
-                                className={`w-full px-6 py-2.5 sm:py-3 bg-white text-black text-sm sm:text-base font-bold rounded-lg border border-black/10 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center ${loading ? "opacity-70 cursor-not-allowed" : ""
-                                    }`}
-                            >
-                                {loading ? "Отправка..." : t.formSubmitButton}
-                            </motion.button>
-
-                            {submitStatus === "success" && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    className="p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm text-center"
-                                >
-                                    ✓ Ваше сообщение успешно отправлено!
-                                </motion.div>
-                            )}
-
-                            {submitStatus === "error" && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    className="p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-sm text-center"
-                                >
-                                    ✕ Ошибка при отправке. Пожалуйста, попробуйте снова.
-                                </motion.div>
-                            )}
-
-                            <p className="text-xs text-[color:var(--accent-text)]">
-                                {t.formDisclaimer}
-                            </p>
-                        </motion.form>
+                        <div className="space-y-2">
+                            <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-email">
+                                {t.formEmailLabel}
+                            </label>
+                            <input
+                                id="cta-email"
+                                name="email"
+                                type="email"
+                                placeholder={t.formEmailPlaceholder}
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] placeholder:text-[#F5E4C3]/35 focus:outline-none focus:border-[#C8974A]/55"
+                                required
+                            />
+                        </div>
                     </div>
-                </motion.div>
+
+                    <div className="space-y-2">
+                        <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-role">
+                            {t.formRoleLabel}
+                        </label>
+                        <select
+                            id="cta-role"
+                            name="role"
+                            value={formData.role}
+                            onChange={handleInputChange}
+                            className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] focus:outline-none focus:border-[#C8974A]/55"
+                            required
+                        >
+                            <option value="" disabled>
+                                {t.formRoleLabel}
+                            </option>
+                            <option value="teacher">{t.formRoleTeacher}</option>
+                            <option value="parent">{t.formRoleParent}</option>
+                            <option value="student">{t.formRoleStudent}</option>
+                            <option value="other">{t.formRoleOther}</option>
+                        </select>
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-message">
+                            {t.formMessageLabel}
+                        </label>
+                        <textarea
+                            id="cta-message"
+                            name="message"
+                            rows="4"
+                            placeholder={t.formMessagePlaceholder}
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] placeholder:text-[#F5E4C3]/35 focus:outline-none focus:border-[#C8974A]/55"
+                            required
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className={`w-full inline-flex items-center justify-center font-display text-[0.66rem] tracking-[0.22em] uppercase text-[#0D0B08] bg-[#C8974A] px-10 py-4 hover:bg-[#E8BE7A] transition-colors duration-300 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                    >
+                        {loading ? "Отправка..." : t.formSubmitButton}
+                    </button>
+
+                    {submitStatus === "success" && (
+                        <div className="p-3 border border-green-500/45 bg-green-500/12 text-green-300 text-sm text-center">
+                            ✓ Ваше сообщение успешно отправлено!
+                        </div>
+                    )}
+
+                    {submitStatus === "error" && (
+                        <div className="p-3 border border-red-500/45 bg-red-500/12 text-red-300 text-sm text-center">
+                            ✕ Ошибка при отправке. Пожалуйста, попробуйте снова.
+                        </div>
+                    )}
+
+                    <p className="text-xs text-[#F5E4C3]/55 font-body">{t.formDisclaimer}</p>
+                </form>
             </div>
         </section>
     );
