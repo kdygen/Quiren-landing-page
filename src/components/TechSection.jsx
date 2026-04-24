@@ -1,24 +1,5 @@
-function TechSection() {
-    const steps = [
-        {
-            number: "01",
-            title: "Программа обучения",
-            description:
-                "Структурированная программа с видеоуроками, нотами и табулатурами. Вы всегда знаете, что делать дальше и учитесь без хаоса.",
-        },
-        {
-            number: "02",
-            title: "Приложение + устройство",
-            description:
-                "Приложение анализирует вашу игру в реальном времени, а LED-индикаторы на домбре показывают, куда ставить пальцы. Вы сразу видите и слышите свои ошибки.",
-        },
-        {
-            number: "03",
-            title: "Геймификация",
-            description:
-                "Уровни, достижения и цели помогают сохранять мотивацию. Вы видите свой прогресс и продолжаете обучение каждый день.",
-        },
-    ];
+function TechSection({ t }) {
+    const steps = t.techSteps || [];
 
     return (
         <section id="tech" className="bg-[#0D0B08] py-24 lg:py-32 px-4 lg:px-16 overflow-hidden">
@@ -27,12 +8,12 @@ function TechSection() {
                     <div className="flex items-center gap-4 mb-5">
                         <div className="h-px w-8 bg-[#C8974A]" />
                         <span className="font-display text-[10px] tracking-[0.45em] uppercase text-[#C8974A] font-light">
-                            Технология
+                            {t.techSectionLabel}
                         </span>
                     </div>
 
                     <h2 className="font-serif text-5xl lg:text-6xl leading-[1.05] text-[#FDFAF5] font-light mb-10">
-                        Как это <em className="text-[#C8974A] italic font-light">работает?</em>
+                        {t.techHeadingMain} <em className="text-[#C8974A] italic font-light">{t.techHeadingAccent}</em>
                     </h2>
 
                     <div className="space-y-8">
@@ -65,7 +46,7 @@ function TechSection() {
                     <div className="relative overflow-hidden aspect-[4/5] w-full max-w-[544px] mx-auto lg:ml-auto border border-[#C8974A]/18 bg-[#1A1510]">
                         <img
                             src={`${import.meta.env.BASE_URL}image-optimized.jpg`}
-                            alt="Учитель и ученик"
+                            alt={t.techImageAlt}
                             className="h-full w-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0D0B08]/20" />

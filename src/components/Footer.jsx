@@ -25,7 +25,7 @@ function Footer({ t, activeAccent }) {
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className={`font-semibold ${headingText}`}>Product</h3>
+                        <h3 className={`font-semibold ${headingText}`}>{t.footerProduct}</h3>
                         {t.navigation.slice(0, 3).map((item) => (
                             <a
                                 key={item.href}
@@ -38,22 +38,22 @@ function Footer({ t, activeAccent }) {
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className={`font-semibold ${headingText}`}>Community</h3>
+                        <h3 className={`font-semibold ${headingText}`}>{t.footerCommunity}</h3>
                         <a
                             href="#"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}
                         >
-                            Contact
+                            {t.footerContact}
                         </a>
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className={`font-semibold ${headingText}`}>Legal</h3>
+                        <h3 className={`font-semibold ${headingText}`}>{t.footerLegal}</h3>
                         <a
                             href="#"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}
                         >
-                            Privacy Policy
+                            {t.footerPrivacy}
                         </a>
                     </div>
                 </motion.div>
@@ -61,7 +61,7 @@ function Footer({ t, activeAccent }) {
                 <div
                     className={`border-t border-[color:var(--accent-border)] pt-6 sm:pt-8 text-center text-sm ${bodyText}`}
                 >
-                    <p>© 2026 Quimen. All rights reserved.</p>
+                    <p>{t.footerCopyright}</p>
                 </div>
             </div>
         </footer>

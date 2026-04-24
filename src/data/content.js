@@ -12,24 +12,136 @@ export const translations = {
         heroSubtitle: "звучит история",
         heroDescription:
             "Quimen — это платформа, которая делает казахскую музыкальную культуру доступной каждому. Учись играть на домбре с нуля, сохраняя живую связь с традицией предков.",
+        navMenu: "Меню",
+        navClose: "Закрыть",
         ctaButton: "Стать пилотным пользователем",
         learnMore: "Узнать подробнее",
         contactButton: "Оставить контакты",
         aboutTitle: "Что делает Quimen особенным?",
         aboutDescription:
             "Традиционные уроки по домбре часто требуют много времени, дороги до школы и зависят от расписания преподавателя. Quimen предлагает другой формат: вы сохраняете живого учителя, если он у вас есть, но переносите часть обучения на дом – с точной визуальной подсказкой и честной аналитикой. Устройство помогает ученику не теряться между уроками и постепенно формировать правильную технику.",
+        aboutSectionLabel: "О проекте",
+        aboutHeadingMain: "Традиция,",
+        aboutHeadingLine2: "рождённая",
+        aboutHeadingAccent: "заново",
+        aboutParagraph1:
+            "Quimen создан, чтобы ни одна казахская семья не теряла связь со своими музыкальными корнями. Мы стремимся к миру, в котором домбыра звучит в каждом доме.",
+        aboutParagraph2:
+            "На протяжении тысячелетий этот инструмент передавал истории, радость и мудрость от поколения к поколению. Сегодня мы соединяем древнее искусство с современными технологиями, создавая новый способ учиться, сохраняя и развивая традицию.",
+        aboutParagraph3:
+            "Мы не просто учим играть на инструменте. Мы передаём культуру, историю и дух казахского народа через живой звук домбыры.",
+        aboutImageAlt: "Прошлое и настоящее",
         whyTitle: "Почему Quimen?",
         whyDescription:
             "Наша задача – не заменить домбру гаджетом, а наоборот: сделать традиционный инструмент ближе к молодому поколению. Мы объединяем педагогику, технологии и уважение к казахской культуре, чтобы обучение стало системным и измеримым, но при этом живым и эмоциональным.",
+        whySectionLabel: "Инструмент",
+        whyHeadingMain: "Что такое",
+        whyHeadingAccent: "домбыра",
+        whyParagraph1:
+            "Домбыра — двуструнный щипковый инструмент, являющийся душой казахской музыкальной культуры. Её история насчитывает более тысячи лет. Великий Курмангазы, Дина Нүрпейісова и многие другие кюйши создали на ней бессмертные произведения.",
+        whyParagraph2:
+            "Кюй — инструментальная пьеса для домбыры — это не просто музыка. Это живое послание предков, зашифрованное в звуках степного ветра, журчании рек и дыхании казахской земли.",
+        whyParagraph3:
+            "Сегодня Quimen несёт эту традицию в будущее — делая её интерактивной, доступной и живой для новых поколений.",
+        whyImageAlt: "Домбыра",
         techTitle: "Основные технологии",
         techDescription:
             "Мы строим продукт на стыке железа, софта и педагогики. Каждый элемент – от LEDs до алгоритмов анализа – создан для того, чтобы обучение было понятным даже без технических знаний.",
+        techSectionLabel: "Технология",
+        techHeadingMain: "Как это",
+        techHeadingAccent: "работает?",
+        techImageAlt: "Учитель и ученик",
+        techSteps: [
+            {
+                number: "01",
+                title: "Программа обучения",
+                description:
+                    "Структурированная программа с видеоуроками, нотами и табулатурами. Вы всегда знаете, что делать дальше и учитесь без хаоса.",
+            },
+            {
+                number: "02",
+                title: "Приложение + устройство",
+                description:
+                    "Приложение анализирует вашу игру в реальном времени, а LED-индикаторы на домбре показывают, куда ставить пальцы. Вы сразу видите и слышите свои ошибки.",
+            },
+            {
+                number: "03",
+                title: "Геймификация",
+                description:
+                    "Уровни, достижения и цели помогают сохранять мотивацию. Вы видите свой прогресс и продолжаете обучение каждый день.",
+            },
+        ],
+        appSectionLabel: "Приложение",
+        appHeadingLine1: "Домбыра",
+        appHeadingLine2: "в твоём",
+        appHeadingAccent: "кармане",
+        appPhoneSongsLabel: "SONGS",
+        appPhoneTrackTitle: "Кюй Балбарауын — Традиционный",
+        appPhonePortsActive: "2 ports active",
+        appPhoneStepLabel: "Шаг 3 / 5",
+        appPhoneSpeed08: "0.8x",
+        appPhoneSpeed10: "1x",
+        appPhoneSpeed16: "1.6x",
+        appPhoneSpeed20: "2x",
+        appFeatures: [
+            {
+                icon: "♪",
+                title: "Интерактивные ноты",
+                description:
+                    "Система подсчевает текущую ноту в реальном времени. Следите за ключем шаг за шагом с визуальной подсказкой.",
+            },
+            {
+                icon: "●",
+                title: "Контроль темпа",
+                description:
+                    "Регулируйте скорость воспроизведения от 0.5• до 2•. Учитесь в своём ритме, не теряя мелодической линии.",
+            },
+            {
+                icon: "⚡",
+                title: "Световая поддержка",
+                description:
+                    "Подключите смарт-светильник и система визуально дублирует ноты через свет — уникальный опыт погружения в музыку.",
+            },
+            {
+                icon: "↻",
+                title: "Повтор и прогресс",
+                description:
+                    "Отслеживайте каждый шаг обучения. Повторяйте сложные фрагменты до полного освоения.",
+            },
+        ],
         audienceTitle: "Для кого мы создаём Quimen?",
         audienceDescription:
             "Мы думаем о Quimen как о мосте между поколениями: бабушки и дедушки, которые играют традиционные кюи, дети, которые привыкли к смартфону, и преподаватели, которые хотят видеть реальный прогресс учеников.",
+        audienceSectionLabel: "Аудитория",
+        audienceHeadingMain: "Для",
+        audienceHeadingAccent: "кого",
+        audienceCards: [
+            {
+                icon: "🧒",
+                title: "Дети 6–14 лет",
+                description:
+                    "Ваш ребёнок познакомится с казахской музыкальной культурой через игровой и интерактивный формат. Занятия развивают музыкальный слух, координацию и культурную идентичность.",
+            },
+            {
+                icon: "👩‍🎓",
+                title: "Подростки и студенты",
+                description:
+                    "Хочешь освоить домбыру самостоятельно? Наша платформа даёт полную свободу в выборе темпа и времени обучения. Учись в любое время — прогресс всегда с тобой.",
+            },
+            {
+                icon: "🏛️",
+                title: "Школы и учителя",
+                description:
+                    "Полноценная платформа для музыкальных школ с интерактивной доской, инструментами отслеживания прогресса и готовой учебной программой по домбыре.",
+            },
+        ],
         ctaTitle: "Присоединиться к пилотной программе",
         ctaDescription:
             "Мы собираем список музыкальных школ, преподавателей и семей, которые хотят протестировать Quimen раньше других. Оставьте контакты – мы свяжемся с вами, как только будем готовы к следующей волне пилотов.",
+        ctaSectionLabel: "Начать сейчас",
+        ctaHeadingLine1: "Пусть домбыра",
+        ctaHeadingLine2: "зазвучит",
+        ctaHeadingAccent: "снова",
         faqTitle: "Частые вопросы",
         formNameLabel: "Имя и фамилия",
         formNamePlaceholder: "Например, Алия Нурлыбек",
@@ -43,8 +155,17 @@ export const translations = {
         formMessageLabel: "Сообщение (необязательно)",
         formMessagePlaceholder: "Расскажите пару слов о себе или вашей школе",
         formSubmitButton: "Отправить заявку",
+        formSubmitting: "Отправка...",
+        formSuccess: "✓ Ваше сообщение успешно отправлено!",
+        formError: "✕ Ошибка при отправке. Пожалуйста, попробуйте снова.",
         formDisclaimer:
             "Отправляя форму, вы соглашаетесь получать от нас e-mail с обновлениями о проекте. Никакого спама.",
+        footerProduct: "Product",
+        footerCommunity: "Community",
+        footerLegal: "Legal",
+        footerContact: "Contact",
+        footerPrivacy: "Privacy Policy",
+        footerCopyright: "© 2026 Quimen. All rights reserved.",
         ctaBenefits: [
             "• Ранняя скидка на устройство",
             "• Совместная разработка образовательной программы",
@@ -134,25 +255,137 @@ export const translations = {
         heroTitle: "History speaks",
         heroSubtitle: "when you play dombra",
         heroDescription:
-            "The first smart dombra with LED lighting and live feedback. Quimen brings together traditional dombra and cutting-edge technology. The device shows you exactly where to place your fingers, listens to your playing through your phone, and guides you step-by-step through kuis – from your first notes to complex masterpieces.",
+            "Quimen is a platform that makes Kazakh musical culture accessible to everyone. Learn to play dombra from scratch while preserving a living connection with ancestral tradition.",
+        navMenu: "Menu",
+        navClose: "Close",
         ctaButton: "Join the pilot program",
         learnMore: "Learn more",
         contactButton: "Get in touch",
         aboutTitle: "What makes Quimen special?",
         aboutDescription:
             "Traditional dombra lessons often require significant time investment, travel to schools, and depend on teacher availability. Quimen offers a different approach: keep your live teacher if you have one, but bring part of your learning home – with precise visual guidance and honest feedback. The device helps students stay engaged between lessons and gradually develop proper technique.",
+        aboutSectionLabel: "About",
+        aboutHeadingMain: "Tradition,",
+        aboutHeadingLine2: "reborn",
+        aboutHeadingAccent: "again",
+        aboutParagraph1:
+            "Quimen was created so that no Kazakh family loses touch with its musical roots. We strive for a world where the dombra sounds in every home.",
+        aboutParagraph2:
+            "For millennia, this instrument has passed stories, joy, and wisdom from generation to generation. Today we connect ancient art with modern technology, creating a new way to learn while preserving and developing tradition.",
+        aboutParagraph3:
+            "We do not just teach an instrument. We pass on the culture, history, and spirit of the Kazakh people through the living sound of the dombra.",
+        aboutImageAlt: "Past and present",
         whyTitle: "Why Quimen?",
         whyDescription:
             "Our mission isn't to replace the dombra with a gadget, but rather to bring this traditional instrument closer to the younger generation. We combine pedagogy, technology, and deep respect for Kazakh culture to make learning systematic and measurable, while keeping it alive and emotionally engaging.",
+        whySectionLabel: "Instrument",
+        whyHeadingMain: "What is",
+        whyHeadingAccent: "dombra",
+        whyParagraph1:
+            "Dombra is a two-string plucked instrument and the soul of Kazakh musical culture. Its history spans more than a thousand years. Great masters such as Kurmangazy, Dina Nurpeisova, and many others created immortal works with it.",
+        whyParagraph2:
+            "Kuy, an instrumental piece for dombra, is not just music. It is a living message of ancestors encrypted in the sounds of the steppe wind, river murmur, and breath of the Kazakh land.",
+        whyParagraph3:
+            "Today, Quimen carries this tradition into the future, making it interactive, accessible, and alive for new generations.",
+        whyImageAlt: "Dombra",
         techTitle: "Core Technologies",
         techDescription:
             "We're building at the intersection of hardware, software, and pedagogy. Every component – from LEDs to analysis algorithms – is designed to make learning intuitive, even without technical knowledge.",
+        techSectionLabel: "Technology",
+        techHeadingMain: "How it",
+        techHeadingAccent: "works?",
+        techImageAlt: "Teacher and student",
+        techSteps: [
+            {
+                number: "01",
+                title: "Learning Program",
+                description:
+                    "A structured program with video lessons, notes, and tablature. You always know what to do next and learn without chaos.",
+            },
+            {
+                number: "02",
+                title: "App + Device",
+                description:
+                    "The app analyzes your playing in real time, while LED indicators on the dombra show where to place your fingers. You immediately see and hear your mistakes.",
+            },
+            {
+                number: "03",
+                title: "Gamification",
+                description:
+                    "Levels, achievements, and goals help you stay motivated. You see your progress and continue learning every day.",
+            },
+        ],
+        appSectionLabel: "Application",
+        appHeadingLine1: "Dombra",
+        appHeadingLine2: "in your",
+        appHeadingAccent: "pocket",
+        appPhoneSongsLabel: "SONGS",
+        appPhoneTrackTitle: "Kuy Balbarauyn — Traditional",
+        appPhonePortsActive: "2 ports active",
+        appPhoneStepLabel: "Step 3 / 5",
+        appPhoneSpeed08: "0.8x",
+        appPhoneSpeed10: "1x",
+        appPhoneSpeed16: "1.6x",
+        appPhoneSpeed20: "2x",
+        appFeatures: [
+            {
+                icon: "♪",
+                title: "Interactive Notes",
+                description:
+                    "The system highlights the current note in real time. Follow each key step-by-step with visual guidance.",
+            },
+            {
+                icon: "●",
+                title: "Tempo Control",
+                description:
+                    "Adjust playback speed from 0.5x to 2x. Learn at your own pace without losing the melodic line.",
+            },
+            {
+                icon: "⚡",
+                title: "Light Support",
+                description:
+                    "Connect a smart light and the system duplicates notes through light for an immersive musical experience.",
+            },
+            {
+                icon: "↻",
+                title: "Repetition and Progress",
+                description:
+                    "Track every learning step. Repeat difficult fragments until full mastery.",
+            },
+        ],
         audienceTitle: "Who is Quimen for?",
         audienceDescription:
             "We see Quimen as a bridge between generations: grandparents who play traditional kuis, children who grew up with smartphones, and teachers who want to see real student progress.",
+        audienceSectionLabel: "Audience",
+        audienceHeadingMain: "For",
+        audienceHeadingAccent: "whom",
+        audienceCards: [
+            {
+                icon: "🧒",
+                title: "Children 6–14",
+                description:
+                    "Your child will discover Kazakh musical culture through an engaging interactive format. Classes develop musical hearing, coordination, and cultural identity.",
+            },
+            {
+                icon: "👩‍🎓",
+                title: "Teens and Students",
+                description:
+                    "Want to master dombra independently? Our platform gives full freedom in pace and schedule. Learn anytime and keep your progress with you.",
+            },
+            {
+                icon: "🏛️",
+                title: "Schools and Teachers",
+                description:
+                    "A complete platform for music schools with interactive tools, progress tracking, and a ready dombra curriculum.",
+            },
+        ],
         ctaTitle: "Join our pilot program",
         ctaDescription:
             "We're building a community of music schools, teachers, and families who want to experience Quimen before anyone else. Share your contact details – we'll reach out when we're ready for the next wave of pilots.",
+        ctaSectionLabel: "Start now",
+        ctaHeadingLine1: "Let the dombra",
+        ctaHeadingLine2: "sound",
+        ctaHeadingAccent: "again",
         faqTitle: "Frequently Asked Questions",
         formNameLabel: "Full Name",
         formNamePlaceholder: "For example, John Smith",
@@ -167,8 +400,17 @@ export const translations = {
         formMessagePlaceholder:
             "Tell us a few words about yourself or your school",
         formSubmitButton: "Submit Application",
+        formSubmitting: "Sending...",
+        formSuccess: "✓ Your message has been sent successfully!",
+        formError: "✕ Sending failed. Please try again.",
         formDisclaimer:
             "By submitting the form, you agree to receive emails from us with project updates. No spam.",
+        footerProduct: "Product",
+        footerCommunity: "Community",
+        footerLegal: "Legal",
+        footerContact: "Contact",
+        footerPrivacy: "Privacy Policy",
+        footerCopyright: "© 2026 Quimen. All rights reserved.",
         ctaBenefits: [
             "• Early discount on the device",
             "• Joint development of educational program",
@@ -258,25 +500,137 @@ export const translations = {
         heroTitle: "Күй тартқанда",
         heroSubtitle: "тарих сөйлейді",
         heroDescription:
-            "Алғашқы ақылды домбыра LED жарықтандыру және тікелей кері байланыспен. Quimen арқылы ата-бабалардың домбырасы заманауи технологиямен кездеседі. Саусақты қайда басу керектігін жарық арқылы көрсетеді, телефон арқылы ойнағаныңызды тыңдайды, күйлерді үйренуде қадам сайын жетелейді.",
+            "Quimen — қазақ музыкалық мәдениетін баршаға қолжетімді ететін платформа. Домбыраны нөлден үйреніп, ата дәстүрімен тірі байланысты сақта.",
+        navMenu: "Мәзір",
+        navClose: "Жабу",
         ctaButton: "Алғашқылардан болу",
         learnMore: "Көбірек білу",
         contactButton: "Хабарласу",
         aboutTitle: "Quimen неге ерекше?",
         aboutDescription:
             "Дәстүрлі домбыра сабақтары көбінесе көп уақытты, мектепке жол жүруді талап етеді және мұғалімнің кестесіне тәуелді болады. Quimen басқа форматты ұсынады: егер сізде тірі мұғалім болса, оны сақтайсыз, бірақ оқытудың бір бөлігін үйге көшіресіз – дәл визуалды нұсқаулар мен адал аналитикамен. Құрылғы оқушыға сабақтар арасында адаспауға және біртіндеп дұрыс техниканы қалыптастыруға көмектеседі.",
+        aboutSectionLabel: "Жоба туралы",
+        aboutHeadingMain: "Дәстүр,",
+        aboutHeadingLine2: "қайта",
+        aboutHeadingAccent: "жаңғырған",
+        aboutParagraph1:
+            "Quimen әрбір қазақ отбасы музыкалық тамырымен байланысын жоғалтпау үшін жасалды. Біз домбыра әр үйде шырқалатын әлемге ұмтыламыз.",
+        aboutParagraph2:
+            "Мыңдаған жылдар бойы бұл аспап ұрпақтан ұрпаққа тарих, қуаныш және даналық жеткізді. Бүгін біз көне өнерді заманауи технологиямен ұштастырып, дәстүрді сақтай отырып үйренудің жаңа жолын ұсынамыз.",
+        aboutParagraph3:
+            "Біз тек аспапта ойнауды үйретпейміз. Домбыраның тірі үні арқылы қазақ халқының мәдениеті, тарихы мен рухын жеткіземіз.",
+        aboutImageAlt: "Өткен мен бүгін",
         whyTitle: "Неге Quimen таңдау керек?",
         whyDescription:
             "Біздің мақсат - домбыраны гаджетке айналдыру емес. Керісінше, ата-бабалардың аспабын жас балаларға жақындату. Дәстүр мен технологияны, мұғалімдік пен жаңалықты бірге қолданып, үйренуді қызықты әрі нәтижелі етеміз.",
+        whySectionLabel: "Аспап",
+        whyHeadingMain: "Домбыра",
+        whyHeadingAccent: "деген не",
+        whyParagraph1:
+            "Домбыра — қазақ музыка мәдениетінің жаны саналатын қос ішекті шертпелі аспап. Оның тарихы мың жылдан асады. Құрманғазы, Дина Нұрпейісова және өзге де күйшілер осы аспапта мәңгі туындыларды дүниеге әкелді.",
+        whyParagraph2:
+            "Күй — жай әуен емес, ол домбыра арқылы жеткен ата-бабаның тірі аманаты. Онда дала желі, өзен сарыны және қазақ жерінің тынысы бар.",
+        whyParagraph3:
+            "Бүгін Quimen осы дәстүрді болашаққа жеткізіп, оны жаңа ұрпақ үшін интерактивті, қолжетімді әрі тірі етеді.",
+        whyImageAlt: "Домбыра",
         techTitle: "Қалай жұмыс істейді",
         techDescription:
             "Техника, бағдарлама және педагогиканы бірге қолданамыз. LED жарығынан бастап дыбыс талдауға дейін барлығы техникалық білімсіз де түсінікті болуы үшін жасалған.",
+        techSectionLabel: "Технология",
+        techHeadingMain: "Бұл қалай",
+        techHeadingAccent: "жұмыс істейді?",
+        techImageAlt: "Ұстаз бен оқушы",
+        techSteps: [
+            {
+                number: "01",
+                title: "Оқу бағдарламасы",
+                description:
+                    "Бейнесабақтар, ноталар және табулатуралардан тұратын құрылымды бағдарлама. Әрі қарай не істеу керегін әрдайым біліп, ретсіздіксіз үйренесіз.",
+            },
+            {
+                number: "02",
+                title: "Қосымша + құрылғы",
+                description:
+                    "Қосымша ойыныңызды нақты уақытта талдайды, ал домбырадағы LED-көрсеткіштер саусақты қайда қою керегін көрсетеді. Қатеңізді бірден көріп, естисіз.",
+            },
+            {
+                number: "03",
+                title: "Геймификация",
+                description:
+                    "Деңгейлер, жетістіктер және мақсаттар ынтаны сақтауға көмектеседі. Сіз өз прогресіңізді көріп, күн сайын үйренуді жалғастырасыз.",
+            },
+        ],
+        appSectionLabel: "Қосымша",
+        appHeadingLine1: "Домбыра",
+        appHeadingLine2: "сенің",
+        appHeadingAccent: "қалтаңда",
+        appPhoneSongsLabel: "SONGS",
+        appPhoneTrackTitle: "Күй Балбарауын — Дәстүрлі",
+        appPhonePortsActive: "2 ports active",
+        appPhoneStepLabel: "Қадам 3 / 5",
+        appPhoneSpeed08: "0.8x",
+        appPhoneSpeed10: "1x",
+        appPhoneSpeed16: "1.6x",
+        appPhoneSpeed20: "2x",
+        appFeatures: [
+            {
+                icon: "♪",
+                title: "Интерактивті ноталар",
+                description:
+                    "Жүйе ағымдағы нотаны нақты уақытта көрсетеді. Көрнекі нұсқаумен әр қадамды біртіндеп бақылаңыз.",
+            },
+            {
+                icon: "●",
+                title: "Темпті бақылау",
+                description:
+                    "Ойнату жылдамдығын 0.5x-тен 2x-ке дейін реттеңіз. Әуенді жоғалтпай өз ырғағыңызбен үйреніңіз.",
+            },
+            {
+                icon: "⚡",
+                title: "Жарықпен қолдау",
+                description:
+                    "Смарт-шамды қосыңыз, жүйе ноталарды жарық арқылы қайталайды — музыкаға терең енуге мүмкіндік береді.",
+            },
+            {
+                icon: "↻",
+                title: "Қайталау және прогресс",
+                description:
+                    "Оқудың әр қадамын бақылаңыз. Күрделі бөліктерді толық меңгергенше қайталаңыз.",
+            },
+        ],
         audienceTitle: "Кімге арналған",
         audienceDescription:
             "Quimen ұрпақтарды жалғастырады: күй ойнайтын ата-әжелер, телефонмен өскен балалар, оқушылардың дамуын көргісі келетін мұғалімдер - барлығына бірдей пайдалы.",
+        audienceSectionLabel: "Аудитория",
+        audienceHeadingMain: "Quimen",
+        audienceHeadingAccent: "кімге",
+        audienceCards: [
+            {
+                icon: "🧒",
+                title: "6–14 жастағы балалар",
+                description:
+                    "Балаңыз қазақ музыка мәдениетін ойын және интерактивті формат арқылы таниды. Сабақтар есту қабілетін, координацияны және мәдени бірегейлікті дамытады.",
+            },
+            {
+                icon: "👩‍🎓",
+                title: "Жасөспірімдер мен студенттер",
+                description:
+                    "Домбыраны өз бетіңше меңгергің келе ме? Біздің платформа қарқын мен уақытты еркін таңдауға мүмкіндік береді. Кез келген уақытта үйреніп, прогресті бақылаңыз.",
+            },
+            {
+                icon: "🏛️",
+                title: "Мектептер мен мұғалімдер",
+                description:
+                    "Домбыра бойынша дайын бағдарлама, прогресті бақылау және интерактивті құралдары бар музыка мектептеріне арналған толық платформа.",
+            },
+        ],
         ctaTitle: "Алғашқы қолданушылар тобына қосылу",
         ctaDescription:
             "Quimen-ді басқалардан бұрын сынап көргісі келетін музыка мектептері, мұғалімдер, отбасылар іздеп жатырмыз. Байланыс жолдарыңызды қалдырыңыз - дайын болғанда хабарласамыз.",
+        ctaSectionLabel: "Қазір бастау",
+        ctaHeadingLine1: "Домбыра",
+        ctaHeadingLine2: "қайта",
+        ctaHeadingAccent: "жаңғырсын",
         faqTitle: "Көп сұралатын сұрақтар",
         formNameLabel: "Есіміңіз",
         formNamePlaceholder: "Мысалы: Айгүл Нұрланқызы",
@@ -290,8 +644,17 @@ export const translations = {
         formMessageLabel: "Қосымша ақпарат",
         formMessagePlaceholder: "Өзіңіз немесе мектебіңіз туралы айтыңыз",
         formSubmitButton: "Жіберу",
+        formSubmitting: "Жіберілуде...",
+        formSuccess: "✓ Хабарламаңыз сәтті жіберілді!",
+        formError: "✕ Жіберу кезінде қате болды. Қайталап көріңіз.",
         formDisclaimer:
             "Форманы толтыру арқылы жоба жаңалықтарын алуға келісесіз. Спам жоқ.",
+        footerProduct: "Өнім",
+        footerCommunity: "Қауымдастық",
+        footerLegal: "Құқықтық",
+        footerContact: "Байланыс",
+        footerPrivacy: "Құпиялық саясаты",
+        footerCopyright: "© 2026 Quimen. Барлық құқықтар қорғалған.",
         ctaBenefits: [
             "• Құрылғыны арзанырақ алу мүмкіндігі",
             "• Оқу бағдарламасын бірге жасау",

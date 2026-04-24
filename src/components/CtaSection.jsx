@@ -68,19 +68,18 @@ function CtaSection({ t }) {
                     <div className="flex justify-center items-center gap-4 mb-5">
                         <div className="h-px w-8 bg-[#C8974A]" />
                         <span className="font-display text-[10px] tracking-[0.45em] uppercase text-[#C8974A] font-light">
-                            Начать сейчас
+                            {t.ctaSectionLabel}
                         </span>
                         <div className="h-px w-8 bg-[#C8974A]" />
                     </div>
 
                     <h2 className="font-serif text-5xl lg:text-6xl leading-[1.06] text-[#FDFAF5] font-light mb-6">
-                        Пусть домбыра<br />
-                        зазвучит <em className="text-[#C8974A] italic font-light">снова</em>
+                        {t.ctaHeadingLine1}<br />
+                        {t.ctaHeadingLine2} <em className="text-[#C8974A] italic font-light">{t.ctaHeadingAccent}</em>
                     </h2>
 
                     <p className="max-w-[700px] mx-auto font-body text-[1.02rem] leading-[1.85] text-[#F5E4C3]/65 font-light">
-                        {t?.ctaDescription ||
-                            "Присоединяйтесь к ученикам, которые открывают для себя красоту казахской музыки через платформу Quimen."}
+                        {t.ctaDescription}
                     </p>
                 </div>
 
@@ -165,18 +164,18 @@ function CtaSection({ t }) {
                         disabled={loading}
                         className={`w-full inline-flex items-center justify-center font-display text-[0.66rem] tracking-[0.22em] uppercase text-[#0D0B08] bg-[#C8974A] px-10 py-4 hover:bg-[#E8BE7A] transition-colors duration-300 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
                     >
-                        {loading ? "Отправка..." : t.formSubmitButton}
+                        {loading ? t.formSubmitting : t.formSubmitButton}
                     </button>
 
                     {submitStatus === "success" && (
                         <div className="p-3 border border-green-500/45 bg-green-500/12 text-green-300 text-sm text-center">
-                            ✓ Ваше сообщение успешно отправлено!
+                            {t.formSuccess}
                         </div>
                     )}
 
                     {submitStatus === "error" && (
                         <div className="p-3 border border-red-500/45 bg-red-500/12 text-red-300 text-sm text-center">
-                            ✕ Ошибка при отправке. Пожалуйста, попробуйте снова.
+                            {t.formError}
                         </div>
                     )}
 

@@ -42,7 +42,7 @@ function App() {
       <AboutSection t={t} activeAccent={activeAccent} />
       <WhySection t={t} activeAccent={activeAccent} />
       <TechSection t={t} activeAccent={activeAccent} />
-      <AppSection />
+      <AppSection t={t} />
       <AudienceSection t={t} activeAccent={activeAccent} />
       <CtaSection t={t} activeAccent={activeAccent} />
       <Footer t={t} activeAccent={activeAccent} />

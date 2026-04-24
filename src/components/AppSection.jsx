@@ -1,30 +1,5 @@
-function AppSection() {
-    const features = [
-        {
-            icon: "♪",
-            title: "Интерактивные ноты",
-            description:
-                "Система подсчевает текущую ноту в реальном времени. Следите за ключем шаг за шагом с визуальной подсказкой.",
-        },
-        {
-            icon: "●",
-            title: "Контроль темпа",
-            description:
-                "Регулируйте скорость воспроизведения от 0.5• до 2•. Учитесь в своём ритме, не теряя мелодической линии.",
-        },
-        {
-            icon: "⚡",
-            title: "Световая поддержка",
-            description:
-                "Подключите смарт-светильник и система визуально дублирует ноты через свет — уникальный опыт погружения в музыку.",
-        },
-        {
-            icon: "↻",
-            title: "Повтор и прогресс",
-            description:
-                "Отслеживайте каждый шаг обучения. Повторяйте сложные фрагменты до полного освоения.",
-        },
-    ];
+function AppSection({ t }) {
+    const features = t.appFeatures || [];
 
     return (
         <section id="app" className="bg-[#1A1510] py-24 lg:py-32 px-4 lg:px-16">
@@ -38,19 +13,19 @@ function AppSection() {
                                 <div className="text-center space-y-6">
                                     <div className="text-6xl">🎵</div>
                                     <div className="space-y-2">
-                                        <p className="text-[0.7rem] tracking-widest text-[#C8974A]">SONGS</p>
+                                        <p className="text-[0.7rem] tracking-widest text-[#C8974A]">{t.appPhoneSongsLabel}</p>
                                         <p className="text-sm font-serif text-[#F5E4C3]">
-                                            Кюй Балбарауын — Традиционный
+                                            {t.appPhoneTrackTitle}
                                         </p>
                                     </div>
                                     <div className="bg-[#1A1510] rounded-lg p-4 min-h-[100px] flex items-center justify-center">
                                         <div className="text-4xl">♪ ♪</div>
                                     </div>
-                                    <div className="text-[0.65rem] text-[#C8974A]">2 ports active</div>
+                                    <div className="text-[0.65rem] text-[#C8974A]">{t.appPhonePortsActive}</div>
                                     <div className="w-full h-1 bg-[#C8974A]/20 rounded-full overflow-hidden">
                                         <div className="w-1/3 h-full bg-[#C8974A]/60" />
                                     </div>
-                                    <p className="text-[0.65rem] text-[#C8974A]">Шаг 3 / 5</p>
+                                    <p className="text-[0.65rem] text-[#C8974A]">{t.appPhoneStepLabel}</p>
                                     <div className="flex justify-center gap-3 pt-2">
                                         <button className="w-8 h-8 border border-[#C8974A]/30 rounded-full flex items-center justify-center text-[#C8974A] text-xs">
                                             ⏮
@@ -69,10 +44,10 @@ function AppSection() {
                                         </button>
                                     </div>
                                     <div className="flex justify-center gap-2 text-[0.65rem]">
-                                        <span className="text-[#C8974A]">0.8x</span>
-                                        <span className="text-[#7CB342]">1x</span>
-                                        <span className="text-[#C8974A]">1.6x</span>
-                                        <span className="text-[#C8974A]">2x</span>
+                                        <span className="text-[#C8974A]">{t.appPhoneSpeed08}</span>
+                                        <span className="text-[#7CB342]">{t.appPhoneSpeed10}</span>
+                                        <span className="text-[#C8974A]">{t.appPhoneSpeed16}</span>
+                                        <span className="text-[#C8974A]">{t.appPhoneSpeed20}</span>
                                     </div>
                                 </div>
                             </div>
@@ -89,13 +64,13 @@ function AppSection() {
                     <div className="flex items-center gap-4 mb-5">
                         <div className="h-px w-8 bg-[#C8974A]" />
                         <span className="font-display text-[10px] tracking-[0.45em] uppercase text-[#C8974A] font-light">
-                            Приложение
+                            {t.appSectionLabel}
                         </span>
                     </div>
 
                     <h2 className="font-serif text-5xl lg:text-6xl leading-[1.08] text-[#FDFAF5] font-light mb-6">
-                        Домбыра<br />
-                        в твоём <em className="text-[#C8974A] italic font-light">кармане</em>
+                        {t.appHeadingLine1}<br />
+                        {t.appHeadingLine2} <em className="text-[#C8974A] italic font-light">{t.appHeadingAccent}</em>
                     </h2>
 
                     <div className="flex items-center gap-7 mb-10">

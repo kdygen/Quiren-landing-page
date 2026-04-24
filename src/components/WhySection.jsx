@@ -1,4 +1,4 @@
-function WhySection() {
+function WhySection({ t }) {
     return (
         <section id="why" className="bg-[#1A1510] py-20 lg:py-28 px-4 lg:px-16">
             <div className="max-w-[1400px] mx-auto">
@@ -7,7 +7,7 @@ function WhySection() {
                         <div className="relative overflow-hidden aspect-[4/5] w-full max-w-[544px] mx-auto lg:mx-0 border border-[#C8974A]/20">
                             <img
                                 src={`${import.meta.env.BASE_URL}987c341f500edab44f9c8497cf840952.jpg`}
-                                alt="Домбыра"
+                                alt={t.whyImageAlt}
                                 className="h-full w-full object-cover"
                             />
                         </div>
@@ -21,25 +21,25 @@ function WhySection() {
                             <div className="mx-auto max-w-[760px]">
                                 <div className="flex justify-center items-center gap-3 mb-4">
                                     <span className="font-display text-[10px] font-light tracking-[0.45em] uppercase text-[#C8974A]">
-                                        Инструмент
+                                        {t.whySectionLabel}
                                     </span>
                                 </div>
 
                                 <h2 className="font-serif text-5xl lg:text-6xl leading-[1.05] font-light text-[#FDFAF5] mb-12">
-                                    Что такое <em className="text-[#C8974A] italic font-light">домбыра</em>?
+                                    {t.whyHeadingMain} <em className="text-[#C8974A] italic font-light">{t.whyHeadingAccent}</em>?
                                 </h2>
 
                                 <div className="space-y-8">
                                     <p className="font-serif text-[20px] leading-[1.9] text-[#F5E4C3]/75 font-light">
-                                        Домбыра — двуструнный щипковый инструмент, являющийся душой казахской музыкальной культуры. Её история насчитывает более тысячи лет. Великий Курмангазы, Дина Нүрпейісова и многие другие кюйши создали на ней бессмертные произведения.
+                                        {t.whyParagraph1}
                                     </p>
 
                                     <p className="font-serif text-[20px] leading-[1.9] text-[#F5E4C3]/75 font-light">
-                                        Кюй — инструментальная пьеса для домбыры — это не просто музыка. Это живое послание предков, зашифрованное в звуках степного ветра, журчании рек и дыхании казахской земли.
+                                        {t.whyParagraph2}
                                     </p>
 
                                     <p className="font-serif text-[20px] leading-[1.9] text-[#F5E4C3]/75 font-light">
-                                        Сегодня Quimen несёт эту традицию в будущее — делая её интерактивной, доступной и живой для новых поколений.
+                                        {t.whyParagraph3}
                                     </p>
                                 </div>
                             </div>

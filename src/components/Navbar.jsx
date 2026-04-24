@@ -97,7 +97,7 @@ function Navbar({
                             aria-label="Toggle menu"
                         >
                             <span className="text-xs sm:text-sm font-semibold">
-                                {mobileMenuOpen ? "Close" : "Menu"}
+                                {mobileMenuOpen ? t.navClose : t.navMenu}
                             </span>
                         </button>
                     </div>
