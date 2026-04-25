@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen overflow-hidden ${activeAccent.pageBackground}`}
+      className={`min-h-screen overflow-x-hidden ${activeAccent.pageBackground}`}
       style={{
         "--accent-1": activeAccent.primary,
         "--accent-2": activeAccent.secondary,
@@ -41,7 +41,7 @@ function App() {
       <Hero t={t} activeAccent={activeAccent} />
       <AboutSection t={t} activeAccent={activeAccent} />
       <WhySection t={t} activeAccent={activeAccent} />
-      <TechSection t={t} activeAccent={activeAccent} />
+      <TechSection t={t} />
       <AppSection t={t} />
       <AudienceSection t={t} activeAccent={activeAccent} />
       <CtaSection t={t} activeAccent={activeAccent} />
