@@ -1,7 +1,7 @@
 function AboutSection({ t }) {
     return (
-        <section id="about" className="relative bg-[#0D0B08] py-20 lg:py-28 px-4 lg:px-16">
-            <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <section id="about" className="relative bg-[#0D0B08] py-20 lg:py-28 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="max-w-[720px] reveal">
                     <div className="flex items-center gap-4 mb-7">
                         <div className="h-px w-8 bg-[#C8974A]" />

@@ -2,8 +2,8 @@ import DombraModelViewer from "./DombraModelViewer";
 
 function WhySection({ t }) {
     return (
-        <section id="why" className="bg-[#1A1510] py-20 lg:py-28 px-4">
-            <div className="max-w-[1100px] mx-auto text-center">
+        <section id="why" className="bg-[#1A1510] py-20 lg:py-28 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto text-center">
                 <div className="reveal">
                     <div className="flex justify-center items-center gap-3 mb-4">
                         <span className="font-display text-[10px] font-light tracking-[0.45em] uppercase text-[#C8974A]">

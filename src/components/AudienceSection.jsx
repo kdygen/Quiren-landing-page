@@ -2,8 +2,8 @@ function AudienceSection({ t }) {
     const cards = t.audienceCards || [];
 
     return (
-        <section id="audience" className="bg-[#0D0B08] py-24 lg:py-32 px-4 lg:px-16">
-            <div className="max-w-[1400px] mx-auto">
+        <section id="audience" className="bg-[#0D0B08] py-24 lg:py-32 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto">
                 <div className="mb-14 lg:mb-16 reveal">
                     <div className="flex items-center gap-4 mb-5">
                         <div className="h-px w-8 bg-[#C8974A]" />

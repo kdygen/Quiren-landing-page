@@ -19,9 +19,9 @@ function Navbar({
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 px-3 sm:px-4 backdrop-blur-md ${activeAccent.ui.navbar.background} border-b border-[color:var(--accent-border)]`}
+            className={`fixed top-0 w-full z-50 px-4 sm:px-6 backdrop-blur-md ${activeAccent.ui.navbar.background} border-b border-[color:var(--accent-border)]`}
         >
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto px-1 sm:px-2">
                 <div className="flex items-center justify-between h-14 sm:h-16">
                     <motion.div
                         initial={{ opacity: 0 }}

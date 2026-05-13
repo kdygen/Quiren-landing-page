@@ -48,86 +48,86 @@ function TechSection({ t }) {
     const activeStep = openIndex !== null ? steps[openIndex] : null;
 
     return (
-        <section id="tech" className="relative overflow-hidden bg-[#0D0B08] py-24 lg:py-32 px-4 lg:px-16">
-            <div className="mx-auto w-full max-w-[1280px]">
-                        <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
-                            <div className="mb-5 flex items-center justify-center gap-4">
-                                <div className="h-px w-8 bg-[#C8974A]" />
-                                <span className="font-display text-[10px] font-light uppercase tracking-[0.45em] text-[#C8974A]">
-                                    {t.techSectionLabel}
-                                </span>
-                                <div className="h-px w-8 bg-[#C8974A]" />
+        <section id="tech" className="relative overflow-hidden bg-[#0D0B08] py-24 lg:py-32 px-4 sm:px-6">
+            <div className="mx-auto w-full max-w-7xl">
+                <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
+                    <div className="mb-5 flex items-center justify-center gap-4">
+                        <div className="h-px w-8 bg-[#C8974A]" />
+                        <span className="font-display text-[10px] font-light uppercase tracking-[0.45em] text-[#C8974A]">
+                            {t.techSectionLabel}
+                        </span>
+                        <div className="h-px w-8 bg-[#C8974A]" />
+                    </div>
+                    <h2 className="font-serif text-5xl font-light leading-[1.05] text-[#FDFAF5] lg:text-6xl">
+                        {t.techHeadingMain}{" "}
+                        <em className="font-serif font-light italic text-[#C8974A]">{t.techHeadingAccent}</em>
+                    </h2>
+                </div>
+
+                <div className="relative flex items-center gap-3 sm:gap-5">
+                    {!isWide && (
+                        <button
+                            type="button"
+                            onClick={goPrev}
+                            aria-label="Previous"
+                            className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#C8974A]/25 bg-[#1A1510] text-[#FDFAF5] shadow-sm transition hover:border-[#C8974A]/45 hover:bg-[#231C14]"
+                        >
+                            <span className="text-lg font-light leading-none" aria-hidden>
+                                ‹
+                            </span>
+                        </button>
+                    )}
+
+                    <div className="min-w-0 flex-1">
+                        {isWide ? (
+                            <div className="grid grid-cols-3 gap-5 lg:gap-7">
+                                {steps.map((step, index) => (
+                                    <TechCard
+                                        key={step.number}
+                                        step={step}
+                                        imageSrc={TECH_CARD_IMAGES[index] ?? null}
+                                        onOpen={() => setOpenIndex(index)}
+                                    />
+                                ))}
                             </div>
-                            <h2 className="font-serif text-5xl font-light leading-[1.05] text-[#FDFAF5] lg:text-6xl">
-                                {t.techHeadingMain}{" "}
-                                <em className="font-serif font-light italic text-[#C8974A]">{t.techHeadingAccent}</em>
-                            </h2>
-                        </div>
-
-                        <div className="relative flex items-center gap-3 sm:gap-5">
-                            {!isWide && (
-                                <button
-                                    type="button"
-                                    onClick={goPrev}
-                                    aria-label="Previous"
-                                    className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#C8974A]/25 bg-[#1A1510] text-[#FDFAF5] shadow-sm transition hover:border-[#C8974A]/45 hover:bg-[#231C14]"
+                        ) : (
+                            <div className="overflow-hidden rounded-none">
+                                <div
+                                    className="flex transition-transform duration-500 ease-out"
+                                    style={{ transform: `translateX(-${slide * 100}%)` }}
                                 >
-                                    <span className="text-lg font-light leading-none" aria-hidden>
-                                        ‹
-                                    </span>
-                                </button>
-                            )}
-
-                            <div className="min-w-0 flex-1">
-                                {isWide ? (
-                                    <div className="grid grid-cols-3 gap-5 lg:gap-7">
-                                        {steps.map((step, index) => (
+                                    {steps.map((step, index) => (
+                                        <div
+                                            key={step.number}
+                                            className="w-full shrink-0 px-1"
+                                            aria-hidden={index !== slide}
+                                        >
                                             <TechCard
-                                                key={step.number}
                                                 step={step}
                                                 imageSrc={TECH_CARD_IMAGES[index] ?? null}
                                                 onOpen={() => setOpenIndex(index)}
                                             />
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <div className="overflow-hidden rounded-none">
-                                        <div
-                                            className="flex transition-transform duration-500 ease-out"
-                                            style={{ transform: `translateX(-${slide * 100}%)` }}
-                                        >
-                                            {steps.map((step, index) => (
-                                                <div
-                                                    key={step.number}
-                                                    className="w-full shrink-0 px-1"
-                                                    aria-hidden={index !== slide}
-                                                >
-                                                    <TechCard
-                                                        step={step}
-                                                        imageSrc={TECH_CARD_IMAGES[index] ?? null}
-                                                        onOpen={() => setOpenIndex(index)}
-                                                    />
-                                                </div>
-                                            ))}
                                         </div>
-                                    </div>
-                                )}
+                                    ))}
+                                </div>
                             </div>
-
-                            {!isWide && (
-                                <button
-                                    type="button"
-                                    onClick={goNext}
-                                    aria-label="Next"
-                                    className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#C8974A]/35 bg-[#1A1510] text-[#FDFAF5] shadow-sm transition hover:border-[#C8974A]/55 hover:bg-[#231C14]"
-                                >
-                                    <span className="text-lg font-light leading-none" aria-hidden>
-                                        ›
-                                    </span>
-                                </button>
-                            )}
-                        </div>
+                        )}
                     </div>
+
+                    {!isWide && (
+                        <button
+                            type="button"
+                            onClick={goNext}
+                            aria-label="Next"
+                            className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#C8974A]/35 bg-[#1A1510] text-[#FDFAF5] shadow-sm transition hover:border-[#C8974A]/55 hover:bg-[#231C14]"
+                        >
+                            <span className="text-lg font-light leading-none" aria-hidden>
+                                ›
+                            </span>
+                        </button>
+                    )}
+                </div>
+            </div>
 
             {activeStep && (
                 <div

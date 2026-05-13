@@ -54,7 +54,7 @@ function CtaSection({ t }) {
     };
 
     return (
-        <section id="cta" className="relative bg-[#0D0B08] py-24 lg:py-32 px-4 lg:px-16 overflow-hidden">
+        <section id="cta" className="relative bg-[#0D0B08] py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
             <div
                 className="pointer-events-none absolute inset-0"
                 style={{
@@ -63,7 +63,7 @@ function CtaSection({ t }) {
                 }}
             />
 
-            <div className="relative z-10 max-w-[980px] mx-auto">
+            <div className="relative z-10 max-w-7xl mx-auto">
                 <div className="text-center mb-12 reveal">
                     <div className="flex justify-center items-center gap-4 mb-5">
                         <div className="h-px w-8 bg-[#C8974A]" />

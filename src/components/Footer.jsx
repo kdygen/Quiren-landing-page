@@ -7,9 +7,9 @@ function Footer({ t, activeAccent }) {
 
     return (
         <footer
-            className={`border-t border-[color:var(--accent-border)] py-10 sm:py-12 px-4 ${activeAccent.ui.footer.section}`}
+            className={`border-t border-[color:var(--accent-border)] py-10 sm:py-12 px-4 sm:px-6 ${activeAccent.ui.footer.section}`}
         >
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}

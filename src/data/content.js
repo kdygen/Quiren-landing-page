@@ -71,10 +71,12 @@ export const translations = {
                     "Уровни, достижения и цели помогают сохранять мотивацию. Вы видите свой прогресс и продолжаете обучение каждый день.",
             },
         ],
-        appSectionLabel: "Приложение",
+        appSectionLabel: "Система управления обучением",
         appHeadingLine1: "Домбыра",
         appHeadingLine2: "в твоём",
         appHeadingAccent: "кармане",
+        appIntro:
+            "Следите за выполнением уроков, частотой практики, точностью нот и общим прогрессом в одном экране, который помогает ученикам и преподавателям работать синхронно.",
         appPhoneSongsLabel: "SONGS",
         appPhoneTrackTitle: "Кюй Балбарауын — Традиционный",
         appPhonePortsActive: "2 ports active",
@@ -85,28 +87,34 @@ export const translations = {
         appPhoneSpeed20: "2x",
         appFeatures: [
             {
-                icon: "♪",
-                title: "Интерактивные ноты",
+                title: "Аналитика прогресса",
+                headline: "Отслеживайте рост каждого ученика",
                 description:
-                    "Система подсчевает текущую ноту в реальном времени. Следите за ключем шаг за шагом с визуальной подсказкой.",
+                    "Следите за выполнением уроков, частотой практики, точностью нот и общим прогрессом в реальном времени.",
             },
             {
-                icon: "●",
-                title: "Контроль темпа",
+                title: "Панель преподавателя",
+                headline: "Полная видимость для учителей",
                 description:
-                    "Регулируйте скорость воспроизведения от 0.5• до 2•. Учитесь в своём ритме, не теряя мелодической линии.",
+                    "Отслеживайте прогресс каждого ученика, замечайте трудности, назначайте задания и помогайте вовремя.",
             },
             {
-                icon: "⚡",
-                title: "Световая поддержка",
+                title: "Домашняя практика",
+                headline: "Обучение продолжается за пределами класса",
                 description:
-                    "Подключите смарт-светильник и система визуально дублирует ноты через свет — уникальный опыт погружения в музыку.",
+                    "Ученики практикуются дома с LED-подсказками, интерактивными уроками и мгновенной обратной связью.",
             },
             {
-                icon: "↻",
-                title: "Повтор и прогресс",
+                title: "Геймифицированное обучение",
+                headline: "Создано, чтобы удерживать интерес",
                 description:
-                    "Отслеживайте каждый шаг обучения. Повторяйте сложные фрагменты до полного освоения.",
+                    "Уровни, достижения, серии занятий и вехи прогресса мотивируют учеников и снижают отток.",
+            },
+            {
+                title: "Прозрачный прогресс для родителей",
+                headline: "Прозрачный прогресс для родителей",
+                description:
+                    "Родители могут видеть прогресс, активность и достижения своего ребёнка через простые отчёты о прогрессе.",
             },
         ],
         audienceTitle: "Для кого мы создаём Quimen?",
@@ -143,6 +151,40 @@ export const translations = {
         ctaHeadingLine2: "зазвучит",
         ctaHeadingAccent: "снова",
         faqTitle: "Частые вопросы",
+        appIntro:
+            "Следите за выполнением уроков, частотой практики, точностью нот и общим прогрессом в одном экране, который помогает ученикам и преподавателям работать синхронно.",
+        appFeatures: [
+            {
+                title: "Аналитика прогресса",
+                headline: "Отслеживайте рост каждого ученика",
+                description:
+                    "Следите за выполнением уроков, частотой практики, точностью нот и общим прогрессом в реальном времени.",
+            },
+            {
+                title: "Панель преподавателя",
+                headline: "Полная видимость для учителей",
+                description:
+                    "Отслеживайте прогресс каждого ученика, замечайте трудности, назначайте задания и помогайте вовремя.",
+            },
+            {
+                title: "Домашняя практика",
+                headline: "Обучение продолжается за пределами класса",
+                description:
+                    "Ученики практикуются дома с LED-подсказками, интерактивными уроками и мгновенной обратной связью.",
+            },
+            {
+                title: "Геймифицированное обучение",
+                headline: "Создано, чтобы удерживать интерес",
+                description:
+                    "Уровни, достижения, серии занятий и вехи прогресса мотивируют учеников и снижают отток.",
+            },
+            {
+                title: "Прозрачный прогресс для родителей",
+                headline: "Прозрачный прогресс для родителей",
+                description:
+                    "Родители могут видеть прогресс, активность и достижения своего ребёнка через простые отчёты о прогрессе.",
+            },
+        ],
         formNameLabel: "Имя и фамилия",
         formNamePlaceholder: "Например, Алия Нурлыбек",
         formEmailLabel: "E-mail",
@@ -174,7 +216,6 @@ export const translations = {
         cardLessonText: "Урок · Начальные кюи",
         cardRealtimeText: "Реальное время",
         featureSchools: "Для школ и индивидуальных учеников",
-        featureLanguages: "Поддержка KZ / RU / EN",
         prevImageLabel: "Предыдущее фото",
         nextImageLabel: "Следующее фото",
         goToImageLabel: "Перейти к фото",
@@ -315,7 +356,7 @@ export const translations = {
                     "Levels, achievements, and goals help you stay motivated. You see your progress and continue learning every day.",
             },
         ],
-        appSectionLabel: "Application",
+        appSectionLabel: "Learning Management System",
         appHeadingLine1: "Dombra",
         appHeadingLine2: "in your",
         appHeadingAccent: "pocket",
@@ -329,28 +370,34 @@ export const translations = {
         appPhoneSpeed20: "2x",
         appFeatures: [
             {
-                icon: "♪",
-                title: "Interactive Notes",
+                title: "Progress Analytics",
+                headline: "Track every student's growth",
                 description:
-                    "The system highlights the current note in real time. Follow each key step-by-step with visual guidance.",
+                    "Monitor lesson completion, practice frequency, note accuracy and overall progress in real time.",
             },
             {
-                icon: "●",
-                title: "Tempo Control",
+                title: "Teacher Dashboard",
+                headline: "Full visibility for teachers",
                 description:
-                    "Adjust playback speed from 0.5x to 2x. Learn at your own pace without losing the melodic line.",
+                    "Track each student's progress, spot difficulties, assign tasks and provide timely support.",
             },
             {
-                icon: "⚡",
-                title: "Light Support",
+                title: "Home Practice",
+                headline: "Learning continues beyond the classroom",
                 description:
-                    "Connect a smart light and the system duplicates notes through light for an immersive musical experience.",
+                    "Students practice at home with LED cues, interactive lessons and instant feedback.",
             },
             {
-                icon: "↻",
-                title: "Repetition and Progress",
+                title: "Gamified Learning",
+                headline: "Designed to keep engagement",
                 description:
-                    "Track every learning step. Repeat difficult fragments until full mastery.",
+                    "Levels, achievements, streaks and progress milestones motivate students and reduce churn.",
+            },
+            {
+                title: "Transparent Progress For Parents",
+                headline: "Transparent Progress For Parents",
+                description:
+                    "Parents can see their child's progress, activity, and achievements through simple progress reports.",
             },
         ],
         audienceTitle: "Who is Quimen for?",
@@ -560,7 +607,7 @@ export const translations = {
                     "Деңгейлер, жетістіктер және мақсаттар ынтаны сақтауға көмектеседі. Сіз өз прогресіңізді көріп, күн сайын үйренуді жалғастырасыз.",
             },
         ],
-        appSectionLabel: "Қосымша",
+        appSectionLabel: "Оқыту басқару жүйесі",
         appHeadingLine1: "Домбыра",
         appHeadingLine2: "сенің",
         appHeadingAccent: "қалтаңда",
@@ -574,28 +621,34 @@ export const translations = {
         appPhoneSpeed20: "2x",
         appFeatures: [
             {
-                icon: "♪",
-                title: "Интерактивті ноталар",
+                title: "Прогресті талдау",
+                headline: "Әр оқушының өсімін қадағалаңыз",
                 description:
-                    "Жүйе ағымдағы нотаны нақты уақытта көрсетеді. Көрнекі нұсқаумен әр қадамды біртіндеп бақылаңыз.",
+                    "Сабақтардың орындалуын, практика жиілігін, ноталардың дәлдігін және жалпы прогресті нақты уақытта қадағалаңыз.",
             },
             {
-                icon: "●",
-                title: "Темпті бақылау",
+                title: "Мұғалім панелі",
+                headline: "Мұғалімдерге толық көрініс",
                 description:
-                    "Ойнату жылдамдығын 0.5x-тен 2x-ке дейін реттеңіз. Әуенді жоғалтпай өз ырғағыңызбен үйреніңіз.",
+                    "Әр оқушының прогрестін бақылап, қиындықтарды байқап, тапсырмалар тағайындап, уақытылы қолдау көрсетіңіз.",
             },
             {
-                icon: "⚡",
-                title: "Жарықпен қолдау",
+                title: "Үйдегі тәжірибе",
+                headline: "Оқу сыныптан тыс жалғасады",
                 description:
-                    "Смарт-шамды қосыңыз, жүйе ноталарды жарық арқылы қайталайды — музыкаға терең енуге мүмкіндік береді.",
+                    "Оқушылар үйде LED-нұсқаулықтармен, интерактивті сабақтармен және жедел кері байланыспен жаттығады.",
             },
             {
-                icon: "↻",
-                title: "Қайталау және прогресс",
+                title: "Геймификацияланған оқу",
+                headline: "Ынтаны ұстап тұруға арналған",
                 description:
-                    "Оқудың әр қадамын бақылаңыз. Күрделі бөліктерді толық меңгергенше қайталаңыз.",
+                    "Деңгейлер, жетістіктер, сабақ жиынтықтары мен прогрестің белестері оқушыларды ынталандырып, оқудан кетуді азайтады.",
+            },
+            {
+                title: "Ата-аналарға арналған ашық прогресс",
+                headline: "Ата-аналарға арналған ашық прогресс",
+                description:
+                    "Ата-аналар өз балаларының прогресі, белсенділігі мен жетістіктерін қарапайым есептер арқылы көре алады.",
             },
         ],
         audienceTitle: "Кімге арналған",
