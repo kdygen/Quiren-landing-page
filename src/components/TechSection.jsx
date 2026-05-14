@@ -167,27 +167,16 @@ function TechSection({ t }) {
                                 </div>
                             </div>
 
-                            <div className="font-body text-[#FDFAF5]">
-                                <p className="mb-3 font-display text-[10px] font-light uppercase tracking-[0.28em] text-[#C8974A]/90">
-                                    {t.techSectionLabel}
-                                </p>
+                            <div className="font-body text-[#FDFAF5] flex flex-col justify-center max-w-lg mx-auto lg:mx-0">
                                 <h3
                                     id="tech-modal-title"
-                                    className="mb-5 font-serif text-3xl font-light leading-tight tracking-tight text-[#FDFAF5] sm:text-4xl"
+                                    className="mb-6 font-serif text-4xl font-light leading-tight tracking-tight text-[#FDFAF5] sm:text-5xl"
                                 >
                                     {activeStep.title}
                                 </h3>
-                                <p className="mb-8 text-[15px] font-light leading-relaxed text-[#F5E4C3]/78 sm:text-base">
+                                <p className="text-lg font-light leading-relaxed text-[#F5E4C3]/80 sm:text-xl">
                                     {activeStep.description}
                                 </p>
-                                <div className="rounded-xl border border-[#C8974A]/14 bg-[#0D0B08]/55 px-5 py-5 sm:px-6 sm:py-6">
-                                    <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#C8974A]/85">
-                                        {t.techTitle}
-                                    </p>
-                                    <p className="text-sm font-light leading-relaxed text-[#F5E4C3]/72 sm:text-[15px]">
-                                        {t.techDescription}
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </div>

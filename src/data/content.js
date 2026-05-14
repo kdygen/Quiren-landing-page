@@ -1,12 +1,13 @@
 export const translations = {
     RU: {
         navigation: [
-            { name: "О продукте", href: "#about" },
-            { name: "Почему Quimen", href: "#why" },
+            { name: "О проекте", href: "#about" },
+            { name: "О домбре", href: "#why" },
             { name: "Технологии", href: "#tech" },
+            { name: "LMS", href: "#app" },
             { name: "Для кого", href: "#audience" },
         ],
-        tagline: "умная домбра для нового поколения",
+        tagline: "Учись играть домбре по-новому",
         pilotBadge: "Пилотируем с музыкальными школами",
         heroTitle: "Когда играет күй",
         heroSubtitle: "звучит история",
@@ -286,12 +287,13 @@ export const translations = {
     },
     EN: {
         navigation: [
-            { name: "About", href: "#about" },
-            { name: "Why Quimen", href: "#why" },
+            { name: "Project", href: "#about" },
+            { name: "About Dombra", href: "#why" },
             { name: "Technology", href: "#tech" },
+            { name: "LMS", href: "#app" },
             { name: "For Whom", href: "#audience" },
         ],
-        tagline: "smart dombra for the new generation",
+        tagline: "Learn dombra the modern way",
         pilotBadge: "Piloting with music schools",
         heroTitle: "History speaks",
         heroSubtitle: "when you play dombra",
@@ -537,12 +539,13 @@ export const translations = {
     },
     KZ: {
         navigation: [
-            { name: "Жоба туралы", href: "#about" },
-            { name: "Артықшылықтары", href: "#why" },
+            { name: "Жоба", href: "#about" },
+            { name: "Домбыра", href: "#why" },
             { name: "Технология", href: "#tech" },
-            { name: "Кімге керек", href: "#audience" },
+            { name: "LMS", href: "#app" },
+            { name: "Кімге арналған", href: "#audience" },
         ],
-        tagline: "заманауи домбыра жас ұрпаққа",
+        tagline: "Домбыраны жаңа әдіспен үйрен",
         pilotBadge: "Музыка мектептерінде сынап жатырмыз",
         heroTitle: "Күй тартқанда",
         heroSubtitle: "тарих сөйлейді",

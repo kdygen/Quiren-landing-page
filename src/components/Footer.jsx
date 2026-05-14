@@ -40,7 +40,7 @@ function Footer({ t, activeAccent }) {
                     <div className="space-y-3">
                         <h3 className={`font-semibold ${headingText}`}>{t.footerCommunity}</h3>
                         <a
-                            href="#"
+                            href="#cta"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}
                         >
                             {t.footerContact}
@@ -50,7 +50,7 @@ function Footer({ t, activeAccent }) {
                     <div className="space-y-3">
                         <h3 className={`font-semibold ${headingText}`}>{t.footerLegal}</h3>
                         <a
-                            href="#"
+                            href="#privacy"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}
                         >
                             {t.footerPrivacy}

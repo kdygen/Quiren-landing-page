@@ -35,7 +35,7 @@ function Navbar({
                         />
                     </motion.div>
 
-                    <div className="hidden lg:flex items-center gap-8">
+                    <div className="hidden lg:flex flex-1 items-center justify-center gap-12 xl:gap-16 2xl:gap-20">
                         {navigationItems.map((item, i) => (
                             <motion.a
                                 key={item.href}

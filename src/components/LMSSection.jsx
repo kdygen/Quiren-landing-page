@@ -34,8 +34,8 @@ export default function AppSection({ t }) {
                                 key={feat.title}
                                 onClick={() => setActive(i)}
                                 className={`shrink-0 rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${i === active
-                                        ? "bg-[#F5E4C3] text-[#0D0B08] border border-[#F5E4C3]"
-                                        : "bg-transparent text-[#F5E4C3]/70 border border-[#C8974A]/30"
+                                    ? "bg-[#F5E4C3] text-[#0D0B08] border border-[#F5E4C3]"
+                                    : "bg-transparent text-[#F5E4C3]/70 border border-[#C8974A]/30"
                                     }`}
                             >
                                 {feat.title}
@@ -43,13 +43,15 @@ export default function AppSection({ t }) {
                         ))}
                     </div>
 
-                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.06] text-[#FDFAF5] font-light mb-6">
-                        {activeFeature.headline}
-                    </h2>
+                    <div className="min-h-[13.5rem] md:min-h-[15rem] lg:min-h-[16rem]">
+                        <h2 className="max-w-xl font-serif text-3xl md:text-4xl lg:text-[3.15rem] leading-[1.08] text-[#FDFAF5] font-light mb-6">
+                            {activeFeature.headline}
+                        </h2>
 
-                    <p className="max-w-2xl text-lg leading-[1.9] text-[#F5E4C3]/70 mb-8">
-                        {activeFeature.description}
-                    </p>
+                        <p className="max-w-2xl text-lg leading-[1.9] text-[#F5E4C3]/70 mb-8">
+                            {activeFeature.description}
+                        </p>
+                    </div>
 
                     {/* removed repetitive list; section now driven by translations via `t.appFeatures` */}
                 </div>

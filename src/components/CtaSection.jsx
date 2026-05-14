@@ -179,6 +179,18 @@ function CtaSection({ t }) {
                         </div>
                     )}
 
+                    <div className="pt-2 text-center border-t border-[#C8974A]/15">
+                        <p className="text-xs text-[#F5E4C3]/60 font-body">
+                            Or reach us at{" "}
+                            <a
+                                href="mailto:info@quimen.edu"
+                                className="text-[#C8974A] hover:text-[#E8BE7A] transition-colors"
+                            >
+                                info@quimen.edu
+                            </a>
+                        </p>
+                    </div>
+
                     <p className="text-xs text-[#F5E4C3]/55 font-body">{t.formDisclaimer}</p>
                 </form>
             </div>

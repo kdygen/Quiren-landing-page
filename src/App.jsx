@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { translations, languages, accentThemes } from "./data/content";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
-import WhySection from "./components/WhySection";
+import InstrumentSection from "./components/InstrumentSection";
 import TechSection from "./components/TechSection";
-import AppSection from "./components/AppSection";
+import LMSSection from "./components/LMSSection";
 import AudienceSection from "./components/AudienceSection";
-import CtaSection from "./components/CtaSection";
+import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 
 function App() {
@@ -38,13 +38,13 @@ function App() {
         setMobileMenuOpen={setMobileMenuOpen}
         languages={languages}
       />
-      <Hero t={t} activeAccent={activeAccent} />
+      <HeroSection t={t} activeAccent={activeAccent} />
       <AboutSection t={t} activeAccent={activeAccent} />
-      <WhySection t={t} activeAccent={activeAccent} />
+      <InstrumentSection t={t} activeAccent={activeAccent} />
       <TechSection t={t} />
-      <AppSection t={t} />
+      <LMSSection t={t} />
       <AudienceSection t={t} activeAccent={activeAccent} />
-      <CtaSection t={t} activeAccent={activeAccent} />
+      <CTASection t={t} activeAccent={activeAccent} />
       <Footer t={t} activeAccent={activeAccent} />
     </div>
   );
