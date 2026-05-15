@@ -19,8 +19,10 @@ function Hero({ t, activeAccent }) {
         <section className="relative min-h-screen flex items-start sm:items-center justify-center md:justify-end pt-24 sm:pt-20 pb-10 sm:pb-12 px-4 overflow-hidden">
             <div className="absolute inset-0 w-full h-full left-0 hidden md:block">
                 <img
-                    src={`${import.meta.env.BASE_URL}quimen2.png`}
+                    src={`${import.meta.env.BASE_URL}quimen2.webp`}
                     alt="Quimen"
+                    loading="eager"
+                    fetchPriority="high"
                     className="w-full h-full object-cover object-center md:object-left"
                 />
             </div>

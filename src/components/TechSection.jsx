@@ -2,9 +2,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const base = import.meta.env.BASE_URL;
 const TECH_CARD_IMAGES = [
-    `${base}tech-card-learning.png`,
-    `${base}tech-card-app-device.png`,
-    `${base}tech-card-gamification.png`,
+    `${base}tech-card-learning.webp`,
+    `${base}tech-card-app-device.webp`,
+    `${base}tech-card-gamification.webp`,
 ];
 
 function TechSection({ t }) {

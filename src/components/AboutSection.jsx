@@ -37,8 +37,10 @@ function AboutSection({ t }) {
                 <div className="relative reveal reveal-delay-2">
                     <div className="relative overflow-hidden border border-[#C8974A]/20 aspect-[4/5] w-full max-w-[544px] ml-auto">
                         <img
-                            src={`${import.meta.env.BASE_URL}Gemini_Generated_Image_70l4pj70l4pj70l4.png`}
+                            src={`${import.meta.env.BASE_URL}Gemini_Generated_Image_70l4pj70l4pj70l4.webp`}
                             alt={t.aboutImageAlt}
+                            loading="lazy"
+                            decoding="async"
                             className="h-full w-full object-cover"
                         />
                     </div>

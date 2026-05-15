@@ -29,9 +29,11 @@ function Navbar({
                         className="-ml-1 sm:-ml-2 flex h-14 sm:h-16 items-center overflow-hidden"
                     >
                         <img
-                            src={`${import.meta.env.BASE_URL}quimenlogo.png`}
+                            src={`${import.meta.env.BASE_URL}quimenlogo.webp`}
                             alt="Quimen"
                             className="h-24 sm:h-32 w-auto max-w-none"
+                            loading="eager"
+                            fetchPriority="high"
                         />
                     </motion.div>
 

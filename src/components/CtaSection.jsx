@@ -96,6 +96,7 @@ function CtaSection({ t }) {
                                 id="cta-name"
                                 name="name"
                                 type="text"
+                                autoComplete="name"
                                 placeholder={t.formNamePlaceholder}
                                 value={formData.name}
                                 onChange={handleInputChange}
@@ -112,6 +113,7 @@ function CtaSection({ t }) {
                                 id="cta-email"
                                 name="email"
                                 type="email"
+                                autoComplete="email"
                                 placeholder={t.formEmailPlaceholder}
                                 value={formData.email}
                                 onChange={handleInputChange}
@@ -155,7 +157,6 @@ function CtaSection({ t }) {
                             value={formData.message}
                             onChange={handleInputChange}
                             className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] placeholder:text-[#F5E4C3]/35 focus:outline-none focus:border-[#C8974A]/55"
-                            required
                         />
                     </div>
 

@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { translations, languages, accentThemes } from "./data/content";
+import { useState, useEffect } from "react";
+import { RU } from "./data/translations-ru.js";
+import { languages, accentThemes } from "./data/content";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
@@ -13,8 +14,27 @@ import Footer from "./components/Footer";
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState("RU");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [allTranslations, setAllTranslations] = useState({ RU });
 
-  const t = translations[currentLanguage] || translations.RU;
+  useEffect(() => {
+    // Skip RU since it's already in initial state
+    if (currentLanguage === "RU") return;
+
+    // Load other languages dynamically
+    const loadLanguage = async () => {
+      if (!allTranslations[currentLanguage]) {
+        try {
+          const module = await import(`./data/translations-${currentLanguage.toLowerCase()}.js`);
+          setAllTranslations((prev) => ({ ...prev, [currentLanguage]: module[currentLanguage] }));
+        } catch (error) {
+          console.warn(`Failed to load language ${currentLanguage}:`, error);
+        }
+      }
+    };
+    loadLanguage();
+  }, [currentLanguage, allTranslations]);
+
+  const t = allTranslations[currentLanguage] || allTranslations.RU;
   const activeAccent = accentThemes[0];
 
   return (

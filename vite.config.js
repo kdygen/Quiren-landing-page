@@ -7,4 +7,14 @@ export default defineConfig({
   // For Plesk/production deployment, use '/'
   // For GitHub Pages deployment, change this to '/your-repo-name/'
   base: '/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three': ['three'],
+          'framer-motion': ['framer-motion'],
+        },
+      },
+    },
+  },
 })
