@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import TechIllustration from "./TechIllustrations";
 
 const base = import.meta.env.BASE_URL;
 const TECH_CARD_IMAGES = [
@@ -161,7 +162,9 @@ function TechSection({ t }) {
                                     <div className="aspect-[9/19] w-full rounded-[2rem] border-[10px] border-[#0D0B08] bg-[#0D0B08] shadow-xl shadow-black/40">
                                         <div className="flex h-full w-full flex-col rounded-[1.35rem] bg-[#1A1510]/90">
                                             <div className="mx-auto mt-3 h-5 w-16 rounded-full bg-black/50" />
-                                            <div className="m-3 mt-4 flex flex-1 flex-col rounded-xl bg-[#0D0B08]/55" />
+                                            <div className="m-3 mt-4 flex flex-1 flex-col overflow-hidden rounded-xl bg-[#0D0B08]/55">
+                                                {openIndex !== null && <TechIllustration index={openIndex} />}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
