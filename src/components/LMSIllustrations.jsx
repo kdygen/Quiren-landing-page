@@ -1,8 +1,8 @@
 // Lightweight hand-built SVG scenes standing in for real product screenshots.
 // Each illustration mirrors the subject of its matching `appFeatures` entry.
-const GOLD = "#C8974A";
-const CREAM = "#F5E4C3";
-const PAPER = "#FDFAF5";
+const GOLD = "var(--gold)";
+const CREAM = "var(--copy)";
+const PAPER = "var(--foreground)";
 
 function Frame({ children }) {
     return (

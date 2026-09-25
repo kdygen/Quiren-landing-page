@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
-function Footer({ t, activeAccent }) {
-    const headingText = activeAccent.ui.footer.heading;
-    const bodyText = activeAccent.ui.footer.body;
-    const linkHover = activeAccent.ui.footer.linkHover;
+function Footer({ t }) {
+    const headingText = "text-foreground";
+    const bodyText = "text-copy/70";
+    const linkHover = "hover:text-gold";
 
     return (
         <footer
-            className={`border-t border-[color:var(--accent-border)] py-10 sm:py-12 px-4 sm:px-6 ${activeAccent.ui.footer.section}`}
+            className="border-t border-border bg-card py-10 sm:py-12 px-4 sm:px-6"
         >
             <div className="max-w-7xl mx-auto">
                 <motion.div
@@ -59,7 +59,7 @@ function Footer({ t, activeAccent }) {
                 </motion.div>
 
                 <div
-                    className={`border-t border-[color:var(--accent-border)] pt-6 sm:pt-8 text-center text-sm ${bodyText}`}
+                    className={`border-t border-border pt-6 sm:pt-8 text-center text-sm ${bodyText}`}
                 >
                     <p>{t.footerCopyright}</p>
                 </div>

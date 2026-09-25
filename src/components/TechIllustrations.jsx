@@ -1,9 +1,9 @@
 // Hand-built SVG "app screen" mockups standing in for real screenshots inside
 // the phone frame of the tech-step modal. Index matches `t.techSteps`.
-const GOLD = "#C8974A";
-const CREAM = "#F5E4C3";
-const PAPER = "#FDFAF5";
-const INK = "#0D0B08";
+const GOLD = "var(--gold)";
+const CREAM = "var(--copy)";
+const PAPER = "var(--foreground)";
+const INK = "var(--background)";
 
 function Screen({ children }) {
     return (

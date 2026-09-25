@@ -1,4 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import TechIllustration from "./TechIllustrations";
 
 const base = import.meta.env.BASE_URL;
@@ -13,7 +16,6 @@ function TechSection({ t }) {
     const [openIndex, setOpenIndex] = useState(null);
     const [slide, setSlide] = useState(0);
     const [isWide, setIsWide] = useState(false);
-    const closeRef = useRef(null);
 
     useEffect(() => {
         const mq = window.matchMedia("(min-width: 1024px)");
@@ -23,21 +25,6 @@ function TechSection({ t }) {
         return () => mq.removeEventListener("change", onChange);
     }, []);
 
-    useEffect(() => {
-        if (openIndex === null) return;
-        const prev = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
-        closeRef.current?.focus();
-        const onKey = (e) => {
-            if (e.key === "Escape") setOpenIndex(null);
-        };
-        window.addEventListener("keydown", onKey);
-        return () => {
-            document.body.style.overflow = prev;
-            window.removeEventListener("keydown", onKey);
-        };
-    }, [openIndex]);
-
     const goPrev = useCallback(() => {
         setSlide((i) => (i - 1 + steps.length) % steps.length);
     }, [steps.length]);
@@ -46,37 +33,37 @@ function TechSection({ t }) {
         setSlide((i) => (i + 1) % steps.length);
     }, [steps.length]);
 
-    const activeStep = openIndex !== null ? steps[openIndex] : null;
+    const activeStep = openIndex !== null ? steps[openIndex] ?? null : null;
 
     return (
-        <section id="tech" className="relative overflow-hidden bg-[#0D0B08] py-24 lg:py-32 px-4 sm:px-6">
+        <section id="tech" className="relative overflow-hidden bg-background py-24 lg:py-32 px-4 sm:px-6">
             <div className="mx-auto w-full max-w-7xl">
                 <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
                     <div className="mb-5 flex items-center justify-center gap-4">
-                        <div className="h-px w-8 bg-[#C8974A]" />
-                        <span className="font-display text-[10px] font-light uppercase tracking-[0.45em] text-[#C8974A]">
+                        <div className="h-px w-8 bg-gold" />
+                        <span className="font-display text-[10px] font-light uppercase tracking-[0.45em] text-gold">
                             {t.techSectionLabel}
                         </span>
-                        <div className="h-px w-8 bg-[#C8974A]" />
+                        <div className="h-px w-8 bg-gold" />
                     </div>
-                    <h2 className="font-serif text-5xl font-light leading-[1.05] text-[#FDFAF5] lg:text-6xl">
+                    <h2 className="font-serif text-5xl font-light leading-[1.05] text-foreground lg:text-6xl">
                         {t.techHeadingMain}{" "}
-                        <em className="font-serif font-light italic text-[#C8974A]">{t.techHeadingAccent}</em>
+                        <em className="font-serif font-light italic text-gold">{t.techHeadingAccent}</em>
                     </h2>
                 </div>
 
                 <div className="relative flex items-center gap-3 sm:gap-5">
                     {!isWide && (
-                        <button
+                        <Button
                             type="button"
+                            variant="outline"
+                            size="icon-lg"
                             onClick={goPrev}
                             aria-label="Previous"
-                            className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#C8974A]/25 bg-[#1A1510] text-[#FDFAF5] shadow-sm transition hover:border-[#C8974A]/45 hover:bg-[#231C14]"
+                            className="z-10 shrink-0 rounded-md"
                         >
-                            <span className="text-lg font-light leading-none" aria-hidden>
-                                ‹
-                            </span>
-                        </button>
+                            <ChevronLeft />
+                        </Button>
                     )}
 
                     <div className="min-w-0 flex-1">
@@ -92,7 +79,7 @@ function TechSection({ t }) {
                                 ))}
                             </div>
                         ) : (
-                            <div className="overflow-hidden rounded-none">
+                            <div className="overflow-hidden">
                                 <div
                                     className="flex transition-transform duration-500 ease-out"
                                     style={{ transform: `translateX(-${slide * 100}%)` }}
@@ -116,83 +103,60 @@ function TechSection({ t }) {
                     </div>
 
                     {!isWide && (
-                        <button
+                        <Button
                             type="button"
+                            variant="outline"
+                            size="icon-lg"
                             onClick={goNext}
                             aria-label="Next"
-                            className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#C8974A]/35 bg-[#1A1510] text-[#FDFAF5] shadow-sm transition hover:border-[#C8974A]/55 hover:bg-[#231C14]"
+                            className="z-10 shrink-0 rounded-md"
                         >
-                            <span className="text-lg font-light leading-none" aria-hidden>
-                                ›
-                            </span>
-                        </button>
+                            <ChevronRight />
+                        </Button>
                     )}
                 </div>
             </div>
 
-            {activeStep && (
-                <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="tech-modal-title"
-                >
-                    <button
-                        type="button"
-                        className="absolute inset-0 bg-black/55 backdrop-blur-[2px]"
-                        aria-label="Close"
-                        onClick={() => setOpenIndex(null)}
-                    />
-                    <div className="relative z-[101] max-h-[90vh] w-full max-w-[960px] overflow-y-auto rounded-2xl border border-[#C8974A]/18 bg-[#1A1510] shadow-[0_24px_80px_rgba(0,0,0,0.55)]">
-                        <button
-                            ref={closeRef}
-                            type="button"
-                            onClick={() => setOpenIndex(null)}
-                            className="absolute right-4 top-4 z-[102] flex h-10 w-10 items-center justify-center rounded-full border border-[#C8974A]/35 bg-[#0D0B08] text-[#FDFAF5] transition hover:border-[#C8974A]/55 hover:bg-[#231C14]"
-                            aria-label="Close"
-                        >
-                            <span className="text-lg leading-none" aria-hidden>
-                                ×
-                            </span>
-                        </button>
-
-                        <div className="grid gap-10 p-8 pt-16 sm:p-10 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-12 lg:p-12 lg:pt-12">
+            <Dialog open={activeStep !== null} onOpenChange={(open) => !open && setOpenIndex(null)}>
+                <DialogContent className="max-h-[90vh] gap-0 overflow-y-auto border-border bg-card p-0 sm:max-w-[960px]">
+                    {activeStep && (
+                        <div className="grid gap-10 p-8 pt-14 sm:p-10 sm:pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-12 lg:p-12">
                             <div className="flex justify-center lg:justify-start">
                                 <div className="relative w-[min(100%,220px)] shrink-0">
-                                    <div className="aspect-[9/19] w-full rounded-[2rem] border-[10px] border-[#0D0B08] bg-[#0D0B08] shadow-xl shadow-black/40">
-                                        <div className="flex h-full w-full flex-col rounded-[1.35rem] bg-[#1A1510]/90">
+                                    <div className="aspect-[9/19] w-full rounded-[2rem] border-[10px] border-background bg-background shadow-xl shadow-black/40">
+                                        <div className="flex h-full w-full flex-col rounded-[1.35rem] bg-card/90">
                                             <div className="mx-auto mt-3 h-5 w-16 rounded-full bg-black/50" />
-                                            <div className="m-3 mt-4 flex flex-1 flex-col overflow-hidden rounded-xl bg-[#0D0B08]/55">
-                                                {openIndex !== null && <TechIllustration index={openIndex} />}
+                                            <div className="m-3 mt-4 flex flex-1 flex-col overflow-hidden rounded-xl bg-background/55">
+                                                <TechIllustration index={openIndex} />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="font-body text-[#FDFAF5] flex flex-col justify-center max-w-lg mx-auto lg:mx-0">
-                                <h3
-                                    id="tech-modal-title"
-                                    className="mb-6 font-serif text-4xl font-light leading-tight tracking-tight text-[#FDFAF5] sm:text-5xl"
-                                >
+                            <div className="font-body text-foreground flex flex-col justify-center max-w-lg mx-auto lg:mx-0">
+                                <span className="mb-4 font-display text-[10px] font-light uppercase tracking-[0.45em] text-primary">
+                                    {activeStep.number}
+                                </span>
+                                <DialogTitle className="mb-6 font-serif text-4xl font-light leading-tight tracking-tight text-foreground sm:text-5xl">
                                     {activeStep.title}
-                                </h3>
-                                <p className="text-lg font-light leading-relaxed text-[#F5E4C3]/80 sm:text-xl">
+                                </DialogTitle>
+                                <DialogDescription className="text-lg font-light leading-relaxed text-copy/80 sm:text-xl">
                                     {activeStep.description}
-                                </p>
+                                </DialogDescription>
                             </div>
                         </div>
-                    </div>
-                </div>
-            )}
+                    )}
+                </DialogContent>
+            </Dialog>
         </section>
     );
 }
 
 function TechCard({ step, onOpen, imageSrc }) {
     return (
-        <article className="relative aspect-[3/3.57] w-[95%] max-w-full mx-auto overflow-hidden rounded-[1.35rem] border border-[#C8974A]/18 bg-[#1A1510] shadow-sm sm:rounded-[1.5rem]">
-            <div className="absolute inset-0 bg-[#1A1510]" aria-hidden />
+        <article className="relative aspect-[3/3.57] w-[95%] max-w-full mx-auto overflow-hidden rounded-lg border border-border bg-card">
+            <div className="absolute inset-0 bg-card" aria-hidden />
             {imageSrc ? (
                 <img
                     src={imageSrc}
@@ -206,17 +170,19 @@ function TechCard({ step, onOpen, imageSrc }) {
                 className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,rgba(13,11,8,0.97)_0%,rgba(13,11,8,0.72)_16%,rgba(13,11,8,0.38)_30%,rgba(13,11,8,0.08)_44%,transparent_58%)]"
                 aria-hidden
             />
-            <h3 className="absolute left-5 top-5 z-[2] max-w-[85%] font-serif text-2xl font-light leading-tight tracking-tight text-[#FDFAF5] sm:left-6 sm:top-6 sm:text-[1.75rem]">
+            <h3 className="absolute left-5 top-5 z-[2] max-w-[85%] font-serif text-2xl font-light leading-tight tracking-tight text-white sm:left-6 sm:top-6 sm:text-[1.75rem]">
                 {step.title}
             </h3>
-            <button
+            <Button
                 type="button"
+                variant="secondary"
+                size="icon-lg"
                 onClick={onOpen}
-                className="absolute bottom-4 right-4 z-[3] flex h-10 w-10 items-center justify-center rounded-full bg-white text-xl font-light leading-none text-[#0D0B08] shadow-md transition hover:scale-105 active:scale-95"
+                className="absolute bottom-4 right-4 z-[3] rounded-md shadow-md"
                 aria-label={`${step.title} — details`}
             >
-                +
-            </button>
+                <Plus />
+            </Button>
         </article>
     );
 }

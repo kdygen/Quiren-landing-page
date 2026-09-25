@@ -43,6 +43,10 @@ export const EN = {
         "Kuy, an instrumental piece for dombra, is not just music. It is a living message of ancestors encrypted in the sounds of the steppe wind, river murmur, and breath of the Kazakh land.",
     whyParagraph3:
         "Today, Quimen carries this tradition into the future, making it interactive, accessible, and alive for new generations.",
+    whyHintRotate: "Drag to rotate",
+    whyHintZoom: "Scroll to zoom",
+    whyViewerPause: "Pause",
+    whyViewerPlay: "Play",
     whyImageAlt: "Dombra",
     techTitle: "Core Technologies",
     techDescription:

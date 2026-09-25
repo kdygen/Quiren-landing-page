@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
-function Hero({ t, activeAccent }) {
+function Hero({ t }) {
     const scrollToSection = (sectionId) => {
         const target = document.getElementById(sectionId);
 
@@ -37,22 +40,24 @@ function Hero({ t, activeAccent }) {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className={`inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 ${activeAccent.ui.hero.badge} border rounded-full`}
                 >
-                    <span className="text-white text-xs sm:text-sm font-medium">
+                    <Badge
+                        variant="outline"
+                        className="h-auto max-w-full gap-2 whitespace-normal rounded-md border-border bg-background/60 px-3 py-1.5 text-left font-display text-[9px] font-light uppercase leading-snug tracking-[0.14em] text-copy backdrop-blur-sm sm:text-[10px] sm:tracking-[0.2em]"
+                    >
+                        <span className="size-1.5 shrink-0 rounded-full bg-primary" aria-hidden />
                         {t.pilotBadge}
-                    </span>
+                    </Badge>
                 </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="font-bold leading-tight text-white text-xl sm:text-4xl md:text-5xl lg:text-[52px]"
-                    style={{ textShadow: "0 4px 16px rgba(0,0,0,0.5)" }}
+                    className="font-bold leading-tight text-foreground md:text-white md:[text-shadow:0_4px_16px_rgba(0,0,0,0.5)] text-xl sm:text-4xl md:text-5xl lg:text-[52px]"
                 >
                     {t.heroTitle}{" "}
-                    <span className="text-[#f6d36b] drop-shadow-[0_0_20px_rgba(246,211,107,0.75)]">
+                    <span className="text-gold-soft">
                         {t.heroSubtitle}
                     </span>
                 </motion.h1>
@@ -61,8 +66,7 @@ function Hero({ t, activeAccent }) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.35 }}
-                    className="text-sm sm:text-base md:text-xl text-white leading-relaxed"
-                    style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}
+                    className="text-sm sm:text-base md:text-xl text-copy md:text-white md:[text-shadow:0_2px_8px_rgba(0,0,0,0.4)] leading-relaxed"
                 >
                     {t.heroDescription}
                 </motion.p>
@@ -71,25 +75,26 @@ function Hero({ t, activeAccent }) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="flex flex-col sm:flex-row gap-4 pt-4"
+                    className="flex flex-col sm:flex-row gap-3 pt-4"
                 >
-                    <motion.button
+                    <Button
                         type="button"
+                        size="lg"
                         onClick={() => scrollToSection("cta")}
-                        className="px-5 sm:px-8 py-3 sm:py-4 rounded-full bg-white text-[#1A1510] text-sm sm:text-base font-semibold shadow-[0_8px_32px_rgba(255,255,255,0.2)] border border-white hover:bg-gray-50 hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] transition-all duration-300 w-full sm:w-fit inline-flex items-center justify-center gap-2 group"
+                        className="group h-12 w-full bg-foreground px-7 text-sm font-semibold text-background hover:bg-foreground/90 sm:w-fit sm:text-base md:bg-[#1c150c] md:text-[#fff8ec] md:hover:bg-[#2c2217]"
                     >
-                        <span>{t.ctaButton}</span>
-                        <span className="text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1">
-                            ›
-                        </span>
-                    </motion.button>
-                    <button
+                        {t.ctaButton}
+                        <ArrowRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                    </Button>
+                    <Button
                         type="button"
+                        size="lg"
+                        variant="outline"
                         onClick={() => scrollToSection("about")}
-                        className="px-5 sm:px-8 py-3 sm:py-4 rounded-full border border-[#F5E4C3]/30 bg-white/5 text-[#FDFAF5] text-sm sm:text-base font-semibold backdrop-blur-sm transition-all duration-300 hover:bg-[#F5E4C3]/10 hover:border-[#F5E4C3]/60 hover:text-white w-full sm:w-auto"
+                        className="h-12 w-full border-foreground/25 bg-transparent px-7 text-sm font-semibold text-foreground hover:border-foreground/45 hover:bg-foreground/5 hover:text-foreground sm:w-auto sm:text-base dark:border-foreground/25 dark:bg-transparent dark:hover:bg-foreground/5 md:border-white/70 md:bg-white/10 md:text-white md:backdrop-blur-sm md:hover:bg-white/20 md:hover:text-white md:dark:border-white/70 md:dark:bg-white/10 md:dark:hover:bg-white/20"
                     >
                         {t.learnMore}
-                    </button>
+                    </Button>
                 </motion.div>
             </motion.div>
         </section>

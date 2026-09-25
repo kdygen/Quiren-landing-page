@@ -1,7 +1,7 @@
 export const languages = [
-    { code: "RU", name: "Русский", flag: "🇷🇺" },
     { code: "EN", name: "English", flag: "🇺🇸" },
     { code: "KZ", name: "Қазақша", flag: "🇰🇿" },
+    { code: "RU", name: "Русский", flag: "🇷🇺" },
 ];
 
 export const accentThemes = [

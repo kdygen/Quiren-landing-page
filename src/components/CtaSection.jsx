@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+import { Textarea } from "@/components/ui/textarea";
 
-// Initialize EmailJS with your Public Key
-emailjs.init("Bl7VTVYE7GJyeQlxf");
+// EmailJS keys are public by design; the recipient is fixed in the EmailJS template, never sent from here.
+emailjs.init({
+    publicKey: "Bl7VTVYE7GJyeQlxf",
+    blockHeadless: true, // reject automated headless browsers
+    limitRate: { id: "cta-form", throttle: 10000 }, // at most one send per 10s from this browser
+});
+
+// Bots usually submit instantly; real people take longer than this to fill the form.
+const MIN_FILL_TIME_MS = 3000;
+const MAX_LENGTH = { name: 100, email: 254, message: 2000 };
 
 function CtaSection({ t }) {
     const [formData, setFormData] = useState({
@@ -13,6 +27,9 @@ function CtaSection({ t }) {
     });
     const [loading, setLoading] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null); // "success", "error", or null
+    const [honeypot, setHoneypot] = useState("");
+    const [openedAt] = useState(() => Date.now());
+    const successTimer = useRef(null);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -24,6 +41,21 @@ function CtaSection({ t }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const showSuccess = () => {
+            setSubmitStatus("success");
+            setFormData({ name: "", email: "", role: "", message: "" });
+            // Auto-clear success message after 5 seconds
+            clearTimeout(successTimer.current);
+            successTimer.current = setTimeout(() => setSubmitStatus(null), 5000);
+        };
+
+        // Likely a bot: pretend it worked so it doesn't retry, but send nothing.
+        if (honeypot || Date.now() - openedAt < MIN_FILL_TIME_MS) {
+            showSuccess();
+            return;
+        }
+
         setLoading(true);
         setSubmitStatus(null);
 
@@ -32,19 +64,14 @@ function CtaSection({ t }) {
                 "service_awv8t5s", // Your Service ID
                 "template_1518ipq", // Your Template ID
                 {
-                    to_email: "kudaibergen.margulan67@gmail.com",
-                    name: formData.name,
-                    email: formData.email,
+                    name: formData.name.trim().slice(0, MAX_LENGTH.name),
+                    email: formData.email.trim().slice(0, MAX_LENGTH.email),
                     role: formData.role,
-                    message: formData.message,
+                    message: formData.message.trim().slice(0, MAX_LENGTH.message),
                 }
             );
 
-            setSubmitStatus("success");
-            setFormData({ name: "", email: "", role: "", message: "" });
-
-            // Auto-clear success message after 5 seconds
-            setTimeout(() => setSubmitStatus(null), 5000);
+            showSuccess();
         } catch (error) {
             console.error("EmailJS Error:", error);
             setSubmitStatus("error");
@@ -54,145 +81,168 @@ function CtaSection({ t }) {
     };
 
     return (
-        <section id="cta" className="relative bg-[#0D0B08] py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
+        <section id="cta" className="relative bg-background py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
             <div
                 className="pointer-events-none absolute inset-0"
                 style={{
                     background:
-                        "radial-gradient(ellipse at center, rgba(200,151,74,0.10) 0%, transparent 70%)",
+                        "radial-gradient(ellipse at center, color-mix(in srgb, var(--gold) 12%, transparent) 0%, transparent 70%)",
                 }}
             />
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 <div className="text-center mb-12 reveal">
                     <div className="flex justify-center items-center gap-4 mb-5">
-                        <div className="h-px w-8 bg-[#C8974A]" />
-                        <span className="font-display text-[10px] tracking-[0.45em] uppercase text-[#C8974A] font-light">
+                        <div className="h-px w-8 bg-gold" />
+                        <span className="font-display text-[10px] tracking-[0.45em] uppercase text-gold font-light">
                             {t.ctaSectionLabel}
                         </span>
-                        <div className="h-px w-8 bg-[#C8974A]" />
+                        <div className="h-px w-8 bg-gold" />
                     </div>
 
-                    <h2 className="font-serif text-5xl lg:text-6xl leading-[1.06] text-[#FDFAF5] font-light mb-6">
+                    <h2 className="font-serif text-5xl lg:text-6xl leading-[1.06] text-foreground font-light mb-6">
                         {t.ctaHeadingLine1}<br />
-                        {t.ctaHeadingLine2} <em className="text-[#C8974A] italic font-light">{t.ctaHeadingAccent}</em>
+                        {t.ctaHeadingLine2} <em className="text-gold italic font-light">{t.ctaHeadingAccent}</em>
                     </h2>
 
-                    <p className="max-w-[700px] mx-auto font-body text-[1.02rem] leading-[1.85] text-[#F5E4C3]/65 font-light">
+                    <p className="max-w-[700px] mx-auto font-body text-[1.02rem] leading-[1.85] text-copy/65 font-light">
                         {t.ctaDescription}
                     </p>
                 </div>
 
                 <form
                     onSubmit={handleSubmit}
-                    className="reveal reveal-delay-1 border border-[#C8974A]/18 bg-[#1A1510]/70 p-6 lg:p-10 space-y-5"
+                    className="reveal reveal-delay-1 relative rounded-lg border border-border bg-card/70 p-6 lg:p-10 space-y-5"
                 >
+                    {/* Honeypot: hidden from people, but bots filling every field will complete it */}
+                    <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+                        <label htmlFor="cta-company">Company</label>
+                        <input
+                            id="cta-company"
+                            name="company"
+                            type="text"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            value={honeypot}
+                            onChange={(e) => setHoneypot(e.target.value)}
+                        />
+                    </div>
+
                     <div className="grid md:grid-cols-2 gap-5">
                         <div className="space-y-2">
-                            <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-name">
+                            <Label className="font-display text-[10px] tracking-[0.2em] uppercase text-primary font-light" htmlFor="cta-name">
                                 {t.formNameLabel}
-                            </label>
-                            <input
+                            </Label>
+                            <Input
                                 id="cta-name"
                                 name="name"
                                 type="text"
                                 autoComplete="name"
+                                maxLength={MAX_LENGTH.name}
                                 placeholder={t.formNamePlaceholder}
                                 value={formData.name}
                                 onChange={handleInputChange}
-                                className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] placeholder:text-[#F5E4C3]/35 focus:outline-none focus:border-[#C8974A]/55"
+                                className="h-11 bg-background px-4 text-base text-foreground placeholder:text-copy/35 md:text-sm dark:bg-background"
                                 required
                             />
                         </div>
 
                         <div className="space-y-2">
-                            <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-email">
+                            <Label className="font-display text-[10px] tracking-[0.2em] uppercase text-primary font-light" htmlFor="cta-email">
                                 {t.formEmailLabel}
-                            </label>
-                            <input
+                            </Label>
+                            <Input
                                 id="cta-email"
                                 name="email"
                                 type="email"
                                 autoComplete="email"
+                                maxLength={MAX_LENGTH.email}
                                 placeholder={t.formEmailPlaceholder}
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] placeholder:text-[#F5E4C3]/35 focus:outline-none focus:border-[#C8974A]/55"
+                                className="h-11 bg-background px-4 text-base text-foreground placeholder:text-copy/35 md:text-sm dark:bg-background"
                                 required
                             />
                         </div>
                     </div>
 
                     <div className="space-y-2">
-                        <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-role">
+                        <Label className="font-display text-[10px] tracking-[0.2em] uppercase text-primary font-light" htmlFor="cta-role">
                             {t.formRoleLabel}
-                        </label>
-                        <select
-                            id="cta-role"
+                        </Label>
+                        <Select
                             name="role"
                             value={formData.role}
-                            onChange={handleInputChange}
-                            className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] focus:outline-none focus:border-[#C8974A]/55"
+                            onValueChange={(role) => setFormData((prev) => ({ ...prev, role }))}
                             required
                         >
-                            <option value="" disabled>
-                                {t.formRoleLabel}
-                            </option>
-                            <option value="teacher">{t.formRoleTeacher}</option>
-                            <option value="parent">{t.formRoleParent}</option>
-                            <option value="student">{t.formRoleStudent}</option>
-                            <option value="other">{t.formRoleOther}</option>
-                        </select>
+                            <SelectTrigger
+                                id="cta-role"
+                                className="w-full bg-background px-4 text-base text-foreground data-[size=default]:h-11 md:text-sm dark:bg-background dark:hover:bg-background"
+                            >
+                                <SelectValue placeholder={t.formRoleLabel} />
+                            </SelectTrigger>
+                            <SelectContent position="popper">
+                                <SelectItem value="teacher">{t.formRoleTeacher}</SelectItem>
+                                <SelectItem value="parent">{t.formRoleParent}</SelectItem>
+                                <SelectItem value="student">{t.formRoleStudent}</SelectItem>
+                                <SelectItem value="other">{t.formRoleOther}</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
 
                     <div className="space-y-2">
-                        <label className="font-display text-[10px] tracking-[0.2em] uppercase text-[#C8974A] font-light" htmlFor="cta-message">
+                        <Label className="font-display text-[10px] tracking-[0.2em] uppercase text-primary font-light" htmlFor="cta-message">
                             {t.formMessageLabel}
-                        </label>
-                        <textarea
+                        </Label>
+                        <Textarea
                             id="cta-message"
                             name="message"
                             rows="4"
+                            maxLength={MAX_LENGTH.message}
                             placeholder={t.formMessagePlaceholder}
                             value={formData.message}
                             onChange={handleInputChange}
-                            className="w-full border border-[#C8974A]/20 bg-[#0D0B08] px-4 py-3 text-[#F7F0E6] placeholder:text-[#F5E4C3]/35 focus:outline-none focus:border-[#C8974A]/55"
+                            className="min-h-28 bg-background px-4 py-3 text-base text-foreground placeholder:text-copy/35 md:text-sm dark:bg-background"
                         />
                     </div>
 
-                    <button
+                    <Button
                         type="submit"
+                        size="lg"
                         disabled={loading}
-                        className={`w-full inline-flex items-center justify-center font-display text-[0.66rem] tracking-[0.22em] uppercase text-[#0D0B08] bg-[#C8974A] px-10 py-4 hover:bg-[#E8BE7A] transition-colors duration-300 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                        className="h-12 w-full font-display text-[0.66rem] font-normal uppercase tracking-[0.22em] hover:bg-primary/85"
                     >
                         {loading ? t.formSubmitting : t.formSubmitButton}
-                    </button>
+                    </Button>
 
                     {submitStatus === "success" && (
-                        <div className="p-3 border border-green-500/45 bg-green-500/12 text-green-300 text-sm text-center">
+                        <div role="status" className="rounded-md border border-green-500/40 bg-green-500/10 p-3 text-center text-sm text-green-300">
                             {t.formSuccess}
                         </div>
                     )}
 
                     {submitStatus === "error" && (
-                        <div className="p-3 border border-red-500/45 bg-red-500/12 text-red-300 text-sm text-center">
+                        <div role="alert" className="rounded-md border border-red-500/40 bg-red-500/10 p-3 text-center text-sm text-red-300">
                             {t.formError}
                         </div>
                     )}
 
-                    <div className="pt-2 text-center border-t border-[#C8974A]/15">
-                        <p className="text-xs text-[#F5E4C3]/60 font-body">
+                    <Separator />
+
+                    <div className="text-center">
+                        <p className="text-xs text-copy/60 font-body">
                             Or reach us at{" "}
                             <a
                                 href="mailto:info@quimen.edu"
-                                className="text-[#C8974A] hover:text-[#E8BE7A] transition-colors"
+                                className="text-gold hover:text-gold-soft transition-colors"
                             >
                                 info@quimen.edu
                             </a>
                         </p>
                     </div>
 
-                    <p className="text-xs text-[#F5E4C3]/55 font-body">{t.formDisclaimer}</p>
+                    <p className="text-xs text-copy/55 font-body">{t.formDisclaimer}</p>
                 </form>
             </div>
         </section>
