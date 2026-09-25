@@ -1,59 +1,53 @@
-import { motion } from "framer-motion";
-
-function AboutSection({ t, activeAccent }) {
+function AboutSection({ t }) {
     return (
-        <section
-            id="about"
-            className={`relative py-14 sm:py-20 px-4 ${activeAccent.ui.about.section}`}
-        >
-            <div className="max-w-6xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center"
-                >
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="space-y-6"
-                    >
-                        <h2
-                            className={`text-3xl sm:text-4xl md:text-5xl font-bold ${activeAccent.ui.about.heading}`}
-                        >
-                            {t.aboutTitle}
-                        </h2>
-                        <p className="text-base sm:text-lg text-[color:var(--accent-text)] leading-relaxed">
-                            {t.aboutDescription}
-                        </p>
-                        <motion.button
-                            whileHover={{ x: 10 }}
-                            className={`inline-flex items-center gap-2 group ${activeAccent.ui.about.learnMore} transition-colors font-semibold`}
-                        >
-                            <span>{t.learnMore}</span>
-                            <span className="text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1">
-                                ›
-                            </span>
-                        </motion.button>
-                    </motion.div>
+        <section id="about" className="relative bg-background py-20 lg:py-28 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div className="max-w-[720px] reveal">
+                    <div className="flex items-center gap-4 mb-7">
+                        <div className="h-px w-8 bg-gold" />
+                        <span className="font-display text-[10px] tracking-[0.45em] uppercase text-gold font-light">
+                            {t.aboutSectionLabel}
+                        </span>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className={`relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden ${activeAccent.ui.about.mediaCard} border border-[color:var(--accent-border)] flex items-center justify-center`}
-                    >
+                    <h2 className="font-serif text-5xl lg:text-6xl leading-[1.05] text-foreground font-light mb-8">
+                        {t.aboutHeadingMain}<br />
+                        {t.aboutHeadingLine2} <em className="text-gold italic font-light">{t.aboutHeadingAccent}</em>
+                    </h2>
+
+                    <div className="flex items-center gap-7 mb-9">
+                        <div className="h-px w-16 bg-gold/45" />
+                        <div className="w-2 h-2 rotate-45 bg-gold" />
+                        <div className="h-px w-16 bg-gold/45" />
+                    </div>
+
+                    <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-copy/70 font-body font-bold mb-8">
+                        {t.aboutParagraph1}
+                    </p>
+
+                    <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-copy/70 font-body font-light mb-8">
+                        {t.aboutParagraph2}
+                    </p>
+
+                    <p className="text-lg lg:text-[1.02rem] leading-[1.9] text-copy/70 font-body font-light">
+                        {t.aboutParagraph3}
+                    </p>
+                </div>
+
+                <div className="relative reveal reveal-delay-2">
+                    <div className="relative overflow-hidden rounded-lg border border-border aspect-[4/5] w-full max-w-[544px] ml-auto">
                         <img
-                            src={`${import.meta.env.BASE_URL}image.png`}
-                            alt={t.cardLessonText}
-                            className="h-full w-full object-cover scale-110 sm:scale-[1.2] -translate-y-4 sm:-translate-y-8 translate-x-2 sm:translate-x-4"
+                            src={`${import.meta.env.BASE_URL}Gemini_Generated_Image_70l4pj70l4pj70l4.webp`}
+                            alt={t.aboutImageAlt}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-full w-full object-cover"
                         />
-                    </motion.div>
-                </motion.div>
+                    </div>
+
+                    <div className="pointer-events-none absolute -top-7 -left-7 w-[48%] h-[48%] rounded-lg border border-primary/15" />
+                    <div className="pointer-events-none absolute -bottom-7 -right-7 w-[60%] h-[60%] rounded-lg border border-primary/25" />
+                </div>
             </div>
         </section>
     );

@@ -1,0 +1,24 @@
+# Security headers for Apache / Plesk. Vite copies this file into dist/ on build.
+<IfModule mod_headers.c>
+    # Only ever load the site over HTTPS (ignored by browsers on plain HTTP)
+    Header always set Strict-Transport-Security "max-age=31536000"
+    # Stop other sites from embedding this one in a frame (clickjacking)
+    Header always set X-Frame-Options "DENY"
+    Header always set Content-Security-Policy "frame-ancestors 'none'"
+    # Don't let browsers guess file types
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # The site needs none of these browser features
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
+
+# Never serve hidden files such as .DS_Store or .git
+# (/.well-known/ stays reachable: Let's Encrypt uses it to renew the SSL certificate)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+Options -Indexes

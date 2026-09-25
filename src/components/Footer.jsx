@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 
-function Footer({ t, activeAccent }) {
-    const headingText = activeAccent.ui.footer.heading;
-    const bodyText = activeAccent.ui.footer.body;
-    const linkHover = activeAccent.ui.footer.linkHover;
+function Footer({ t }) {
+    const headingText = "text-foreground";
+    const bodyText = "text-copy/70";
+    const linkHover = "hover:text-gold";
 
     return (
         <footer
-            className={`border-t border-[color:var(--accent-border)] py-10 sm:py-12 px-4 ${activeAccent.ui.footer.section}`}
+            className="border-t border-border bg-card py-10 sm:py-12 px-4 sm:px-6"
         >
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -25,7 +25,7 @@ function Footer({ t, activeAccent }) {
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className={`font-semibold ${headingText}`}>Product</h3>
+                        <h3 className={`font-semibold ${headingText}`}>{t.footerProduct}</h3>
                         {t.navigation.slice(0, 3).map((item) => (
                             <a
                                 key={item.href}
@@ -38,30 +38,30 @@ function Footer({ t, activeAccent }) {
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className={`font-semibold ${headingText}`}>Community</h3>
+                        <h3 className={`font-semibold ${headingText}`}>{t.footerCommunity}</h3>
                         <a
-                            href="#"
+                            href="#cta"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}
                         >
-                            Contact
+                            {t.footerContact}
                         </a>
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className={`font-semibold ${headingText}`}>Legal</h3>
+                        <h3 className={`font-semibold ${headingText}`}>{t.footerLegal}</h3>
                         <a
-                            href="#"
+                            href="#privacy"
                             className={`block text-sm ${bodyText} ${linkHover} transition-colors`}
                         >
-                            Privacy Policy
+                            {t.footerPrivacy}
                         </a>
                     </div>
                 </motion.div>
 
                 <div
-                    className={`border-t border-[color:var(--accent-border)] pt-6 sm:pt-8 text-center text-sm ${bodyText}`}
+                    className={`border-t border-border pt-6 sm:pt-8 text-center text-sm ${bodyText}`}
                 >
-                    <p>© 2026 Quimen. All rights reserved.</p>
+                    <p>{t.footerCopyright}</p>
                 </div>
             </div>
         </footer>

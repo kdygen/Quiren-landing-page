@@ -1,12 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Unbounded:wght@300;400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap');
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-copy: var(--copy);
+}
+
+/*
+ * Quimen palette mapped onto shadcn tokens.
+ * `--gold` is the accent for text, lines and icons; `--primary` is the fill for buttons.
+ * They differ in light mode so small gold text keeps readable contrast on paper.
+ */
+:root {
+  --radius: 0.375rem;
+  color-scheme: light;
+
+  --background: #fbf7f0;
+  --foreground: #1c150c;
+  --card: #f3eadb;
+  --card-foreground: #1c150c;
+  --popover: #fffdf8;
+  --popover-foreground: #1c150c;
+  --primary: #eaa42c;
+  --primary-foreground: #1c150c;
+  --secondary: #1c150c;
+  --secondary-foreground: #fbf7f0;
+  --muted: #ece2cf;
+  --muted-foreground: rgb(58 46 31 / 0.7);
+  --accent: #ece2cf;
+  --accent-foreground: #1c150c;
+  --destructive: #c0392b;
+  --border: rgb(150 96 16 / 0.22);
+  --input: rgb(150 96 16 / 0.3);
+  --ring: #c98414;
+
+  --gold: #a4650a;
+  --gold-soft: #c07a10;
+  --copy: #2b2116;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: #0f0c08;
+  --foreground: #fff8ec;
+  --card: #1c1711;
+  --card-foreground: #fff8ec;
+  --popover: #1c1711;
+  --popover-foreground: #fff8ec;
+  --primary: #f2b441;
+  --primary-foreground: #140f08;
+  --secondary: #f6e9cf;
+  --secondary-foreground: #140f08;
+  --muted: #2a2219;
+  --muted-foreground: rgb(246 233 207 / 0.65);
+  --accent: #2a2219;
+  --accent-foreground: #fff8ec;
+  --destructive: #e5534b;
+  --border: rgb(242 180 65 / 0.2);
+  --input: rgb(242 180 65 / 0.26);
+  --ring: #f2b441;
+
+  --gold: #f2b441;
+  --gold-soft: #ffd27d;
+  --copy: #f6e9cf;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light;
-  color: rgb(15, 23, 42);
+  color: var(--foreground);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,6 +124,9 @@ body {
   width: 100%;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 #root {
@@ -35,9 +141,15 @@ h1 {
   line-height: 1.1;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
+
 /* Removed global button styles to allow Tailwind classes to work properly */
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}

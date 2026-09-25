@@ -1,58 +1,48 @@
-import { motion } from "framer-motion";
+import { GraduationCap, Music, School } from "lucide-react";
 
-function AudienceSection({ t, activeAccent }) {
+// Icons follow card order in `t.audienceCards`: children, teens/students, schools
+const AUDIENCE_ICONS = [Music, GraduationCap, School];
+
+function AudienceSection({ t }) {
+    const cards = t.audienceCards || [];
+
     return (
-        <section
-            id="audience"
-            className={`relative py-14 sm:py-20 px-4 ${activeAccent.ui.audience.section}`}
-        >
-            <div className="max-w-6xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-10 sm:mb-16"
-                >
-                    <h2
-                        className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 ${activeAccent.ui.audience.heading}`}
-                    >
-                        {t.audienceTitle}
-                    </h2>
-                    <p className="text-base sm:text-lg text-[color:var(--accent-text)] max-w-2xl mx-auto">
-                        {t.audienceDescription}
-                    </p>
-                </motion.div>
+        <section id="audience" className="bg-background py-24 lg:py-32 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto">
+                <div className="mb-14 lg:mb-16 reveal">
+                    <div className="flex items-center gap-4 mb-5">
+                        <div className="h-px w-8 bg-gold" />
+                        <span className="font-display text-[10px] tracking-[0.45em] uppercase text-gold font-light">
+                            {t.audienceSectionLabel}
+                        </span>
+                    </div>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8, staggerChildren: 0.1 }}
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-3 gap-4 sm:gap-6"
-                >
-                    {t.audience.map((aud) => (
-                        <motion.div
-                            key={aud.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            className={`relative p-5 sm:p-8 rounded-2xl overflow-hidden group ${activeAccent.ui.audience.card}`}
-                        >
-                            <div className="absolute inset-0 bg-[linear-gradient(135deg,var(--accent-soft),rgba(0,0,0,0))] group-hover:bg-[linear-gradient(135deg,var(--accent-soft),var(--accent-soft))] transition-all" />
-                            <div className="absolute inset-0 border border-[color:var(--accent-border)] group-hover:border-white transition-all rounded-2xl" />
-                            <div className="relative z-10">
-                                <h3
-                                    className={`text-lg sm:text-xl font-bold mb-3 ${activeAccent.ui.audience.cardHeading}`}
-                                >
-                                    {aud.title}
+                    <h2 className="font-serif text-5xl lg:text-6xl leading-[1.06] text-foreground font-light">
+                        {t.audienceHeadingMain} <em className="text-gold italic font-light">{t.audienceHeadingAccent}</em>?
+                    </h2>
+                </div>
+
+                <div className="grid lg:grid-cols-3 overflow-hidden rounded-lg border border-border bg-card/40 reveal reveal-delay-1">
+                    {cards.map((card, index) => {
+                        const Icon = AUDIENCE_ICONS[index] ?? Music;
+                        return (
+                            <article
+                                key={card.title}
+                                className={`px-8 py-10 lg:px-10 lg:py-12 ${index < 2 ? "border-b lg:border-b-0 lg:border-r" : ""} border-border transition-colors duration-200 hover:bg-accent/40`}
+                            >
+                                <div className="mb-6 flex size-11 items-center justify-center rounded-md border border-border bg-background text-primary">
+                                    <Icon className="size-5" strokeWidth={1.5} aria-hidden />
+                                </div>
+                                <h3 className="font-serif text-[2.05rem] leading-[1.2] text-gold-soft font-light mb-5">
+                                    {card.title}
                                 </h3>
-                                <p className="text-sm sm:text-base text-[color:var(--accent-text)]">{aud.desc}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                                <p className="font-body text-[1.02rem] leading-[1.85] text-copy/68 font-light">
+                                    {card.description}
+                                </p>
+                            </article>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );
